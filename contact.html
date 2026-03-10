@@ -209,15 +209,6 @@ nav {
 .ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0 32px; }
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* ── SHOWREEL ── */
-.showreel { padding: 72px 0 0; background: var(--black); }
-.showreel-inner { max-width: 960px; margin: 0 auto; }
-.showreel-embed {
-  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-  border: 1px solid rgba(211,184,106,0.15);
-}
-.showreel-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
 /* ── FOOTER ── */
 footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0.1); padding: 40px 0 28px; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -323,26 +314,6 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     <span class="ticker-item">♠ Product Launches</span>
   </div>
 </div>
-
-<!-- SHOWREEL -->
-<section class="showreel">
-  <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom:36px;">
-      <p class="section-label" style="justify-content:center">Watch Us Perform</p>
-      <h2 class="section-title">Our Showreel</h2>
-      <div class="section-divider" style="margin: 18px auto 0;"></div>
-    </div>
-    <div class="showreel-inner reveal reveal-delay-1">
-      <div class="showreel-embed">
-        <iframe
-          src="https://www.youtube.com/embed/AaFwuC6kVN4?rel=0&modestbranding=1&controls=1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CONTACT SECTION -->
 <section class="contact-section">
