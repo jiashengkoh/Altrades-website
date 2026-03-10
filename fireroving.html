@@ -45,11 +45,13 @@ nav {
 .nav-links a.active { color: var(--gold); }
 .nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 10px 24px; }
 .nav-cta:hover { background: var(--red-dark) !important; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+  min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
+}
 .hamburger span { display: block; width: 26px; height: 2px; background: var(--gold); }
-.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999; background: rgba(15,15,15,0.98); padding: 24px 32px 32px; border-bottom: 1px solid rgba(211,184,106,0.15); flex-direction: column; gap: 4px; }
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 1001; background: rgba(15,15,15,0.98); padding: 24px 32px 32px; border-bottom: 1px solid rgba(211,184,106,0.15); flex-direction: column; gap: 4px; }
 .mobile-menu.open { display: flex; }
-.mobile-menu a { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-menu a { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: block; width: 100%; -webkit-tap-highlight-color: rgba(211,184,106,0.2); }
 
 /* ── HERO ── */
 .hero {
@@ -338,7 +340,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex;
+  min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
+}
   .container { padding: 0 20px; }
   .hero-left { padding: 100px 20px 48px; }
   .form-row { grid-template-columns: 1fr; }

@@ -87,6 +87,7 @@ nav.scrolled {
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; padding: 4px;
+  min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
 }
 .hamburger span {
   display: block; width: 26px; height: 2px;
@@ -94,7 +95,7 @@ nav.scrolled {
 }
 .mobile-menu {
   display: none; position: fixed;
-  top: 72px; left: 0; right: 0; z-index: 999;
+  top: 72px; left: 0; right: 0; z-index: 1001;
   background: rgba(15,15,15,0.98);
   padding: 24px 32px 32px;
   border-bottom: 1px solid rgba(211,184,106,0.15);
@@ -454,8 +455,9 @@ section { padding: 100px 0; }
   background: rgba(15,15,15,0.9);
   display: flex; flex-direction: column; justify-content: center;
   padding: 32px; opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
 }
-.act-card:hover .act-hover { opacity: 1; }
+.act-card:hover .act-hover { opacity: 1; pointer-events: auto; }
 .act-hover .act-name { font-size: 1.3rem; margin-bottom: 12px; }
 .act-card.wide .act-hover .act-name { font-size: 1.8rem; }
 .act-hover p { font-size: 0.84rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 24px; }
@@ -649,7 +651,9 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex;
+  min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
+}
   section { padding: 72px 0; }
   .container { padding: 0 20px; }
   .intro-grid { grid-template-columns: 1fr 1fr; }
@@ -662,6 +666,15 @@ footer {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .act-hover { display: none; }
+  .act-card { cursor: pointer; }
+  .act-card .act-content { padding-bottom: 48px; }
+  .act-card-mobile-link {
+    position: absolute; bottom: 16px; left: 18px;
+    font-size: 0.65rem; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 6px; z-index: 4;
+  }
+  .act-card-mobile-link::after { content: '→'; }
 }
 @media (max-width: 480px) {
   .hero-title { font-size: 2.8rem; }
@@ -677,7 +690,7 @@ footer {
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="#">
+  <a class="nav-logo" href="index.html">
     <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="18" cy="6" r="3" stroke="#D3B86A" stroke-width="1.5" fill="none"/>
       <circle cx="30" cy="14" r="2" stroke="#D3B86A" stroke-width="1.2" fill="none"/>
@@ -858,7 +871,7 @@ footer {
 
     <div class="acts-grid" id="actsGrid">
       <!-- Group Acrobatics - WIDE -->
-      <div class="act-card wide" data-act="acro" data-categories="stage">
+      <div class="act-card wide" data-act="acro" onclick="window.location='groupacrobatics.html'" style="cursor:pointer" data-categories="stage">
         <div class="act-bg" style="background:#0a0a0a">
           <img src="groupacrobatics-hero.jpg" alt="Group Acrobatics" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.7;">
         </div>
@@ -876,7 +889,7 @@ footer {
       </div>
 
       <!-- Fire Performances -->
-      <div class="act-card" data-act="fire" data-categories="stage fire">
+      <div class="act-card" data-act="fire" onclick="window.location='fireperformances.html'" style="cursor:pointer" data-categories="stage fire">
         <div class="act-bg" style="background:#0a0a0a">
           <img src="fire-performance-hero.jpg" alt="Fire Performances" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.75;">
         </div>
@@ -894,7 +907,7 @@ footer {
       </div>
 
       <!-- Contortion -->
-      <div class="act-card" data-act="contortion" data-categories="stage roving">
+      <div class="act-card" data-act="contortion" onclick="window.location='catalogue.html'" style="cursor:pointer" data-categories="stage roving">
         <div class="act-bg" style="background:linear-gradient(135deg,#100a1a,#180f28)"><div class="act-bg-emoji">🧘</div></div>
         <span class="act-num">03</span>
         <span class="act-tag tag-stage">Stage</span>
@@ -910,7 +923,7 @@ footer {
       </div>
 
       <!-- Fire Roving - WIDE -->
-      <div class="act-card wide" data-act="fireroving" data-categories="roving fire">
+      <div class="act-card wide" data-act="fireroving" onclick="window.location='fireroving.html'" style="cursor:pointer" data-categories="roving fire">
         <div class="act-bg" style="background:#0a0a0a">
           <img src="fire-roving-hero.jpg" alt="Fire Roving" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.75;">
         </div>
@@ -928,7 +941,7 @@ footer {
       </div>
 
       <!-- Stilt Walking -->
-      <div class="act-card" data-act="stilt" data-categories="roving">
+      <div class="act-card" data-act="stilt" onclick="window.location='stiltwalking.html'" style="cursor:pointer" data-categories="roving">
         <div class="act-bg" style="background:linear-gradient(135deg,#101808,#182510)"><div class="act-bg-emoji">🦺</div></div>
         <span class="act-num">05</span>
         <span class="act-tag tag-roving">Roving</span>
@@ -944,7 +957,7 @@ footer {
       </div>
 
       <!-- Hand Balancing -->
-      <div class="act-card" data-act="handbal" data-categories="stage">
+      <div class="act-card" data-act="handbal" onclick="window.location='catalogue.html'" style="cursor:pointer" data-categories="stage">
         <div class="act-bg" style="background:linear-gradient(135deg,#0f1510,#151f15)"><div class="act-bg-emoji">🤲</div></div>
         <span class="act-num">06</span>
         <span class="act-tag tag-stage">Stage</span>
