@@ -787,13 +787,21 @@ footer {
 <div class="intro">
   <div class="container">
     <div class="intro-grid">
-      <div class="intro-stat reveal" style="grid-column: span 2;">
+      <div class="intro-stat reveal">
         <div class="stat-num">17+</div>
         <div class="stat-label">Signature Acts</div>
       </div>
-      <div class="intro-stat reveal reveal-delay-1" style="grid-column: span 2;">
+      <div class="intro-stat reveal reveal-delay-1">
         <div class="stat-num">200+</div>
         <div class="stat-label">Events Produced</div>
+      </div>
+      <div class="intro-stat reveal reveal-delay-2">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">World-Class Performers</div>
+      </div>
+      <div class="intro-stat reveal reveal-delay-3">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Countries Represented</div>
       </div>
     </div>
   </div>
@@ -811,8 +819,8 @@ footer {
             <span class="about-card-suit">♣</span>
             <span class="about-card-suit">♦</span>
           </div>
-          <p class="about-card-quote">Born in Singapore. Built for the world's stage. We are a homegrown troupe with the artistry, ambition, and international reach to bring any creative vision to life.</p>
-          <p class="about-card-attr">— Circus of Altrades</p>
+          <p class="about-card-quote">"Jack of all trades, master of none." — unlike this phrase, we've mastered them all.</p>
+          <p class="about-card-attr">— The Altrades Promise</p>
         </div>
         <div class="about-badge">
           <div class="about-badge-text">Based in<br>Singapore<br>🌏 Worldwide</div>
@@ -822,8 +830,8 @@ footer {
         <p class="section-label">Who We Are</p>
         <h2 class="section-title">Your One-Stop Creative Partner</h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Circus of Altrades is Singapore's premier entertainment agency — a proudly homegrown troupe with deep local roots and an international reach. Founded and built in Singapore, our core performers are local talent who have trained, performed, and grown together.</p>
-        <p class="section-sub" style="margin-top:16px">Beyond our own troupe, we have strong connections with international artistes, giving us the flexibility to curate the perfect act for any event. From intimate private celebrations to large-scale corporate galas — we are your one-stop creative partner, handling everything from concept to curtain call.</p>
+        <p class="section-sub">Circus of Altrades is Singapore's premier entertainment agency, bringing together world-class performers from across the globe to craft breathtaking shows.</p>
+        <p class="section-sub" style="margin-top:16px">From immersive circus spectacles to cutting-edge LED and fire acts — we are a one-stop creative partner dedicated to transforming every event into an extraordinary experience. Whatever your vision, whatever your stage, we make it happen.</p>
         <div class="about-links">
           <a href="about.html" class="btn-red">Our Story</a>
           <a href="#catalogue" class="btn-gold-outline">See All Acts</a>
@@ -971,18 +979,18 @@ footer {
     <div class="why-grid">
       <div class="why-item reveal">
         <span class="why-icon">♦</span>
-        <div class="why-title">Proudly Homegrown</div>
-        <div class="why-desc">We are Singapore's own circus troupe — local performers with deep roots, trained together and passionate about bringing world-class entertainment to every stage. We also work with international artistes when the vision calls for it.</div>
+        <div class="why-title">Global Talent Network</div>
+        <div class="why-desc">World-class performers handpicked from across the globe, ensuring the highest calibre of artistry for every event — from Singapore to worldwide.</div>
       </div>
       <div class="why-item reveal reveal-delay-1">
         <span class="why-icon">♣</span>
         <div class="why-title">One-Stop Creative Partner</div>
-        <div class="why-desc">From creative concept and choreography to full production and on-night execution — we handle every detail so you can focus on your guests and let us handle the magic.</div>
+        <div class="why-desc">From creative concept and choreography to full production and on-night execution — we handle every detail so you can focus on your guests.</div>
       </div>
       <div class="why-item reveal reveal-delay-2">
         <span class="why-icon">♥</span>
         <div class="why-title">Versatility & Innovation</div>
-        <div class="why-desc">17 signature acts designed to suit any theme, space, and audience — from intimate private celebrations to large-scale corporate galas. Whatever you imagine, we make it happen.</div>
+        <div class="why-desc">17 signature acts designed to suit any theme, space, and audience — from intimate private celebrations to 5,000-seat corporate galas.</div>
       </div>
     </div>
   </div>
@@ -1089,10 +1097,10 @@ footer {
         <p>
           📍 Singapore · Available Worldwide<br><br>
           📞 <a href="tel:+6581382732">(+65) 8138 2732</a><br><br>
-          ✉ <a href="/cdn-cgi/l/email-protection#c2abaca4ad82a3aeb6b0a3a6a7b1ecb1a5"><span class="__cf_email__" data-cfemail="81e8efe7eec1e0edf5f3e0e5e4f2aff2e6">[email&#160;protected]</span></a>
+          ✉ <a href="mailto:info@altrades.sg">info@altrades.sg</a>
         </p>
         <div class="footer-socials" style="margin-top:20px">
-          <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1d0ddc5c3d0d5d4c29fc2d6" class="footer-social" title="Email">✉</a>
+          <a href="mailto:info@altrades.sg" class="footer-social" title="Email">✉</a>
           <a href="https://www.instagram.com/altrades_sg" class="footer-social" title="Instagram" target="_blank">📷</a>
           <a href="https://www.tiktok.com/@circusofaltrades" class="footer-social" title="TikTok" target="_blank">🎵</a>
         </div>
@@ -1106,7 +1114,7 @@ footer {
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Nav scroll
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
@@ -1133,4 +1141,15 @@ function filterActs(cat, btn) {
 
 // Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
-  en
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
