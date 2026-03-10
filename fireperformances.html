@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stilt Walking | Circus of Altrades</title>
-<meta name="description" content="Larger-than-life stilt walkers for your event. Themed costumes, guest interaction, and roving entertainment across 3×20 min sets. Singapore's premier roving entertainment.">
+<title>Fire Performances | Circus of Altrades</title>
+<meta name="description" content="1–4 fire performers delivering breathtaking outdoor fire acts. Fire poi, fire staff, fire breathing and more. Singapore's premier fire performance act for corporate events and festivals.">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +40,8 @@ nav {
 .nav-logo-sub { font-size: 0.55rem; font-weight: 400; letter-spacing: 0.25em; color: rgba(211,184,106,0.6); text-transform: uppercase; }
 .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
 .nav-links a { color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
 .nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 10px 24px; }
 .nav-cta:hover { background: var(--red-dark) !important; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
@@ -70,37 +71,27 @@ nav {
 .hero-breadcrumb a { color: rgba(211,184,106,0.6); text-decoration: none; transition: color 0.2s; }
 .hero-breadcrumb a:hover { color: var(--gold); }
 .hero-breadcrumb span { color: rgba(255,255,255,0.2); }
-
-/* Roving badge — distinct from Stage */
 .hero-label {
-  display: inline-flex; align-items: center; gap: 10px;
-  margin-bottom: 16px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
 }
-.hero-label-badge {
-  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em;
-  text-transform: uppercase; padding: 6px 14px;
-  background: rgba(211,184,106,0.12);
-  border: 1px solid rgba(211,184,106,0.3);
-  color: var(--gold);
-}
-.hero-label-type {
-  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(255,255,255,0.25);
-}
-
+.hero-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
 .hero-title {
   font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 900;
   text-transform: uppercase; line-height: 0.92;
   letter-spacing: 0.02em; margin-bottom: 28px;
 }
 .hero-title span { color: var(--gold); display: block; }
-.hero-divider { width: 48px; height: 3px; background: var(--gold); margin-bottom: 28px; }
+.hero-divider { width: 48px; height: 3px; background: var(--red); margin-bottom: 28px; }
 .hero-tagline {
   font-size: 1.05rem; font-style: italic; font-weight: 300;
   color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 40px;
-  border-left: 3px solid var(--gold); padding-left: 20px;
+  border-left: 3px solid var(--red); padding-left: 20px;
 }
-.hero-meta { display: flex; gap: 32px; margin-bottom: 44px; flex-wrap: wrap; }
+.hero-meta {
+  display: flex; gap: 32px; margin-bottom: 44px; flex-wrap: wrap;
+}
 .hero-meta-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(211,184,106,0.5); margin-bottom: 4px; }
 .hero-meta-value { font-size: 0.9rem; font-weight: 700; color: var(--white); }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -109,121 +100,161 @@ nav {
 .btn-gold-outline { background: transparent; color: var(--gold); padding: 15px 36px; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--gold); transition: all 0.25s; display: inline-block; }
 .btn-gold-outline:hover { background: var(--gold); color: var(--black); }
 
-/* Hero right — video */
+/* Hero right — video panel */
 .hero-right {
   position: relative; background: #0a0a0a;
   display: flex; align-items: center; justify-content: center;
 }
 .hero-right::before {
   content: ''; position: absolute; left: 0; top: 10%; bottom: 10%;
-  width: 3px; background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  width: 3px; background: linear-gradient(to bottom, transparent, var(--red), transparent);
+}
+.video-container {
+  width: 100%; height: 100%; position: relative;
+  display: flex; align-items: center; justify-content: center;
 }
 .video-placeholder {
   width: 100%; height: 100%; min-height: 400px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 20px; padding: 40px; text-align: center;
-  background: #111; position: relative; overflow: hidden;
+  background: #111;
+  position: relative; overflow: hidden;
 }
 .video-placeholder::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, rgba(211,184,106,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(195,33,41,0.08) 0%, transparent 70%);
 }
 .video-play-ring {
   width: 80px; height: 80px; border-radius: 50%;
   border: 2px solid rgba(211,184,106,0.3);
-  display: flex; align-items: center; justify-content: center; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
 }
 .video-play-ring::before {
   content: ''; position: absolute; inset: 8px; border-radius: 50%;
-  background: rgba(211,184,106,0.15);
+  background: rgba(195,33,41,0.6);
 }
 .video-play-icon {
-  position: relative; z-index: 1; width: 0; height: 0;
-  border-style: solid; border-width: 12px 0 12px 22px;
-  border-color: transparent transparent transparent var(--gold);
+  position: relative; z-index: 1;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 22px;
+  border-color: transparent transparent transparent var(--white);
   margin-left: 4px;
 }
-.video-placeholder-text { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
-.video-placeholder-note { font-size: 0.62rem; color: rgba(211,184,106,0.35); letter-spacing: 0.08em; }
-.video-embed { width: 100%; height: 100%; min-height: 400px; border: none; display: none; }
+.video-placeholder-text {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.25);
+}
+.video-placeholder-note {
+  font-size: 0.62rem; color: rgba(211,184,106,0.35);
+  letter-spacing: 0.08em;
+}
+.video-embed {
+  width: 100%; height: 100%; min-height: 400px; border: none;
+  display: none;
+}
 
+/* Hero background text */
 .hero-bg-text {
-  position: absolute; right: -20px; bottom: 20px;
+  position: absolute; right: -30px; bottom: 20px;
   font-size: clamp(6rem, 12vw, 11rem); font-weight: 900;
   text-transform: uppercase; color: rgba(255,255,255,0.025);
   line-height: 1; pointer-events: none; user-select: none; z-index: 1;
 }
 
-/* ── HOW IT WORKS (roving-specific) ── */
-.how-it-works { padding: 72px 0; background: var(--black); border-bottom: 1px solid rgba(211,184,106,0.08); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
-.hiw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
-.hiw-step {
-  padding: 40px 32px; background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(211,184,106,0.08); position: relative;
-  transition: background 0.3s;
-}
-.hiw-step:hover { background: rgba(211,184,106,0.04); }
-.hiw-step-num {
-  font-size: 3.5rem; font-weight: 900; color: rgba(211,184,106,0.1);
-  line-height: 1; margin-bottom: 16px; font-family: 'Raleway', sans-serif;
-}
-.hiw-step-title { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); margin-bottom: 10px; }
-.hiw-step-desc { font-size: 0.82rem; font-weight: 300; color: var(--muted); line-height: 1.7; }
-.hiw-step-tag {
-  display: inline-block; margin-top: 16px;
-  font-size: 0.6rem; font-weight: 800; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--gold);
-  border: 1px solid rgba(211,184,106,0.25); padding: 4px 12px;
-}
-/* connector line between steps */
-.hiw-step:not(:last-child)::after {
-  content: '→';
-  position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
-  color: rgba(211,184,106,0.2); font-size: 1.2rem; z-index: 2;
-}
-
 /* ── ABOUT THE ACT ── */
 .act-about { padding: 96px 0; background: var(--black); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
 .act-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .section-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
 .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; text-transform: uppercase; line-height: 1.1; letter-spacing: 0.02em; }
-.section-divider { width: 48px; height: 3px; background: var(--gold); margin: 18px 0 32px; }
+.section-divider { width: 48px; height: 3px; background: var(--red); margin: 18px 0 32px; }
 .act-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.65); }
 .act-desc p + p { margin-top: 18px; }
 .act-desc strong { color: var(--gold); font-weight: 700; }
+
+/* Feature list */
 .act-features { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
-.act-feature { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.025); border: 1px solid rgba(211,184,106,0.08); transition: background 0.3s, border-color 0.3s; }
+.act-feature {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px 24px; background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(211,184,106,0.08);
+  transition: background 0.3s, border-color 0.3s;
+}
 .act-feature:hover { background: rgba(211,184,106,0.05); border-color: rgba(211,184,106,0.2); }
-.act-feature-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.act-feature-icon { color: var(--red); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
 .act-feature-text { font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.65); line-height: 1.6; }
 .act-feature-text strong { color: var(--white); font-weight: 700; display: block; margin-bottom: 2px; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.act-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
-.act-tag { padding: 8px 18px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(211,184,106,0.25); color: rgba(211,184,106,0.7); }
 
 /* Spec card */
-.act-specs { background: var(--black-deep); border: 1px solid rgba(211,184,106,0.12); position: relative; overflow: hidden; }
-.act-specs::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-.act-specs-header { padding: 28px 32px; border-bottom: 1px solid rgba(211,184,106,0.1); }
-.act-specs-title { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-.spec-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 32px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.act-specs {
+  background: var(--black-deep); border: 1px solid rgba(211,184,106,0.12);
+  position: relative; overflow: hidden;
+}
+.act-specs::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--gold);
+}
+.act-specs-header {
+  padding: 28px 32px; border-bottom: 1px solid rgba(211,184,106,0.1);
+}
+.act-specs-title {
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+}
+.act-specs-body { padding: 0; }
+.spec-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 32px; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 .spec-row:last-child { border-bottom: none; }
 .spec-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 .spec-value { font-size: 0.88rem; font-weight: 700; color: var(--white); text-align: right; }
 .spec-value.gold { color: var(--gold); }
 
-/* ── TICKER ── */
-.ticker { background: var(--red); padding: 13px 0; overflow: hidden; border-top: 1px solid rgba(211,184,106,0.15); border-bottom: 1px solid rgba(211,184,106,0.15); }
-.ticker-track { display: flex; animation: ticker 25s linear infinite; white-space: nowrap; width: max-content; }
-.ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0 32px; }
-@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+/* Tags */
+.act-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
+.act-tag {
+  padding: 8px 18px; font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1px solid rgba(211,184,106,0.25); color: rgba(211,184,106,0.7);
+}
+
+/* ── GALLERY ── */
+.gallery { padding: 0; background: var(--black); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+}
+.gallery-img {
+  overflow: hidden; aspect-ratio: 4/3; position: relative;
+}
+.gallery-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(20%);
+  transition: transform 0.5s ease, filter 0.4s ease;
+  display: block;
+}
+.gallery-img:hover img { transform: scale(1.04); filter: grayscale(0%); }
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
-.past-perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; max-width: 860px; margin-left: auto; margin-right: auto; }
-.perf-card { padding: 36px 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(211,184,106,0.08); position: relative; overflow: hidden; transition: background 0.3s, border-color 0.3s; }
-.perf-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s; }
+.past-perf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
+.past-perf-grid-row2 { display: none; }
+.perf-card {
+  padding: 36px 28px; background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(211,184,106,0.08);
+  position: relative; overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+}
+.perf-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--red);
+  transform: scaleX(0); transition: transform 0.4s;
+}
 .perf-card:hover { background: rgba(211,184,106,0.04); border-color: rgba(211,184,106,0.2); }
 .perf-card:hover::after { transform: scaleX(1); }
 .perf-suit { font-size: 1.2rem; color: rgba(211,184,106,0.3); margin-bottom: 20px; display: block; }
@@ -243,24 +274,53 @@ nav {
 .enquire-other { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.07); }
 .enquire-other-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
 .enquire-other-acts { display: flex; flex-direction: column; gap: 8px; }
-.enquire-other-act { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+.enquire-other-act {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06); text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
 .enquire-other-act:hover { background: rgba(211,184,106,0.05); border-color: rgba(211,184,106,0.2); }
 .enquire-other-act-name { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
 .enquire-other-act-arrow { color: var(--gold); font-size: 0.8rem; }
+
+/* Form */
 .enquire-form { display: flex; flex-direction: column; gap: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-.form-input, .form-select, .form-textarea { background: rgba(255,255,255,0.04); border: 1px solid rgba(211,184,106,0.15); color: var(--white); padding: 13px 16px; font-family: 'Raleway', sans-serif; font-size: 0.88rem; transition: border-color 0.2s; outline: none; width: 100%; }
+.form-input, .form-select, .form-textarea {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(211,184,106,0.15);
+  color: var(--white); padding: 13px 16px;
+  font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 400;
+  transition: border-color 0.2s; outline: none; width: 100%;
+}
 .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.18); }
 .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
 .form-select { appearance: none; cursor: pointer; }
-.form-select option { background: var(--black-deep); }
+.form-select option { background: var(--black-deep); color: var(--white); }
 .form-textarea { resize: vertical; min-height: 120px; }
-.form-preselect { background: rgba(211,184,106,0.06); border: 1px solid rgba(211,184,106,0.2); padding: 12px 16px; font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+.form-preselect {
+  background: rgba(195,33,41,0.08); border: 1px solid rgba(195,33,41,0.2);
+  padding: 12px 16px; font-size: 0.72rem; font-weight: 600;
+  color: rgba(255,255,255,0.45); letter-spacing: 0.06em;
+  display: flex; align-items: center; gap: 8px;
+}
 .form-preselect span { color: var(--gold); }
-.form-submit { background: var(--red); color: var(--white); border: 2px solid var(--red); padding: 15px 36px; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; align-self: flex-start; }
+.form-submit {
+  background: var(--red); color: var(--white); border: 2px solid var(--red);
+  padding: 15px 36px; font-family: 'Raleway', sans-serif;
+  font-weight: 800; font-size: 0.78rem; letter-spacing: 0.18em;
+  text-transform: uppercase; cursor: pointer; transition: all 0.25s;
+  align-self: flex-start;
+}
 .form-submit:hover { background: transparent; color: var(--red); }
+
+/* ── TICKER ── */
+.ticker { background: var(--red); padding: 13px 0; overflow: hidden; border-top: 1px solid rgba(211,184,106,0.15); border-bottom: 1px solid rgba(211,184,106,0.15); }
+.ticker-track { display: flex; animation: ticker 25s linear infinite; white-space: nowrap; width: max-content; }
+.ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0 32px; }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ── FOOTER ── */
 footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0.1); padding: 40px 0 28px; }
@@ -283,14 +343,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 @media (max-width: 1024px) {
   nav { padding: 0 32px; }
   .container { padding: 0 32px; }
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 100px 32px 48px; }
-  .hero-right { min-height: 360px; }
+  .hero-right { min-height: 380px; }
   .act-about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hiw-grid { grid-template-columns: 1fr; }
-  .hiw-step::after { display: none; }
   .enquire-grid { grid-template-columns: 1fr; gap: 56px; }
-  .past-perf-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .past-perf-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
@@ -299,6 +357,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .container { padding: 0 20px; }
   .hero-left { padding: 100px 20px 48px; }
   .form-row { grid-template-columns: 1fr; }
+  .past-perf-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 480px) {
   .past-perf-grid { grid-template-columns: 1fr; }
@@ -341,27 +400,24 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <span>/</span>
       <a href="catalogue.html">Catalogue</a>
       <span>/</span>
-      Stilt Walking
+      Fire Performances
     </div>
-    <div class="hero-label">
-      <span class="hero-label-badge">Roving Act</span>
-      <span class="hero-label-type">Guest Interaction · Ambient Entertainment</span>
-    </div>
-    <h1 class="hero-title">Stilt<br><span>Walking</span></h1>
+    <p class="hero-label">Stage Act</p>
+    <h1 class="hero-title">Fire<br><span>Performances</span></h1>
     <div class="hero-divider"></div>
-    <p class="hero-tagline">Larger-than-life performers that roam your event, turning every corner into a moment and every guest into part of the show.</p>
+    <p class="hero-tagline">Ancient fire meets modern artistry — a primal, breathtaking spectacle that commands silence and ignites the night.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <div class="hero-meta-label">Performers</div>
-        <div class="hero-meta-value">Flexible</div>
+        <div class="hero-meta-value">1 – 4</div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-label">Format</div>
-        <div class="hero-meta-value">3 × 20 min sets</div>
+        <div class="hero-meta-label">Type</div>
+        <div class="hero-meta-value">Stage Act</div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-label">Block Duration</div>
-        <div class="hero-meta-value">Up to 4 hours</div>
+        <div class="hero-meta-label">Duration</div>
+        <div class="hero-meta-value">3 – 10 min</div>
       </div>
     </div>
     <div class="hero-btns">
@@ -371,79 +427,34 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 
   <div class="hero-right">
-    <div class="video-placeholder">
-      <div class="video-play-ring">
-        <div class="video-play-icon"></div>
-      </div>
-      <div class="video-placeholder-text">Showreel Coming Soon</div>
-      <div class="video-placeholder-note">Drop your YouTube link here to activate</div>
+    <div class="video-container">
+      <img src="fire-performance-hero.jpg" alt="Fire Performances — Circus of Altrades"
+        style="width:100%; height:100%; object-fit:cover; min-height:400px; display:block; filter:brightness(0.9);">
     </div>
-    <!-- UNCOMMENT WHEN READY:
-    <iframe class="video-embed" style="display:block"
-      src="https://www.youtube.com/embed/VIDEO_ID?controls=1&rel=0&modestbranding=1"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-    -->
   </div>
 
-  <div class="hero-bg-text">STILT</div>
+  <div class="hero-bg-text">FIRE</div>
 </div>
 
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item">♦ Roving Act</span>
-    <span class="ticker-item">♣ 3 × 20 Min Sets</span>
-    <span class="ticker-item">♥ Up to 4 Hours</span>
-    <span class="ticker-item">♠ Themed Costumes</span>
-    <span class="ticker-item">♦ Guest Interaction</span>
-    <span class="ticker-item">♣ Photo Opportunities</span>
-    <span class="ticker-item">♥ Flexible Headcount</span>
-    <span class="ticker-item">♠ Indoor & Outdoor</span>
-    <span class="ticker-item">♦ Roving Act</span>
-    <span class="ticker-item">♣ 3 × 20 Min Sets</span>
-    <span class="ticker-item">♥ Up to 4 Hours</span>
-    <span class="ticker-item">♠ Themed Costumes</span>
-    <span class="ticker-item">♦ Guest Interaction</span>
-    <span class="ticker-item">♣ Photo Opportunities</span>
-    <span class="ticker-item">♥ Flexible Headcount</span>
-    <span class="ticker-item">♠ Indoor & Outdoor</span>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<div class="how-it-works">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <p class="section-label" style="justify-content:center">How It Works</p>
-      <h2 class="section-title">A Full Evening of Roving Magic</h2>
-      <div class="section-divider" style="margin: 18px auto 0;"></div>
-    </div>
-    <div class="hiw-grid">
-      <div class="hiw-step reveal">
-        <div class="hiw-step-num">01</div>
-        <div class="hiw-step-title">Set One</div>
-        <div class="hiw-step-desc">Performers take to the floor as guests arrive or during cocktail hour — setting the atmosphere, drawing attention, and getting the energy going from the first moment.</div>
-        <span class="hiw-step-tag">20 Minutes</span>
-      </div>
-      <div class="hiw-step reveal reveal-delay-1">
-        <div class="hiw-step-num">02</div>
-        <div class="hiw-step-title">Set Two</div>
-        <div class="hiw-step-desc">Mid-event roving keeps energy levels high during dinner service, networking, or reception periods. Performers interact with guests, pose for photos, and keep the crowd entertained.</div>
-        <span class="hiw-step-tag">20 Minutes</span>
-      </div>
-      <div class="hiw-step reveal reveal-delay-2">
-        <div class="hiw-step-num">03</div>
-        <div class="hiw-step-title">Set Three</div>
-        <div class="hiw-step-desc">A final set rounds off the evening — creating a memorable send-off moment as guests depart, or adding energy to a closing celebration. The perfect final impression.</div>
-        <span class="hiw-step-tag">20 Minutes</span>
-      </div>
-    </div>
-    <div style="margin-top:2px; padding: 24px 32px; background: rgba(211,184,106,0.05); border: 1px solid rgba(211,184,106,0.12); display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-      <span style="font-size:0.62rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">Total Block</span>
-      <span style="font-size:0.82rem; font-weight:300; color:rgba(255,255,255,0.5);">3 sets of 20 minutes across a 4-hour engagement window — with scheduled rest breaks between sets for performer safety and quality.</span>
-    </div>
+    <span class="ticker-item">♦ Fire Poi</span>
+    <span class="ticker-item">♣ Fire Staff</span>
+    <span class="ticker-item">♥ Fire Breathing</span>
+    <span class="ticker-item">♠ Fire Fans</span>
+    <span class="ticker-item">♦ Outdoor by Default</span>
+    <span class="ticker-item">♣ 1–4 Performers</span>
+    <span class="ticker-item">♥ 3 – 10 Min Duration</span>
+    <span class="ticker-item">♠ Safety Officer On-Site</span>
+    <span class="ticker-item">♦ Fire Poi</span>
+    <span class="ticker-item">♣ Fire Staff</span>
+    <span class="ticker-item">♥ Fire Breathing</span>
+    <span class="ticker-item">♠ Fire Fans</span>
+    <span class="ticker-item">♦ Outdoor by Default</span>
+    <span class="ticker-item">♣ 1–4 Performers</span>
+    <span class="ticker-item">♥ 3 – 10 Min Duration</span>
+    <span class="ticker-item">♠ Safety Officer On-Site</span>
   </div>
 </div>
 
@@ -454,53 +465,53 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 
       <div class="reveal">
         <p class="section-label">The Act</p>
-        <h2 class="section-title">Towering Elegance. Roaming Energy.</h2>
+        <h2 class="section-title">Where Danger Becomes Art</h2>
         <div class="section-divider"></div>
         <div class="act-desc">
-          <p>Our stilt walkers don't just perform — they <strong>become part of your event's world</strong>. Dressed in stunning themed costumes and standing head and shoulders above the crowd, they glide through your venue with effortless charisma, drawing eyes, sparking conversations, and creating spontaneous moments of wonder.</p>
-          <p>Unlike stage acts that require guests to gather and watch, stilt walking <strong>brings the entertainment directly to your guests</strong> — at cocktail receptions, gala dinners, brand activations, and festivals. Wherever there are people, our stilt walkers create magic.</p>
-          <p>With <strong>fully customisable costumes</strong> tailored to your event's theme, colour palette, or brand identity, our stilt walkers are as much a visual statement as they are an entertainment act — doubling as living décor that elevates the entire atmosphere of your event.</p>
+          <p>Our Fire Performances bring together <strong>1 to 4 expert fire artists</strong> in a hypnotic, high-energy spectacle that transforms any outdoor stage into something unforgettable. Spinning flames trace arcs of light through the dark, each movement precise, each moment charged with raw, primal energy.</p>
+          <p>From the fluid grace of fire poi and fans to the commanding power of fire staffs and the jaw-dropping spectacle of fire breathing, our performers weave together skill, showmanship, and danger into a single seamless act. Every performance is a dialogue between fire and performer — controlled, powerful, and utterly captivating.</p>
+          <p>Performances are held <strong>outdoors by default</strong>, with indoor performances available upon special permit. A dedicated <strong>fire safety officer</strong> is present at every show to ensure all fire safety protocols are fully adhered to — so you can focus on the spectacle, and leave the safety to us.</p>
         </div>
 
         <div class="act-features">
           <div class="act-feature">
             <div class="act-feature-icon">♦</div>
             <div class="act-feature-text">
-              <strong>Themed Costuming</strong>
-              Costumes fully tailored to your event's theme, colour scheme, or brand — from elegant gala looks to bold carnival characters.
+              <strong>Fire Poi & Staff</strong>
+              Fluid, spinning fire props creating sweeping trails of light — mesmerising at any scale.
             </div>
           </div>
           <div class="act-feature">
             <div class="act-feature-icon">♦</div>
             <div class="act-feature-text">
-              <strong>Guest Interaction</strong>
-              Our performers are trained entertainers — they engage, charm, and interact with guests to create genuine moments of delight.
+              <strong>Fire Breathing & Eating</strong>
+              The ultimate crowd-stopper — our performers command fire itself with fearless precision.
             </div>
           </div>
           <div class="act-feature">
             <div class="act-feature-icon">♦</div>
             <div class="act-feature-text">
-              <strong>Unforgettable Photo Moments</strong>
-              Larger-than-life performers make for incredible photo opportunities — a natural draw for guests and social media content.
+              <strong>Fire Fans</strong>
+              Expansive, theatrical fire props that dominate the stage and demand every eye in the room.
             </div>
           </div>
           <div class="act-feature">
             <div class="act-feature-icon">♦</div>
             <div class="act-feature-text">
-              <strong>Flexible Deployment</strong>
-              Number of performers scales to your venue size and guest count — from an intimate gala to a large-scale festival.
+              <strong>Fire Safety Officer On-Site</strong>
+              A dedicated safety officer is present at every performance ensuring full compliance with fire safety regulations.
             </div>
           </div>
         </div>
 
         <div class="act-tags">
-          <div class="act-tag">Roving Act</div>
-          <div class="act-tag">3 × 20 Min Sets</div>
-          <div class="act-tag">Up to 4 Hours</div>
-          <div class="act-tag">Themed Costumes</div>
-          <div class="act-tag">Indoor & Outdoor</div>
+          <div class="act-tag">Stage Act</div>
+          <div class="act-tag">Outdoor (Indoor w/ Permit)</div>
+          <div class="act-tag">1–4 Performers</div>
+          <div class="act-tag">3–10 Min Duration</div>
           <div class="act-tag">Corporate Events</div>
           <div class="act-tag">Festivals</div>
+          <div class="act-tag">Countdown Events</div>
         </div>
       </div>
 
@@ -510,34 +521,30 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <div class="act-specs-header">
             <div class="act-specs-title">Act Specifications</div>
           </div>
-          <div>
+          <div class="act-specs-body">
             <div class="spec-row">
               <div class="spec-label">Act Type</div>
-              <div class="spec-value">Roving / Ambient</div>
+              <div class="spec-value">Stage Performance</div>
             </div>
             <div class="spec-row">
               <div class="spec-label">Performers</div>
-              <div class="spec-value gold">Flexible</div>
+              <div class="spec-value gold">1 – 4 Artists</div>
             </div>
             <div class="spec-row">
-              <div class="spec-label">Sets</div>
-              <div class="spec-value gold">3 × 20 Minutes</div>
-            </div>
-            <div class="spec-row">
-              <div class="spec-label">Engagement Block</div>
-              <div class="spec-value">Up to 4 Hours</div>
-            </div>
-            <div class="spec-row">
-              <div class="spec-label">Costume</div>
-              <div class="spec-value">Fully Customisable</div>
-            </div>
-            <div class="spec-row">
-              <div class="spec-label">Stage Required</div>
-              <div class="spec-value">No — fully roving</div>
+              <div class="spec-label">Duration</div>
+              <div class="spec-value">3 – 10 min</div>
             </div>
             <div class="spec-row">
               <div class="spec-label">Indoor / Outdoor</div>
-              <div class="spec-value">Both</div>
+              <div class="spec-value">Outdoor (Indoor w/ permit)</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Fire Safety</div>
+              <div class="spec-value gold">Officer On-Site</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Theming</div>
+              <div class="spec-value">Fully Customisable</div>
             </div>
             <div class="spec-row">
               <div class="spec-label">Availability</div>
@@ -546,14 +553,14 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
         </div>
 
-        <div style="margin-top: 2px; padding: 28px 32px; background: rgba(211,184,106,0.04); border: 1px solid rgba(211,184,106,0.12);">
+        <div style="margin-top: 2px; padding: 28px 32px; background: rgba(195,33,41,0.08); border: 1px solid rgba(195,33,41,0.2);">
           <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(211,184,106,0.6); margin-bottom:12px;">Perfect For</div>
           <div style="display:flex; flex-direction:column; gap:8px;">
-            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Cocktail Receptions & Gala Dinners</div>
-            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Brand Activations & Pop-Ups</div>
-            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Festivals & Outdoor Events</div>
-            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Shopping Mall Activations</div>
-            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Weddings & Private Celebrations</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--red)">♥</span> Outdoor Galas & Dinner Events</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--red)">♥</span> Countdown & New Year Celebrations</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--red)">♥</span> Festivals & Public Events</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--red)">♥</span> Brand Activations & Launches</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--red)">♥</span> Wedding & Private Celebrations</div>
           </div>
         </div>
       </div>
@@ -562,10 +569,25 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-img reveal">
+      <img src="fire-gallery-1.jpg" alt="Fire Performance — Circus of Altrades">
+    </div>
+    <div class="gallery-img reveal reveal-delay-1">
+      <img src="fire-performance-hero.jpg" alt="Fire Breathing — Circus of Altrades">
+    </div>
+    <div class="gallery-img reveal reveal-delay-2">
+      <img src="fire-gallery-2.jpg" alt="Fire Performance — Circus of Altrades">
+    </div>
+  </div>
+</section>
+
 <!-- PAST PERFORMANCES -->
 <section class="past-perf">
   <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+    <div class="reveal" style="text-align:center; margin-bottom: 16px;">
       <p class="section-label" style="justify-content:center">Track Record</p>
       <h2 class="section-title">Where We've Performed</h2>
       <div class="section-divider" style="margin: 18px auto 0;"></div>
@@ -573,18 +595,23 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     <div class="past-perf-grid">
       <div class="perf-card reveal">
         <span class="perf-suit">♦</span>
-        <div class="perf-event">Trifecta Countdown 2025</div>
-        <div class="perf-year">2025</div>
+        <div class="perf-event">World Table Tennis Championships</div>
+        <div class="perf-year">2026</div>
       </div>
       <div class="perf-card reveal reveal-delay-1">
         <span class="perf-suit">♣</span>
-        <div class="perf-event">CIMB Staff Gala 2025</div>
-        <div class="perf-year">2025</div>
+        <div class="perf-event">Singapore Airport Terminal Services Staff Gala</div>
+        <div class="perf-year">2026</div>
       </div>
       <div class="perf-card reveal reveal-delay-2">
         <span class="perf-suit">♥</span>
-        <div class="perf-event">Marquee Halloween 2022</div>
-        <div class="perf-year">2022</div>
+        <div class="perf-event">Baia Bar NYE Celebration</div>
+        <div class="perf-year">2025</div>
+      </div>
+      <div class="perf-card reveal reveal-delay-3">
+        <span class="perf-suit">♠</span>
+        <div class="perf-event">Burning Man Music Festival (Nevada)</div>
+        <div class="perf-year">2016</div>
       </div>
     </div>
   </div>
@@ -596,9 +623,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     <div class="enquire-grid">
       <div class="enquire-left reveal">
         <p class="section-label">Book This Act</p>
-        <h2 class="section-title">Bring Stilt Walking to Your Event</h2>
+        <h2 class="section-title">Bring Fire Performances to Your Event</h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Tell us about your event and we'll get back to you within 24 hours with a tailored proposal — including performer count, costume recommendations, and scheduling.</p>
+        <p class="enquire-left section-sub">Ready to light up your event? Fill in the form and our team will get back to you within 24 hours with a tailored proposal.</p>
         <div class="enquire-contact">
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">📍</div>
@@ -614,22 +641,22 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
         </div>
         <div class="enquire-other">
-          <div class="enquire-other-label">Explore Other Roving Acts</div>
+          <div class="enquire-other-label">Explore Other Acts</div>
           <div class="enquire-other-acts">
-            <a href="firerove.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Fire Roving Acts</span>
+            <a href="groupacrobatics.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Group Acrobatics</span>
               <span class="enquire-other-act-arrow">→</span>
             </a>
-            <a href="ledrove.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">LED Roving Acts</span>
+            <a href="ledperformances.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">LED Performances</span>
               <span class="enquire-other-act-arrow">→</span>
             </a>
-            <a href="juggling.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Juggling</span>
+            <a href="contortion.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Contortion</span>
               <span class="enquire-other-act-arrow">→</span>
             </a>
             <a href="catalogue.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">View All 17 Acts →</span>
+              <span class="enquire-other-act-name">View All Acts</span>
               <span class="enquire-other-act-arrow">♦</span>
             </a>
           </div>
@@ -639,7 +666,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="reveal reveal-delay-2">
         <div class="enquire-form">
           <div class="form-preselect">
-            ♦ &nbsp; Act pre-selected: <span>Stilt Walking</span>
+            ♦ &nbsp; Act pre-selected: <span>Fire Performances</span>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -663,10 +690,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             <label class="form-label">Event Type</label>
             <select class="form-select">
               <option value="">Select event type…</option>
-              <option>Corporate Gala / Awards Night</option>
-              <option>Brand Activation / Pop-Up</option>
-              <option>Festival / Outdoor Event</option>
-              <option>Shopping Mall Activation</option>
+              <option>Outdoor Gala / Dinner Event</option>
+              <option>Countdown / New Year Celebration</option>
+              <option>Festival / Public Event</option>
+              <option>Brand Launch / Activation</option>
               <option>Wedding / Private Celebration</option>
               <option>Other</option>
             </select>
@@ -689,22 +716,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Number of Stilt Walkers Needed</label>
-            <select class="form-select">
-              <option value="">Not sure yet</option>
-              <option>1 performer</option>
-              <option>2 performers</option>
-              <option>3–4 performers</option>
-              <option>5+ performers</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Costume Theme (if any)</label>
-            <input class="form-input" type="text" placeholder="e.g. Carnival, Black & Gold, Futuristic…">
-          </div>
-          <div class="form-group">
             <label class="form-label">Tell Us About Your Event</label>
-            <textarea class="form-textarea" placeholder="Venue, date, duration, any special requirements…"></textarea>
+            <textarea class="form-textarea" placeholder="Outdoor venue details, theme, any special requirements or ideas…"></textarea>
           </div>
           <button class="form-submit">Send Enquiry →</button>
         </div>
