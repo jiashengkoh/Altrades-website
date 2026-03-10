@@ -700,9 +700,8 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="#catalogue">Catalogue</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#past">Past Events</a></li>
-    <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()" id="hamburger">
     <span></span><span></span><span></span>
@@ -710,9 +709,8 @@ footer {
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#catalogue" onclick="closeMobile()">Catalogue</a>
-  <a href="#about" onclick="closeMobile()">About Us</a>
-  <a href="#past" onclick="closeMobile()">Past Events</a>
-  <a href="contact.html" onclick="closeMobile()">Enquire Now</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="contact.html" onclick="closeMobile()">Contact Us</a>
 </div>
 
 <!-- HERO -->
@@ -861,7 +859,9 @@ footer {
     <div class="acts-grid" id="actsGrid">
       <!-- Group Acrobatics - WIDE -->
       <div class="act-card wide" data-act="acro" data-categories="stage">
-        <div class="act-bg"><div class="act-bg-emoji">🤸</div></div>
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="groupacrobatics-hero.jpg" alt="Group Acrobatics" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.7;">
+        </div>
         <span class="act-num">01</span>
         <span class="act-tag tag-stage">Stage</span>
         <div class="act-content">
@@ -875,9 +875,11 @@ footer {
         </div>
       </div>
 
-      <!-- Fire Breathing -->
+      <!-- Fire Performances -->
       <div class="act-card" data-act="fire" data-categories="stage fire">
-        <div class="act-bg" style="background:linear-gradient(135deg,#1a0500,#2d1000)"><div class="act-bg-emoji">🔥</div></div>
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="fire-performance-hero.jpg" alt="Fire Performances" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.75;">
+        </div>
         <span class="act-num">02</span>
         <span class="act-tag tag-fire">Fire</span>
         <div class="act-content">
@@ -886,8 +888,8 @@ footer {
         </div>
         <div class="act-hover">
           <div class="act-name">Fire Performances</div>
-          <p>From fire breathing to fire staff, our trained performers create dramatic, electrifying acts. Fully safety-compliant and insured.</p>
-          <a href="catalogue.html#fire" class="act-cta">Learn More</a>
+          <p>From fire breathing to fire staff, our trained performers create dramatic, electrifying acts. Fully safety-compliant with officer on-site.</p>
+          <a href="fireperformances.html" class="act-cta">Learn More</a>
         </div>
       </div>
 
@@ -907,19 +909,21 @@ footer {
         </div>
       </div>
 
-      <!-- LED - WIDE -->
-      <div class="act-card wide" data-act="led" data-categories="stage led">
-        <div class="act-bg" style="background:linear-gradient(135deg,#05081a,#0a1030)"><div class="act-bg-emoji" style="font-size:8rem">💡</div></div>
+      <!-- Fire Roving - WIDE -->
+      <div class="act-card wide" data-act="fireroving" data-categories="roving fire">
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="fire-roving-hero.jpg" alt="Fire Roving" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.75;">
+        </div>
         <span class="act-num">04</span>
-        <span class="act-tag tag-led">LED</span>
+        <span class="act-tag tag-fire">Fire · Roving</span>
         <div class="act-content">
-          <div class="act-name">LED Light Shows</div>
-          <div class="act-teaser">Futuristic, immersive spectacles that transform any venue into a world of colour and light</div>
+          <div class="act-name">Fire Roving</div>
+          <div class="act-teaser">Fire doesn't stay on stage — it comes to your guests</div>
         </div>
         <div class="act-hover">
-          <div class="act-name">LED Light Shows</div>
-          <p>Cutting-edge LED performance art combining custom-lit costumes, props, and choreography into a dazzling visual experience. Perfect for indoor events and branded activations.</p>
-          <a href="catalogue.html#led" class="act-cta">Learn More</a>
+          <div class="act-name">Fire Roving</div>
+          <p>Our fire artists roam freely through your space, bringing the heat directly to the crowd. An up-close, immersive fire experience in 3 sets across a 4-hour block.</p>
+          <a href="fireroving.html" class="act-cta">Learn More</a>
         </div>
       </div>
 
@@ -1001,56 +1005,6 @@ footer {
   </div>
 </div>
 
-<!-- PAST EVENTS -->
-<section class="past" id="past">
-  <div class="container">
-    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px">
-      <div>
-        <p class="section-label">Track Record</p>
-        <h2 class="section-title">Past Experiences</h2>
-        <div class="section-divider"></div>
-        <p class="section-sub">Trusted by brands and event organisers across Singapore and beyond.</p>
-      </div>
-      <a href="about.html#past" class="btn-gold-outline" style="align-self:flex-end">View All →</a>
-    </div>
-    <div class="past-grid">
-      <div class="past-item reveal">
-        <div class="past-item-bg">🎪</div>
-        <div class="past-item-overlay"></div>
-        <div class="past-item-content">
-          <div class="past-item-event">Corporate Gala</div>
-          <div class="past-item-detail">Add your event name here</div>
-        </div>
-      </div>
-      <div class="past-item reveal reveal-delay-1">
-        <div class="past-item-bg">🔥</div>
-        <div class="past-item-overlay" style="background:linear-gradient(to top,rgba(139,24,16,0.9) 0%,transparent 55%)"></div>
-        <div class="past-item-content">
-          <div class="past-item-event">Brand Activation</div>
-          <div class="past-item-detail">Add your event name here</div>
-        </div>
-      </div>
-      <div class="past-item reveal reveal-delay-2">
-        <div class="past-item-bg">💡</div>
-        <div class="past-item-overlay" style="background:linear-gradient(to top,rgba(10,20,80,0.9) 0%,transparent 55%)"></div>
-        <div class="past-item-content">
-          <div class="past-item-event">Festival Performance</div>
-          <div class="past-item-detail">Add your event name here</div>
-        </div>
-      </div>
-      <div class="past-item reveal reveal-delay-3">
-        <div class="past-item-bg">🎭</div>
-        <div class="past-item-overlay"></div>
-        <div class="past-item-content">
-          <div class="past-item-event">Private Event</div>
-          <div class="past-item-detail">Add your event name here</div>
-        </div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:20px;font-size:0.72rem;color:rgba(255,255,255,0.2);font-style:italic">← Replace placeholder cards with your actual event photos</p>
-  </div>
-</section>
-
 <!-- CTA STRIP -->
 <div class="cta-strip">
   <h2>Let's Make Your Event Unforgettable</h2>
@@ -1080,9 +1034,9 @@ footer {
         <h4>Stage Acts</h4>
         <ul>
           <li><a href="groupacrobatics.html">Group Acrobatics</a></li>
-          <li><a href="catalogue.html#fire">Fire Performances</a></li>
-          <li><a href="catalogue.html#led">LED Shows</a></li>
-          <li><a href="catalogue.html#contortion">Contortion</a></li>
+          <li><a href="fireperformances.html">Fire Performances</a></li>
+          <li><a href="fireroving.html">Fire Roving</a></li>
+          <li><a href="stiltwalking.html">Stilt Walking</a></li>
           <li><a href="catalogue.html">View All →</a></li>
         </ul>
       </div>
