@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LED Performances | Circus of Altrades</title>
+<meta name="description" content="2–6 LED performers delivering dazzling indoor and outdoor stage acts. LED poi, fans, wings and more. Singapore's premier LED performance act for corporate events, galas and festivals.">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #D3B86A;
+  --gold-light: #e8d49a;
+  --black: #212121;
+  --black-deep: #0f0f0f;
+  --red: #C32129;
+  --red-dark: #8f1820;
+  --white: #ffffff;
+  --muted: rgba(255,255,255,0.5);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Raleway', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; height: 72px;
+  background: rgba(15,15,15,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(211,184,106,0.15);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-text { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); line-height: 1.2; }
+.nav-logo-icon { width: 36px; height: 36px; flex-shrink: 0; }
+.nav-logo-sub { font-size: 0.55rem; font-weight: 400; letter-spacing: 0.25em; color: rgba(211,184,106,0.6); text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+.nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 10px 24px; }
+.nav-cta:hover { background: var(--red-dark) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+  min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
+}
+.hamburger span { display: block; width: 26px; height: 2px; background: var(--gold); }
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 1001; background: rgba(15,15,15,0.98); padding: 24px 32px 32px; border-bottom: 1px solid rgba(211,184,106,0.15); flex-direction: column; gap: 4px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: block; width: 100%; -webkit-tap-highlight-color: rgba(211,184,106,0.2); }
+
+/* ── HERO ── */
+.hero {
+  padding-top: 72px; min-height: 100vh;
+  background: var(--black-deep);
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 64px 80px 56px;
+  position: relative; z-index: 2;
+}
+.hero-breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  margin-bottom: 32px;
+}
+.hero-breadcrumb a { color: rgba(211,184,106,0.6); text-decoration: none; transition: color 0.2s; }
+.hero-breadcrumb a:hover { color: var(--gold); }
+.hero-breadcrumb span { color: rgba(255,255,255,0.2); }
+.hero-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+}
+.hero-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
+.hero-title {
+  font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.92;
+  letter-spacing: 0.02em; margin-bottom: 28px;
+}
+.hero-title span { color: var(--gold); display: block; }
+.hero-divider { width: 48px; height: 3px; background: var(--red); margin-bottom: 28px; }
+.hero-tagline {
+  font-size: 1.05rem; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 40px;
+  border-left: 3px solid var(--red); padding-left: 20px;
+}
+.hero-meta { display: flex; gap: 32px; margin-bottom: 44px; flex-wrap: wrap; }
+.hero-meta-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(211,184,106,0.5); margin-bottom: 4px; }
+.hero-meta-value { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-red { background: var(--red); color: var(--white); padding: 15px 36px; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--red); transition: all 0.25s; display: inline-block; }
+.btn-red:hover { background: transparent; color: var(--red); }
+.btn-gold-outline { background: transparent; color: var(--gold); padding: 15px 36px; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--gold); transition: all 0.25s; display: inline-block; }
+.btn-gold-outline:hover { background: var(--gold); color: var(--black); }
+
+/* Hero right */
+.hero-right {
+  position: relative; background: #0a0a0a;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-right::before {
+  content: ''; position: absolute; left: 0; top: 10%; bottom: 10%;
+  width: 3px; background: linear-gradient(to bottom, transparent, var(--red), transparent);
+}
+
+/* Hero background text */
+.hero-bg-text {
+  position: absolute; right: -30px; bottom: 20px;
+  font-size: clamp(6rem, 12vw, 11rem); font-weight: 900;
+  text-transform: uppercase; color: rgba(255,255,255,0.025);
+  line-height: 1; pointer-events: none; user-select: none; z-index: 1;
+}
+
+/* ── ABOUT THE ACT ── */
+.act-about { padding: 96px 0; background: var(--black); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
+.act-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.section-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
+.section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; text-transform: uppercase; line-height: 1.1; letter-spacing: 0.02em; }
+.section-divider { width: 48px; height: 3px; background: var(--red); margin: 18px 0 32px; }
+.act-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.65); }
+.act-desc p + p { margin-top: 18px; }
+.act-desc strong { color: var(--gold); font-weight: 700; }
+
+/* Feature list */
+.act-features { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
+.act-feature { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.025); border: 1px solid rgba(211,184,106,0.08); transition: background 0.3s, border-color 0.3s; }
+.act-feature:hover { background: rgba(211,184,106,0.05); border-color: rgba(211,184,106,0.2); }
+.act-feature-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.act-feature-text { font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.65); line-height: 1.6; }
+.act-feature-text strong { color: var(--white); font-weight: 700; display: block; margin-bottom: 2px; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Spec card */
+.act-specs { background: var(--black-deep); border: 1px solid rgba(211,184,106,0.12); position: relative; overflow: hidden; }
+.act-specs::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
+.act-specs-header { padding: 28px 32px; border-bottom: 1px solid rgba(211,184,106,0.1); }
+.act-specs-title { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.act-specs-body { padding: 0; }
+.spec-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 32px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.spec-row:last-child { border-bottom: none; }
+.spec-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.spec-value { font-size: 0.88rem; font-weight: 700; color: var(--white); text-align: right; }
+.spec-value.gold { color: var(--gold); }
+
+/* Tags */
+.act-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
+.act-tag { padding: 8px 18px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(211,184,106,0.25); color: rgba(211,184,106,0.7); }
+
+/* ── GALLERY ── */
+.gallery { padding: 0; background: var(--black); }
+.gallery-grid { display: flex; gap: 2px; justify-content: center; align-items: flex-start; flex-wrap: nowrap; overflow: hidden; }
+.gallery-img { overflow: hidden; }
+.gallery-img img { width: auto; height: 480px; object-fit: unset; filter: grayscale(20%); transition: transform 0.5s ease, filter 0.4s ease; display: block; margin: 0 auto; }
+.gallery-img:hover img { transform: scale(1.04); filter: grayscale(0%); }
+
+/* ── PAST PERFORMANCES ── */
+.past-perf { padding: 96px 0; background: var(--black-deep); }
+.past-perf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
+.perf-card { padding: 36px 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(211,184,106,0.08); position: relative; overflow: hidden; transition: background 0.3s, border-color 0.3s; }
+.perf-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transition: transform 0.4s; }
+.perf-card:hover { background: rgba(211,184,106,0.04); border-color: rgba(211,184,106,0.2); }
+.perf-card:hover::after { transform: scaleX(1); }
+.perf-suit { font-size: 1.2rem; color: rgba(211,184,106,0.3); margin-bottom: 20px; display: block; }
+.perf-event { font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 6px; line-height: 1.3; }
+.perf-year { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; }
+
+/* ── ENQUIRE ── */
+.enquire { padding: 96px 0; background: var(--black); }
+.enquire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.enquire-left .section-sub { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--muted); margin-top: 8px; max-width: 100%; }
+.enquire-contact { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+.enquire-contact-item { display: flex; align-items: center; gap: 14px; }
+.enquire-contact-icon { color: var(--gold); font-size: 1rem; width: 20px; }
+.enquire-contact-text { font-size: 0.88rem; font-weight: 400; color: rgba(255,255,255,0.55); }
+.enquire-contact-text a { color: rgba(211,184,106,0.7); text-decoration: none; transition: color 0.2s; }
+.enquire-contact-text a:hover { color: var(--gold); }
+.enquire-other { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.07); }
+.enquire-other-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+.enquire-other-acts { display: flex; flex-direction: column; gap: 8px; }
+.enquire-other-act { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+.enquire-other-act:hover { background: rgba(211,184,106,0.05); border-color: rgba(211,184,106,0.2); }
+.enquire-other-act-name { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.enquire-other-act-arrow { color: var(--gold); font-size: 0.8rem; }
+
+/* Form */
+.enquire-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+.form-input, .form-select, .form-textarea { background: rgba(255,255,255,0.04); border: 1px solid rgba(211,184,106,0.15); color: var(--white); padding: 13px 16px; font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 400; transition: border-color 0.2s; outline: none; width: 100%; }
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.18); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: var(--black-deep); color: var(--white); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-preselect { background: rgba(195,33,41,0.08); border: 1px solid rgba(195,33,41,0.2); padding: 12px 16px; font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+.form-preselect span { color: var(--gold); }
+.form-submit { background: var(--red); color: var(--white); border: 2px solid var(--red); padding: 15px 36px; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; align-self: flex-start; }
+.form-submit:hover { background: transparent; color: var(--red); }
+
+/* ── TICKER ── */
+.ticker { background: var(--red); padding: 13px 0; overflow: hidden; border-top: 1px solid rgba(211,184,106,0.15); border-bottom: 1px solid rgba(211,184,106,0.15); }
+.ticker-track { display: flex; animation: ticker 25s linear infinite; white-space: nowrap; width: max-content; }
+.ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0 32px; }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── FOOTER ── */
+footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0.1); padding: 40px 0 28px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+.footer-suits { display: flex; gap: 12px; color: rgba(211,184,106,0.2); font-size: 0.9rem; }
+.footer-nav { display: flex; gap: 24px; }
+.footer-nav a { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--gold); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js-loaded .reveal { opacity: 0; transform: translateY(24px); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  nav { padding: 0 32px; }
+  .container { padding: 0 32px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 100px 32px 48px; }
+  .hero-right { min-height: 380px; }
+  .act-about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .enquire-grid { grid-template-columns: 1fr; gap: 56px; }
+  .past-perf-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .container { padding: 0 20px; }
+  .hero-left { padding: 100px 20px 48px; }
+  .form-row { grid-template-columns: 1fr; }
+  .past-perf-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-img img { height: 280px; }
+}
+@media (max-width: 480px) {
+  .past-perf-grid { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+  .gallery-img img { height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="altrades-icon.png" alt="Circus of Altrades" class="nav-logo-icon" style="object-fit:contain;">
+    <div>
+      <div class="nav-logo-text">Altrades</div>
+      <div class="nav-logo-sub">Circus of Altrades</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="catalogue.html" class="active">Catalogue</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="catalogue.html">Catalogue</a>
+      <span>/</span>
+      LED Performances
+    </div>
+    <p class="hero-label">Stage Act</p>
+    <h1 class="hero-title">LED<br><span>Performances</span></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Light becomes art — a luminous, high-energy spectacle that transforms any stage into a canvas of colour, motion, and wonder.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Performers</div>
+        <div class="hero-meta-value">2 – 6</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Type</div>
+        <div class="hero-meta-value">Stage Act</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Duration</div>
+        <div class="hero-meta-value">3 – 6 min</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#enquire" class="btn-red">Enquire Now</a>
+      <a href="#about-act" class="btn-gold-outline">Learn More</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="led-perf-hero.jpg" alt="LED Performances — Circus of Altrades"
+      style="width:100%; height:100%; object-fit:cover; min-height:400px; display:block; filter:brightness(0.9);">
+  </div>
+
+  <div class="hero-bg-text">LED</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">♦ LED Poi</span>
+    <span class="ticker-item">♣ LED Fans</span>
+    <span class="ticker-item">♥ LED Wings</span>
+    <span class="ticker-item">♠ Stage Act</span>
+    <span class="ticker-item">♦ 2–6 Performers</span>
+    <span class="ticker-item">♣ 3–6 Min Duration</span>
+    <span class="ticker-item">♥ Indoor & Outdoor</span>
+    <span class="ticker-item">♠ Customisable Colours</span>
+    <span class="ticker-item">♦ LED Poi</span>
+    <span class="ticker-item">♣ LED Fans</span>
+    <span class="ticker-item">♥ LED Wings</span>
+    <span class="ticker-item">♠ Stage Act</span>
+    <span class="ticker-item">♦ 2–6 Performers</span>
+    <span class="ticker-item">♣ 3–6 Min Duration</span>
+    <span class="ticker-item">♥ Indoor & Outdoor</span>
+    <span class="ticker-item">♠ Customisable Colours</span>
+  </div>
+</div>
+
+<!-- ABOUT THE ACT -->
+<section class="act-about" id="about-act">
+  <div class="container">
+    <div class="act-about-grid">
+
+      <div class="reveal">
+        <p class="section-label">The Act</p>
+        <h2 class="section-title">Where Light Becomes the Performance</h2>
+        <div class="section-divider"></div>
+        <div class="act-desc">
+          <p>Our LED Performances bring together <strong>2 to 6 artists</strong> in a dazzling, high-energy stage act that turns any venue into a world of light. Swirling trails of colour, synchronised choreography, and luminous props combine to create a spectacle that's equal parts theatre and visual art.</p>
+          <p>From the fluid motion of LED poi and fans to the sweeping grandeur of illuminated wings and costumes, each act is choreographed to music and designed to command every eye in the room. Whether it's an intimate gala or a large-scale corporate show, our LED performers adapt their craft to suit your stage and your story.</p>
+          <p>Fully <strong>indoor and outdoor ready</strong> — with no fire, no permits, and no restrictions — LED performances are one of our most versatile acts. Costumes and prop colours can be customised to align with your event's theme or brand palette, making every show a one-of-a-kind experience.</p>
+        </div>
+
+        <div class="act-features">
+          <div class="act-feature">
+            <div class="act-feature-icon">♦</div>
+            <div class="act-feature-text">
+              <strong>LED Poi & Fans</strong>
+              Fluid, spinning light props creating sweeping colour trails — mesmerising at any scale, indoors or out.
+            </div>
+          </div>
+          <div class="act-feature">
+            <div class="act-feature-icon">♦</div>
+            <div class="act-feature-text">
+              <strong>LED Wings & Costumes</strong>
+              Expansive illuminated wings and glowing costumes that dominate the stage and create unforgettable visual impact.
+            </div>
+          </div>
+          <div class="act-feature">
+            <div class="act-feature-icon">♦</div>
+            <div class="act-feature-text">
+              <strong>Fully Customisable Colours</strong>
+              Props and costumes can be configured to match your event's theme, colour palette, or brand identity.
+            </div>
+          </div>
+          <div class="act-feature">
+            <div class="act-feature-icon">♦</div>
+            <div class="act-feature-text">
+              <strong>Indoor & Outdoor Ready</strong>
+              No fire, no permits required — LED performances work seamlessly in ballrooms, theatres, outdoor stages and beyond.
+            </div>
+          </div>
+        </div>
+
+        <div class="act-tags">
+          <div class="act-tag">Stage Act</div>
+          <div class="act-tag">Indoor & Outdoor</div>
+          <div class="act-tag">2–6 Performers</div>
+          <div class="act-tag">3–6 Min Duration</div>
+          <div class="act-tag">Corporate Galas</div>
+          <div class="act-tag">Brand Launches</div>
+          <div class="act-tag">Festivals</div>
+        </div>
+      </div>
+
+      <!-- SPEC CARD -->
+      <div class="reveal reveal-delay-2">
+
+        <!-- Portrait video — matches spec card width, 9:16 ratio -->
+        <div style="position:relative; width:100%; padding-bottom:177.78%; margin-bottom:2px; overflow:hidden; border:1px solid rgba(211,184,106,0.15);">
+          <iframe
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+            src="https://www.youtube.com/embed/_v-qvRT6HEw?rel=0&modestbranding=1&controls=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="act-specs">
+          <div class="act-specs-header">
+            <div class="act-specs-title">Act Specifications</div>
+          </div>
+          <div class="act-specs-body">
+            <div class="spec-row">
+              <div class="spec-label">Act Type</div>
+              <div class="spec-value">Stage Performance</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Performers</div>
+              <div class="spec-value gold">2 – 6 Artists</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Duration</div>
+              <div class="spec-value">3 – 6 min</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Indoor / Outdoor</div>
+              <div class="spec-value gold">Both</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Stage Required</div>
+              <div class="spec-value">Yes — stage performance</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Theming</div>
+              <div class="spec-value">Fully Customisable</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Availability</div>
+              <div class="spec-value gold">Singapore & Region</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2px; padding: 28px 32px; background: rgba(211,184,106,0.04); border: 1px solid rgba(211,184,106,0.12);">
+          <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(211,184,106,0.6); margin-bottom:12px;">Perfect For</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Corporate Galas & Awards Nights</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Brand Launches & Product Reveals</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Festivals & Outdoor Events</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Nightlife & Club Performances</div>
+            <div style="font-size:0.82rem; font-weight:400; color:rgba(255,255,255,0.55); display:flex; align-items:center; gap:10px;"><span style="color:var(--gold)">♦</span> Weddings & Private Celebrations</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-img reveal">
+      <img src="led-perf-gallery-1.jpg" alt="LED Performances — Circus of Altrades">
+    </div>
+    <div class="gallery-img reveal reveal-delay-1">
+      <img src="led-perf-gallery-2.jpg" alt="LED Performances — Circus of Altrades">
+    </div>
+    <div class="gallery-img reveal reveal-delay-2">
+      <img src="led-perf-gallery-3.jpg" alt="LED Performances — Circus of Altrades">
+    </div>
+  </div>
+</section>
+
+<!-- PAST PERFORMANCES -->
+<section class="past-perf">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom: 16px;">
+      <p class="section-label" style="justify-content:center">Track Record</p>
+      <h2 class="section-title">Where We've Performed</h2>
+      <div class="section-divider" style="margin: 18px auto 0;"></div>
+    </div>
+    <div class="past-perf-grid">
+      <div class="perf-card reveal">
+        <span class="perf-suit">♦</span>
+        <div class="perf-event">Sun Pharma Celebration</div>
+        <div class="perf-year">2025</div>
+      </div>
+      <div class="perf-card reveal reveal-delay-1">
+        <span class="perf-suit">♣</span>
+        <div class="perf-event">JBL Promo</div>
+        <div class="perf-year">2025</div>
+      </div>
+      <div class="perf-card reveal reveal-delay-2">
+        <span class="perf-suit">♥</span>
+        <div class="perf-event">Jackson Wang Private Party</div>
+        <div class="perf-year">2025</div>
+      </div>
+      <div class="perf-card reveal reveal-delay-3">
+        <span class="perf-suit">♠</span>
+        <div class="perf-event">HSBC Staff Gala</div>
+        <div class="perf-year">2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section class="enquire" id="enquire">
+  <div class="container">
+    <div class="enquire-grid">
+      <div class="enquire-left reveal">
+        <p class="section-label">Book This Act</p>
+        <h2 class="section-title">Bring LED Performances to Your Event</h2>
+        <div class="section-divider"></div>
+        <p class="enquire-left section-sub">Ready to light up your stage? Fill in the form and our team will get back to you within 24 hours with a tailored proposal.</p>
+        <div class="enquire-contact">
+          <div class="enquire-contact-item">
+            <div class="enquire-contact-icon">📍</div>
+            <div class="enquire-contact-text">Singapore · Available Regionally</div>
+          </div>
+          <div class="enquire-contact-item">
+            <div class="enquire-contact-icon">📞</div>
+            <div class="enquire-contact-text"><a href="tel:+6581382732">(+65) 8138 2732</a></div>
+          </div>
+          <div class="enquire-contact-item">
+            <div class="enquire-contact-icon">✉</div>
+            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg" data-cfasync="false">info&#64;altrades&#46;sg</a></div>
+          </div>
+        </div>
+        <div class="enquire-other">
+          <div class="enquire-other-label">Explore Other Acts</div>
+          <div class="enquire-other-acts">
+            <a href="ledroving.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">LED Roving</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="groupacrobatics.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Group Acrobatics</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="fireperformances.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Fire Performances</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="catalogue.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">View All Acts</span>
+              <span class="enquire-other-act-arrow">♦</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="enquire-form">
+          <div class="form-preselect">
+            ♦ &nbsp; Act pre-selected: <span>LED Performances</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input class="form-input" type="text" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input class="form-input" type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="tel" placeholder="+65 9123 4567">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Event Type</label>
+            <select class="form-select">
+              <option value="">Select event type…</option>
+              <option>Corporate Gala / Awards Night</option>
+              <option>Brand Launch / Product Reveal</option>
+              <option>Festival / Outdoor Event</option>
+              <option>Nightlife / Club Performance</option>
+              <option>Wedding / Private Celebration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Event Date</label>
+              <input class="form-input" type="date">
+            </div>
+            <div class="form-group">
+              <label class="form-label">No. of Performers</label>
+              <select class="form-select">
+                <option value="">Select…</option>
+                <option>2 Performers</option>
+                <option>3 Performers</option>
+                <option>4 Performers</option>
+                <option>5 Performers</option>
+                <option>6 Performers</option>
+                <option>Not sure — advise me</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell Us About Your Event</label>
+            <textarea class="form-textarea" placeholder="Venue details, expected audience size, theme, any special requirements…"></textarea>
+          </div>
+          <button class="form-submit">Send Enquiry →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Circus of Altrades · Singapore</p>
+      <div class="footer-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="about.html">About</a>
+        <a href="#enquire">Enquire</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.body.classList.add('js-loaded');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
