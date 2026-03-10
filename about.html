@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Circus of Altrades</title>
+<meta name="description" content="Meet the homegrown Singapore circus troupe behind Circus of Altrades — performers, creators and storytellers pushing the boundaries of contemporary circus.">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #D3B86A;
+  --gold-light: #e8d49a;
+  --black: #212121;
+  --black-deep: #0f0f0f;
+  --red: #C32129;
+  --red-dark: #8f1820;
+  --grey: #EFEFEF;
+  --white: #ffffff;
+  --muted: rgba(255,255,255,0.45);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; height: 72px;
+  background: rgba(15,15,15,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(211,184,106,0.15);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-text { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); line-height: 1.2; }
+.nav-logo-sub { font-size: 0.55rem; font-weight: 400; letter-spacing: 0.25em; color: rgba(211,184,106,0.6); text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 10px 24px; }
+.nav-cta:hover { background: var(--red-dark) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 26px; height: 2px; background: var(--gold); }
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999; background: rgba(15,15,15,0.98); padding: 24px 32px 32px; border-bottom: 1px solid rgba(211,184,106,0.15); flex-direction: column; gap: 4px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  padding-top: 72px; min-height: 52vh;
+  background: var(--black-deep);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(195,33,41,0.12) 0%, transparent 65%),
+              radial-gradient(ellipse at 20% 80%, rgba(211,184,106,0.06) 0%, transparent 50%);
+}
+.page-hero-bg-text {
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-size: clamp(8rem, 18vw, 16rem); font-weight: 900;
+  text-transform: uppercase; letter-spacing: -0.04em;
+  color: rgba(255,255,255,0.03); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.page-hero-content {
+  position: relative; z-index: 1;
+  padding: 80px 56px;
+  max-width: 780px;
+}
+.page-hero-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+}
+.page-hero-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
+.page-hero-title {
+  font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.95;
+  letter-spacing: 0.02em; margin-bottom: 28px;
+}
+.page-hero-title span { color: var(--gold); }
+.page-hero-divider { width: 48px; height: 3px; background: var(--red); margin-bottom: 28px; }
+.page-hero-sub {
+  font-size: 1rem; font-weight: 300; line-height: 1.8;
+  color: rgba(255,255,255,0.55); max-width: 580px;
+}
+.page-hero-suits {
+  position: absolute; bottom: 32px; right: 56px;
+  display: flex; gap: 14px; color: rgba(211,184,106,0.2); font-size: 1.2rem;
+}
+
+/* ── SECTION COMMONS ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
+.section-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.section-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900;
+  text-transform: uppercase; line-height: 1.1; letter-spacing: 0.02em;
+}
+.section-divider { width: 48px; height: 3px; background: var(--red); margin: 18px 0 32px; }
+.section-sub { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--muted); }
+
+/* ── STORY SECTION ── */
+.story { padding: 96px 0; background: var(--black); }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
+.story-text {}
+.story-text p { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+.story-text p strong { color: var(--gold); font-weight: 700; }
+.story-pull {
+  border-left: 3px solid var(--red); padding-left: 24px;
+  margin: 36px 0;
+}
+.story-pull p {
+  font-size: 1.15rem; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,0.8) !important; line-height: 1.65; margin: 0 !important;
+}
+.story-values { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 40px; }
+.story-value {
+  padding: 28px 24px; background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(211,184,106,0.08);
+  transition: background 0.3s;
+}
+.story-value:hover { background: rgba(211,184,106,0.05); }
+.story-value-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.story-value-desc { font-size: 0.8rem; font-weight: 300; color: var(--muted); line-height: 1.65; }
+.story-visual { position: relative; }
+.story-card {
+  background: var(--red); padding: 52px 44px; position: relative; overflow: hidden;
+}
+.story-card::after {
+  content: 'ALTRADES';
+  position: absolute; bottom: -16px; right: -8px;
+  font-size: 4.5rem; font-weight: 900; color: rgba(0,0,0,0.15);
+  text-transform: uppercase; line-height: 1; pointer-events: none;
+}
+.story-card-label { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(211,184,106,0.7); margin-bottom: 20px; }
+.story-card-quote { font-size: 1.25rem; font-style: italic; font-weight: 300; line-height: 1.65; color: var(--white); margin-bottom: 24px; }
+.story-card-suits { display: flex; gap: 10px; color: rgba(211,184,106,0.5); font-size: 1rem; }
+.story-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px;
+}
+.story-stat {
+  padding: 32px 28px; background: var(--black-deep);
+  border: 1px solid rgba(211,184,106,0.08); text-align: center;
+}
+.story-stat-num { font-size: 2.5rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.story-stat-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+/* ── TEAM SECTION ── */
+.team { padding: 96px 0; background: var(--black-deep); }
+
+/* Featured 3 */
+.team-featured {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-bottom: 2px;
+}
+.talent-card {
+  position: relative; overflow: hidden;
+  background: #1a1a1a;
+}
+.talent-card.featured { aspect-ratio: 3/4; }
+
+/* B&W photo area */
+.talent-photo {
+  width: 100%; height: 100%;
+  background: #2a2a2a;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
+  position: relative;
+  filter: grayscale(100%);
+  min-height: 420px;
+}
+.talent-photo-placeholder {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.2);
+  text-align: center; padding: 24px;
+}
+.talent-photo-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; opacity: 0.3;
+}
+/* Photo overlay gradient */
+.talent-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,15,15,1) 0%, rgba(15,15,15,0.4) 45%, transparent 70%);
+  z-index: 1;
+}
+/* Gold top bar on hover */
+.talent-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--gold); z-index: 3;
+  transform: scaleX(0); transition: transform 0.4s;
+}
+.talent-card:hover::before { transform: scaleX(1); }
+
+.talent-info {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+  padding: 32px 28px 28px;
+}
+.talent-number {
+  font-size: 0.6rem; font-weight: 800; letter-spacing: 0.2em;
+  color: rgba(211,184,106,0.4); text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.talent-name {
+  font-size: 1.4rem; font-weight: 900; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--white); line-height: 1;
+  margin-bottom: 4px;
+}
+.talent-role {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.talent-bio {
+  font-size: 0.78rem; font-weight: 300; line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.talent-card:hover .talent-bio { max-height: 200px; opacity: 1; }
+
+/* Expand button */
+.talent-expand {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); cursor: pointer;
+  background: none; border: none; font-family: 'Raleway', sans-serif;
+  padding: 0; opacity: 0; transition: opacity 0.3s;
+}
+.talent-card:hover .talent-expand { opacity: 1; }
+.talent-expand::after { content: '→'; }
+
+/* Full bio modal */
+.bio-modal {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  align-items: center; justify-content: center; padding: 24px;
+}
+.bio-modal.open { display: flex; }
+.bio-modal-inner {
+  background: var(--black); border: 1px solid rgba(211,184,106,0.2);
+  max-width: 640px; width: 100%; padding: 52px 48px;
+  position: relative; max-height: 85vh; overflow-y: auto;
+}
+.bio-modal-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.4rem; cursor: pointer; transition: color 0.2s;
+}
+.bio-modal-close:hover { color: var(--gold); }
+.bio-modal-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.bio-modal-name { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.bio-modal-role { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 28px; }
+.bio-modal-divider { width: 40px; height: 2px; background: var(--gold); margin-bottom: 28px; }
+.bio-modal-text { font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.65); }
+.bio-modal-text p + p { margin-top: 16px; }
+.bio-modal-suits { display: flex; gap: 10px; margin-top: 32px; color: rgba(211,184,106,0.25); font-size: 1rem; }
+
+/* Supporting cast wall */
+.team-supporting {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+.cast-card {
+  position: relative; overflow: hidden;
+  background: #181818; aspect-ratio: 3/4;
+  transition: transform 0.3s;
+}
+.cast-card:hover { z-index: 2; }
+.cast-card:hover .cast-overlay { background: linear-gradient(to top, rgba(195,33,41,0.92) 0%, rgba(15,15,15,0.4) 55%, transparent 80%); }
+.cast-photo {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
+  filter: grayscale(100%);
+  background: #222;
+  min-height: 200px;
+}
+.cast-photo-placeholder {
+  font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.15); text-align: center; padding: 16px;
+}
+.cast-photo-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; opacity: 0.2;
+}
+.cast-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,15,15,0.95) 0%, transparent 55%);
+  transition: background 0.35s; z-index: 1;
+}
+.cast-info {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+  padding: 20px 18px 18px;
+}
+.cast-name {
+  font-size: 0.9rem; font-weight: 900; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--white); margin-bottom: 4px;
+}
+.cast-oneliner {
+  font-size: 0.68rem; font-weight: 300; color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height 0.35s, opacity 0.35s;
+}
+.cast-card:hover .cast-oneliner { max-height: 80px; opacity: 1; }
+.cast-card:hover .cast-name { color: var(--white); }
+
+/* Photo note */
+.photo-note {
+  background: rgba(211,184,106,0.06); border: 1px dashed rgba(211,184,106,0.2);
+  padding: 16px 24px; margin-bottom: 40px; border-radius: 2px;
+  font-size: 0.75rem; color: rgba(211,184,106,0.6); letter-spacing: 0.06em;
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--red); padding: 14px 0; overflow: hidden;
+  border-top: 1px solid rgba(211,184,106,0.15);
+  border-bottom: 1px solid rgba(211,184,106,0.15);
+}
+.ticker-track {
+  display: flex; gap: 0;
+  animation: ticker 28s linear infinite;
+  white-space: nowrap; width: max-content;
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 18px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); padding: 0 36px;
+}
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── CTA ── */
+.cta-strip { background: var(--gold); padding: 80px 48px; text-align: center; }
+.cta-strip h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; text-transform: uppercase; color: var(--black); letter-spacing: 0.04em; margin-bottom: 12px; }
+.cta-strip p { font-size: 1rem; font-weight: 400; color: rgba(33,33,33,0.6); margin-bottom: 36px; }
+.btn-black { background: var(--black); color: var(--gold); padding: 16px 44px; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--black); display: inline-block; transition: all 0.25s; }
+.btn-black:hover { background: transparent; color: var(--black); }
+
+/* ── FOOTER ── */
+footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0.1); padding: 40px 0 28px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+.footer-suits { display: flex; gap: 12px; color: rgba(211,184,106,0.2); font-size: 0.9rem; }
+.footer-nav { display: flex; gap: 24px; }
+.footer-nav a { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--gold); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .container { padding: 0 32px; }
+  nav { padding: 0 32px; }
+  .page-hero-content { padding: 80px 32px; }
+  .story-grid { grid-template-columns: 1fr; gap: 48px; }
+  .team-featured { grid-template-columns: 1fr 1fr; }
+  .team-supporting { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .page-hero-content { padding: 80px 20px; }
+  .container { padding: 0 20px; }
+  .team-featured { grid-template-columns: 1fr; }
+  .team-supporting { grid-template-columns: repeat(2, 1fr); }
+  .story-values { grid-template-columns: 1fr; }
+  .story-stats { grid-template-columns: 1fr 1fr; }
+  .bio-modal-inner { padding: 36px 28px; }
+}
+@media (max-width: 480px) {
+  .team-supporting { grid-template-columns: 1fr 1fr; }
+  .cta-strip { padding: 64px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div>
+      <div class="nav-logo-text">Altrades</div>
+      <div class="nav-logo-sub">Circus of Altrades</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#catalogue">Catalogue</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#past">Past Events</a></li>
+    <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html#catalogue" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="index.html#past" onclick="document.getElementById('mob').classList.remove('open')">Past Events</a>
+  <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Enquire Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg-text">ABOUT</div>
+  <div class="page-hero-content">
+    <p class="page-hero-label">Who We Are</p>
+    <h1 class="page-hero-title">Born in <span>Singapore.</span><br>Built for the Stage.</h1>
+    <div class="page-hero-divider"></div>
+    <p class="page-hero-sub">We are a proudly homegrown circus troupe — local performers with deep roots, international ambition, and a shared passion for pushing the boundaries of contemporary circus in Singapore and beyond.</p>
+  </div>
+  <div class="page-hero-suits">♠ ♥ ♣ ♦</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">♦ Circus Arts</span>
+    <span class="ticker-item">♣ Contemporary Dance</span>
+    <span class="ticker-item">♥ Fire Performance</span>
+    <span class="ticker-item">♠ Acrobatics</span>
+    <span class="ticker-item">♦ Theatre</span>
+    <span class="ticker-item">♣ LED Performance</span>
+    <span class="ticker-item">♥ Contortion</span>
+    <span class="ticker-item">♠ Hand Balancing</span>
+    <span class="ticker-item">♦ Circus Arts</span>
+    <span class="ticker-item">♣ Contemporary Dance</span>
+    <span class="ticker-item">♥ Fire Performance</span>
+    <span class="ticker-item">♠ Acrobatics</span>
+    <span class="ticker-item">♦ Theatre</span>
+    <span class="ticker-item">♣ LED Performance</span>
+    <span class="ticker-item">♥ Contortion</span>
+    <span class="ticker-item">♠ Hand Balancing</span>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<section class="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">Masters of Some. <br>Extraordinary at All.</h2>
+        <div class="section-divider"></div>
+        <p>"Jack of all trades, master of none." Unlike this phrase our name is inspired by, <strong>Circus of Altrades aspires to push the boundaries</strong> of what the circus industry could look like for Singapore in the years to come.</p>
+        <p>We are Singapore's first homegrown group acrobatic circus troupe — a collective of multidisciplinary artists working across circus, dance, theatre, and physical performance. Founded and built locally, our core performers have trained, created, and grown together.</p>
+        <p>Beyond our own troupe, we maintain strong connections with international artistes, giving us the flexibility and reach to curate the perfect experience for any event — anywhere in the world.</p>
+        <div class="story-pull">
+          <p>"We create original productions that blend contemporary performance with circus arts, developing distinctive works that bridge physical virtuosity and storytelling."</p>
+        </div>
+        <div class="story-values">
+          <div class="story-value">
+            <div class="story-value-title">Homegrown</div>
+            <div class="story-value-desc">Rooted in Singapore's creative community, proud of where we come from.</div>
+          </div>
+          <div class="story-value">
+            <div class="story-value-title">Multidisciplinary</div>
+            <div class="story-value-desc">Circus, dance, theatre and physical arts — all under one roof.</div>
+          </div>
+          <div class="story-value">
+            <div class="story-value-title">Collaborative</div>
+            <div class="story-value-desc">We work with international artistes to bring any vision to life.</div>
+          </div>
+          <div class="story-value">
+            <div class="story-value-title">Innovative</div>
+            <div class="story-value-desc">Constantly pushing what contemporary circus can look like.</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-visual reveal reveal-delay-2">
+        <div class="story-card">
+          <div class="story-card-label">Circus of Altrades · Est. Singapore</div>
+          <p class="story-card-quote">Born in Singapore. Built for the world's stage. We are a homegrown troupe with the artistry, ambition, and international reach to bring any creative vision to life.</p>
+          <div class="story-card-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+        </div>
+        <div class="story-stats" style="grid-template-columns: 1fr 1fr;">
+          <div class="story-stat">
+            <div class="story-stat-num">17+</div>
+            <div class="story-stat-label">Signature Acts</div>
+          </div>
+          <div class="story-stat">
+            <div class="story-stat-num">200+</div>
+            <div class="story-stat-label">Events Produced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px">
+      <p class="section-label">The People</p>
+      <h2 class="section-title">Meet the Troupe</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Singapore-born. Performance-obsessed. Hover over each performer to learn more.</p>
+    </div>
+
+    <div class="photo-note">
+      📸 &nbsp; Performer photos will be added after the upcoming photoshoot — placeholders shown below.
+    </div>
+
+    <!-- FEATURED 3 -->
+    <div class="team-featured">
+
+      <!-- JIA SHENG -->
+      <div class="talent-card featured reveal">
+        <div class="talent-photo">
+          <div class="talent-photo-icon">🎭</div>
+          <div class="talent-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="talent-overlay"></div>
+        <div class="talent-info">
+          <div class="talent-number">Founder & Director</div>
+          <div class="talent-name">Koh Jia Sheng</div>
+          <div class="talent-role">Founder · Director · Multidisciplinary Artist</div>
+          <div class="talent-bio">Singapore-based multidisciplinary artist working across circus, dance, and theatre. Creator of original productions that blend contemporary performance with circus arts, bridging physical virtuosity and storytelling.</div>
+          <button class="talent-expand" onclick="openBio('jiasheng')">Full Bio</button>
+        </div>
+      </div>
+
+      <!-- PHIZ -->
+      <div class="talent-card featured reveal reveal-delay-1">
+        <div class="talent-photo">
+          <div class="talent-photo-icon">🔥</div>
+          <div class="talent-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="talent-overlay"></div>
+        <div class="talent-info">
+          <div class="talent-number">Creative Director</div>
+          <div class="talent-name">Phiz Nasrudin</div>
+          <div class="talent-role">Creative Director · Fire Performer · Choreographer</div>
+          <div class="talent-bio">23+ years in the performing arts industry. Versatile performer, choreographer and creative visionary — and Altrades' resident fire performer, delivering high-energy acts that blend danger, skill, and showmanship.</div>
+          <button class="talent-expand" onclick="openBio('phiz')">Full Bio</button>
+        </div>
+      </div>
+
+      <!-- RUIMIN -->
+      <div class="talent-card featured reveal reveal-delay-2">
+        <div class="talent-photo">
+          <div class="talent-photo-icon">⭐</div>
+          <div class="talent-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="talent-overlay"></div>
+        <div class="talent-info">
+          <div class="talent-number">Performer</div>
+          <div class="talent-name">Ruimin</div>
+          <div class="talent-role">Performer · Bio Coming Soon</div>
+          <div class="talent-bio">Bio coming soon — check back shortly.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUPPORTING CAST -->
+    <div class="team-supporting">
+
+      <div class="cast-card reveal">
+        <div class="cast-photo">
+          <div class="cast-photo-icon">🎪</div>
+          <div class="cast-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="cast-overlay"></div>
+        <div class="cast-info">
+          <div class="cast-name">Anastasia</div>
+          <div class="cast-oneliner">One-liner bio coming soon</div>
+        </div>
+      </div>
+
+      <div class="cast-card reveal reveal-delay-1">
+        <div class="cast-photo">
+          <div class="cast-photo-icon">🎪</div>
+          <div class="cast-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="cast-overlay"></div>
+        <div class="cast-info">
+          <div class="cast-name">Louis</div>
+          <div class="cast-oneliner">One-liner bio coming soon</div>
+        </div>
+      </div>
+
+      <div class="cast-card reveal reveal-delay-2">
+        <div class="cast-photo">
+          <div class="cast-photo-icon">🎪</div>
+          <div class="cast-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="cast-overlay"></div>
+        <div class="cast-info">
+          <div class="cast-name">Gaz</div>
+          <div class="cast-oneliner">One-liner bio coming soon</div>
+        </div>
+      </div>
+
+      <div class="cast-card reveal reveal-delay-3">
+        <div class="cast-photo">
+          <div class="cast-photo-icon">🎪</div>
+          <div class="cast-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="cast-overlay"></div>
+        <div class="cast-info">
+          <div class="cast-name">Fooping</div>
+          <div class="cast-oneliner">One-liner bio coming soon</div>
+        </div>
+      </div>
+
+      <div class="cast-card reveal reveal-delay-4">
+        <div class="cast-photo">
+          <div class="cast-photo-icon">🎪</div>
+          <div class="cast-photo-placeholder">Photo coming soon</div>
+        </div>
+        <div class="cast-overlay"></div>
+        <div class="cast-info">
+          <div class="cast-name">Avril</div>
+          <div class="cast-oneliner">One-liner bio coming soon</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Ready to Work With Us?</h2>
+  <p>Tell us your vision and let our troupe bring it to life.</p>
+  <a href="contact.html" class="btn-black">Enquire Now</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Circus of Altrades · Singapore</p>
+      <div class="footer-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- BIO MODALS -->
+
+<!-- Jia Sheng Modal -->
+<div class="bio-modal" id="modal-jiasheng">
+  <div class="bio-modal-inner">
+    <button class="bio-modal-close" onclick="closeBio('jiasheng')">✕</button>
+    <div class="bio-modal-label">Founder & Director</div>
+    <div class="bio-modal-name">Koh Jia Sheng</div>
+    <div class="bio-modal-role">Founder · Director · Multidisciplinary Artist</div>
+    <div class="bio-modal-divider"></div>
+    <div class="bio-modal-text">
+      <p>Koh Jia Sheng is a Singapore-based multidisciplinary artist working across circus, dance, and theatre. As the founder and director of Circus of Altrades, he creates original productions that blend contemporary performance with circus arts, developing distinctive works that bridge physical virtuosity and storytelling.</p>
+      <p>With a background in contemporary dance, acrobatics, and theatre, Jia Sheng has performed and collaborated across a wide range of productions, from national celebrations in Singapore to international stages in Indonesia, Malaysia, and Japan. He holds a Bachelor's degree in Theatre Studies, which informs his approach to directing and devising multidisciplinary performance.</p>
+      <p>Through Altrades, Jia Sheng continues to develop new circus work while mentoring emerging performers and expanding the possibilities of contemporary circus in Singapore.</p>
+    </div>
+    <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+  </div>
+</div>
+
+<!-- Phiz Modal -->
+<div class="bio-modal" id="modal-phiz">
+  <div class="bio-modal-inner">
+    <button class="bio-modal-close" onclick="closeBio('phiz')">✕</button>
+    <div class="bio-modal-label">Creative Director</div>
+    <div class="bio-modal-name">Phiz Nasrudin</div>
+    <div class="bio-modal-role">Creative Director · Fire Performer · Choreographer</div>
+    <div class="bio-modal-divider"></div>
+    <div class="bio-modal-text">
+      <p>Phiz Nasrudin has been in the performing arts industry for over 23 years, building a reputation as a versatile performer, choreographer, and creative visionary. As the Creative Director of Circus of Altrades, Singapore's first group acrobatic circus troupe, he leads the artistic direction and development of the troupe's unique performances.</p>
+      <p>Phiz is also Altrades' resident fire performer, known for delivering captivating and high-energy acts that blend danger, skill, and showmanship.</p>
+      <p>His portfolio as a choreographer includes MediaCorp's Let's Celebrate (2003 & 2004), and he has served as assistant choreographer for theatre productions such as Dim Sum Dollies (2024) and SOS Kumar (2025). Alongside performing, he is also an educator in hip hop dance for children, sharing his experience and passion with the next generation of performers.</p>
+    </div>
+    <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Bio modals
+function openBio(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBio(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on backdrop click
+document.querySelectorAll('.bio-modal').forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+});
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.bio-modal.open').forEach(m => m.classList.remove('open'));
+    document.body.style.overflow = '';
+  }
+});
+</script>
+</body>
+</html>
