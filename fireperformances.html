@@ -535,6 +535,17 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 
       <!-- SPEC CARD -->
       <div class="reveal reveal-delay-2">
+
+        <!-- Portrait video — matches spec card width, 9:16 ratio -->
+        <div style="position:relative; width:100%; padding-bottom:177.78%; margin-bottom:2px; overflow:hidden; border:1px solid rgba(211,184,106,0.15);">
+          <iframe
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+            src="https://www.youtube.com/embed/lXJbyEZyPaU?rel=0&modestbranding=1&controls=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
         <div class="act-specs">
           <div class="act-specs-header">
             <div class="act-specs-title">Act Specifications</div>
@@ -591,13 +602,13 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 <section class="gallery">
   <div class="gallery-grid">
     <div class="gallery-img reveal">
-      <img src="fire-gallery-1.jpg" alt="Fire Performance — Circus of Altrades">
+      <img src="fire-perf-gallery-1.jpg" alt="Fire Performance — Circus of Altrades">
     </div>
     <div class="gallery-img reveal reveal-delay-1">
-      <img src="fire-gallery-2.jpg" alt="Fire Performance — Circus of Altrades">
+      <img src="fire-perf-gallery-2.jpg" alt="Fire Performance — Circus of Altrades">
     </div>
     <div class="gallery-img reveal reveal-delay-2">
-      <img src="fire-gallery-3.jpg" alt="Fire Performance — Circus of Altrades">
+      <img src="fire-perf-gallery-3.jpg" alt="Fire Performance — Circus of Altrades">
     </div>
   </div>
 </section>
@@ -655,7 +666,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#d5bcbbb3ba95b4b9a1a7b4b1b0a6fba6b2"><span class="__cf_email__" data-cfemail="452c2b232a0524293137242120366b3622">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -760,11 +771,6 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+  entri
