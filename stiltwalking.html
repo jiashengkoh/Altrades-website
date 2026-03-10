@@ -217,14 +217,21 @@ nav {
 .spec-value.gold { color: var(--gold); }
 
 /* ── TICKER ── */
-.ticker { background: var(--red); padding: 13px 0; overflow: hidden; border-top: 1px solid rgba(211,184,106,0.15); border-bottom: 1px solid rgba(211,184,106,0.15); }
+.ticker { background: var(--gold); padding: 13px 0; overflow: hidden; border-top: 1px solid rgba(211,184,106,0.15); border-bottom: 1px solid rgba(211,184,106,0.15); }
 .ticker-track { display: flex; animation: ticker 25s linear infinite; white-space: nowrap; width: max-content; }
-.ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0 32px; }
+.ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); padding: 0 32px; }
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── GALLERY ── */
+.gallery { padding: 0; background: var(--black); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.gallery-img { overflow: hidden; aspect-ratio: 4/3; }
+.gallery-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.6s ease, filter 0.4s ease; display: block; }
+.gallery-img:hover img { transform: scale(1.04); filter: grayscale(0%); }
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
-.past-perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; max-width: 860px; margin-left: auto; margin-right: auto; }
+.past-perf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
 .perf-card { padding: 36px 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(211,184,106,0.08); position: relative; overflow: hidden; transition: background 0.3s, border-color 0.3s; }
 .perf-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s; }
 .perf-card:hover { background: rgba(211,184,106,0.04); border-color: rgba(211,184,106,0.2); }
@@ -275,7 +282,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .footer-nav a:hover { color: var(--gold); }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js-loaded .reveal { opacity: 0; transform: translateY(24px); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
@@ -293,7 +301,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hiw-grid { grid-template-columns: 1fr; }
   .hiw-step::after { display: none; }
   .enquire-grid { grid-template-columns: 1fr; gap: 56px; }
-  .past-perf-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .past-perf-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
@@ -389,20 +397,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 
   <div class="hero-right">
-    <div class="video-placeholder">
-      <div class="video-play-ring">
-        <div class="video-play-icon"></div>
-      </div>
-      <div class="video-placeholder-text">Showreel Coming Soon</div>
-      <div class="video-placeholder-note">Drop your YouTube link here to activate</div>
-    </div>
-    <!-- UNCOMMENT WHEN READY:
-    <iframe class="video-embed" style="display:block"
-      src="https://www.youtube.com/embed/VIDEO_ID?controls=1&rel=0&modestbranding=1"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-    -->
+    <img src="stilt-hero.jpg" alt="Stilt Walking — Circus of Altrades"
+      style="width:100%; height:100%; object-fit:cover; display:block;">
   </div>
 
   <div class="hero-bg-text">STILT</div>
@@ -524,6 +520,17 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 
       <!-- SPEC CARD -->
       <div class="reveal reveal-delay-2">
+
+        <!-- Portrait video — matches spec card width, 9:16 ratio -->
+        <div style="position:relative; width:100%; padding-bottom:177.78%; margin-bottom:2px; overflow:hidden; border:1px solid rgba(211,184,106,0.15);">
+          <iframe
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+            src="https://www.youtube.com/embed/KZ9fsIHbjqQ?rel=0&modestbranding=1&controls=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
         <div class="act-specs">
           <div class="act-specs-header">
             <div class="act-specs-title">Act Specifications</div>
@@ -580,28 +587,48 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-img reveal">
+      <img src="stilt-gallery-1.jpg" alt="Stilt Walking — Circus of Altrades">
+    </div>
+    <div class="gallery-img reveal reveal-delay-1">
+      <img src="stilt-gallery-2.jpg" alt="Stilt Walking — Circus of Altrades">
+    </div>
+    <div class="gallery-img reveal reveal-delay-2">
+      <img src="stilt-gallery-3.jpg" alt="Stilt Walking — Circus of Altrades">
+    </div>
+  </div>
+</section>
+
 <!-- PAST PERFORMANCES -->
 <section class="past-perf">
   <div class="container">
     <div class="reveal" style="text-align:center; margin-bottom:16px;">
       <p class="section-label" style="justify-content:center">Track Record</p>
-      <h2 class="section-title">Where We've Performed</h2>
+      <h2 class="section-title">Where We've Roamed</h2>
       <div class="section-divider" style="margin: 18px auto 0;"></div>
     </div>
     <div class="past-perf-grid">
       <div class="perf-card reveal">
         <span class="perf-suit">♦</span>
-        <div class="perf-event">Trifecta Countdown 2025</div>
+        <div class="perf-event">S.O.S Kumar Production</div>
         <div class="perf-year">2025</div>
       </div>
       <div class="perf-card reveal reveal-delay-1">
         <span class="perf-suit">♣</span>
-        <div class="perf-event">CIMB Staff Gala 2025</div>
+        <div class="perf-event">CIMB Staff Gala</div>
         <div class="perf-year">2025</div>
       </div>
       <div class="perf-card reveal reveal-delay-2">
         <span class="perf-suit">♥</span>
-        <div class="perf-event">Marquee Halloween 2022</div>
+        <div class="perf-event">Tada Commercial Shoot</div>
+        <div class="perf-year">2025</div>
+      </div>
+      <div class="perf-card reveal reveal-delay-3">
+        <span class="perf-suit">♠</span>
+        <div class="perf-event">Marquee Halloween</div>
         <div class="perf-year">2022</div>
       </div>
     </div>
@@ -628,7 +655,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#c4adaaa2ab84a5a8b0b6a5a0a1b7eab7a3"><span class="__cf_email__" data-cfemail="30595e565f70515c4442515455431e4357">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -747,11 +774,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+  entries.forEach(e => { if (e.isInterse
