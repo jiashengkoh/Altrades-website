@@ -227,7 +227,7 @@ nav {
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
-.past-perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; max-width: 860px; margin-left: auto; margin-right: auto; }
+.past-perf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
 .perf-card {
   padding: 36px 28px; background: rgba(255,255,255,0.02);
   border: 1px solid rgba(211,184,106,0.08);
@@ -316,7 +316,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .footer-nav a:hover { color: var(--gold); }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js-loaded .reveal { opacity: 0; transform: translateY(24px); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
@@ -518,6 +519,17 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 
       <!-- SPEC CARD -->
       <div class="reveal reveal-delay-2">
+
+        <!-- Portrait video — matches spec card width, 9:16 ratio -->
+        <div style="position:relative; width:100%; padding-bottom:177.78%; margin-bottom:2px; overflow:hidden; border:1px solid rgba(211,184,106,0.15);">
+          <iframe
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+            src="https://www.youtube.com/embed/0uhl-Kp4_2g?rel=0&modestbranding=1&controls=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
         <div class="act-specs">
           <div class="act-specs-header">
             <div class="act-specs-title">Act Specifications</div>
@@ -602,13 +614,13 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 <section class="gallery">
   <div class="gallery-grid">
     <div class="gallery-img reveal">
-      <img src="fire-gallery-2.jpg" alt="Fire Roving — Circus of Altrades">
+      <img src="fire-roving-gallery-1.jpg" alt="Fire Roving — Circus of Altrades">
     </div>
     <div class="gallery-img reveal reveal-delay-1">
-      <img src="fire-gallery-3.jpg" alt="Fire Roving — Circus of Altrades">
+      <img src="fire-roving-gallery-2.jpg" alt="Fire Roving — Circus of Altrades">
     </div>
     <div class="gallery-img reveal reveal-delay-2">
-      <img src="fire-gallery-1.jpg" alt="Fire Performance — Circus of Altrades">
+      <img src="fire-roving-gallery-3.jpg" alt="Fire Roving — Circus of Altrades">
     </div>
   </div>
 </section>
@@ -637,6 +649,11 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         <div class="perf-event">Bohemian Beatfreaks Music Festival (Australia)</div>
         <div class="perf-year">2022</div>
       </div>
+      <div class="perf-card reveal reveal-delay-3">
+        <span class="perf-suit">♠</span>
+        <div class="perf-event">Zoukout</div>
+        <div class="perf-year">2022</div>
+      </div>
     </div>
   </div>
 </section>
@@ -661,7 +678,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#fd94939b92bd9c91898f9c99988ed38e9a"><span class="__cf_email__" data-cfemail="b0d9ded6dff0d1dcc4c2d1d4d5c39ec3d7">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -766,11 +783,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+  entries.forEach(e => { if (e.isInterse
