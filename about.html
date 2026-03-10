@@ -708,75 +708,25 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<!-- BIO MODALS -->
-
-<!-- Jia Sheng Modal -->
-<div class="bio-modal" id="modal-jiasheng">
-  <div class="bio-modal-inner">
-    <button class="bio-modal-close" onclick="closeBio('jiasheng')">✕</button>
-    <div class="bio-modal-label">Founder & Director</div>
-    <div class="bio-modal-name">Koh Jia Sheng</div>
-    <div class="bio-modal-role">Founder · Director · Multidisciplinary Artist</div>
-    <div class="bio-modal-divider"></div>
-    <div class="bio-modal-text">
-      <p>Koh Jia Sheng is a Singapore-based multidisciplinary artist working across circus, dance, and theatre. As the founder and director of Circus of Altrades, he creates original productions that blend contemporary performance with circus arts, developing distinctive works that bridge physical virtuosity and storytelling.</p>
-      <p>With a background in contemporary dance, acrobatics, and theatre, Jia Sheng has performed and collaborated across a wide range of productions, from national celebrations in Singapore to international stages in Indonesia, Malaysia, and Japan. He holds a Bachelor's degree in Theatre Studies, which informs his approach to directing and devising multidisciplinary performance.</p>
-      <p>Through Altrades, Jia Sheng continues to develop new circus work while mentoring emerging performers and expanding the possibilities of contemporary circus in Singapore.</p>
-    </div>
-    <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
-  </div>
-</div>
-
-<!-- Phiz Modal -->
-<div class="bio-modal" id="modal-phiz">
-  <div class="bio-modal-inner">
-    <button class="bio-modal-close" onclick="closeBio('phiz')">✕</button>
-    <div class="bio-modal-label">Creative Director</div>
-    <div class="bio-modal-name">Phiz Nasrudin</div>
-    <div class="bio-modal-role">Creative Director · Fire Performer · Choreographer</div>
-    <div class="bio-modal-divider"></div>
-    <div class="bio-modal-text">
-      <p>Phiz Nasrudin has been in the performing arts industry for over 23 years, building a reputation as a versatile performer, choreographer, and creative visionary. As the Creative Director of Circus of Altrades, Singapore's first group acrobatic circus troupe, he leads the artistic direction and development of the troupe's unique performances.</p>
-      <p>Phiz is also Altrades' resident fire performer, known for delivering captivating and high-energy acts that blend danger, skill, and showmanship.</p>
-      <p>His portfolio as a choreographer includes MediaCorp's Let's Celebrate (2003 & 2004), and he has served as assistant choreographer for theatre productions such as Dim Sum Dollies (2024) and SOS Kumar (2025). Alongside performing, he is also an educator in hip hop dance for children, sharing his experience and passion with the next generation of performers.</p>
-    </div>
-    <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
-  </div>
-</div>
-
 <script>
-// Scroll reveal
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Bio modals
-function openBio(id) {
-  document.getElementById('modal-' + id).classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBio(id) {
-  document.getElementById('modal-' + id).classList.remove('open');
-  document.body.style.overflow = '';
-}
-// Close on backdrop click
-document.querySelectorAll('.bio-modal').forEach(modal => {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
     }
   });
-});
-// Close on Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.bio-modal.open').forEach(m => m.classList.remove('open'));
-    document.body.style.overflow = '';
-  }
-});
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Mobile menu
+const ham = document.querySelector('.hamburger');
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
 </script>
 </body>
 </html>
