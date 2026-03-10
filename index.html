@@ -695,8 +695,8 @@ footer {
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="#catalogue">Catalogue</a></li>
+    <ul class="nav-links">
+    <li><a href="catalogue.html">Catalogue</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
@@ -704,10 +704,10 @@ footer {
     <span></span><span></span><span></span>
   </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#catalogue" onclick="closeMobile()">Catalogue</a>
-  <a href="about.html" onclick="closeMobile()">About</a>
-  <a href="contact.html" onclick="closeMobile()">Contact Us</a>
+<div class="mobile-menu" id="mob">
+  <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
 <!-- HERO -->
@@ -889,19 +889,21 @@ footer {
         </div>
       </div>
 
-      <!-- Contortion -->
-      <div class="act-card" data-act="contortion" onclick="window.location='catalogue.html'" style="cursor:pointer" data-categories="stage roving">
-        <div class="act-bg" style="background:linear-gradient(135deg,#100a1a,#180f28)"><div class="act-bg-emoji">🧘</div></div>
+      <!-- LED Roving -->
+      <div class="act-card" data-act="ledroving" onclick="window.location='ledroving.html'" style="cursor:pointer" data-categories="roving led">
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="led-roving-hero.jpg" alt="LED Roving" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.8;">
+        </div>
         <span class="act-num">03</span>
-        <span class="act-tag tag-stage">Stage</span>
+        <span class="act-tag tag-led">LED · Roving</span>
         <div class="act-content">
-          <div class="act-name">Contortion</div>
-          <div class="act-teaser">The impossible made graceful — bending reality before your eyes</div>
+          <div class="act-name">LED Roving</div>
+          <div class="act-teaser">Glowing performers that bring light and wonder to every corner of your event</div>
         </div>
         <div class="act-hover">
-          <div class="act-name">Contortion</div>
-          <p>Elegant, jaw-dropping flexibility that blurs the line between human and art. Available for stage and table-roving alike.</p>
-          <a href="catalogue.html#contortion" class="act-cta">Learn More</a>
+          <div class="act-name">LED Roving</div>
+          <p>Our LED artists roam freely through your space with glowing poi, fans and props — creating intimate, up-close moments of light and spectacle.</p>
+          <a href="ledroving.html" class="act-cta">Learn More</a>
         </div>
       </div>
 
@@ -925,7 +927,9 @@ footer {
 
       <!-- Stilt Walking -->
       <div class="act-card" data-act="stilt" onclick="window.location='stiltwalking.html'" style="cursor:pointer" data-categories="roving">
-        <div class="act-bg" style="background:linear-gradient(135deg,#101808,#182510)"><div class="act-bg-emoji">🦺</div></div>
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="stilt-hero.jpg" alt="Stilt Walking" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.75;">
+        </div>
         <span class="act-num">05</span>
         <span class="act-tag tag-roving">Roving</span>
         <div class="act-content">
@@ -939,19 +943,21 @@ footer {
         </div>
       </div>
 
-      <!-- Hand Balancing -->
-      <div class="act-card" data-act="handbal" onclick="window.location='catalogue.html'" style="cursor:pointer" data-categories="stage">
-        <div class="act-bg" style="background:linear-gradient(135deg,#0f1510,#151f15)"><div class="act-bg-emoji">🤲</div></div>
+      <!-- LED Performances -->
+      <div class="act-card" data-act="ledperf" onclick="window.location='ledperformances.html'" style="cursor:pointer" data-categories="stage led">
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="led-perf-hero.jpg" alt="LED Performances" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.8;">
+        </div>
         <span class="act-num">06</span>
-        <span class="act-tag tag-stage">Stage</span>
+        <span class="act-tag tag-led">LED · Stage</span>
         <div class="act-content">
-          <div class="act-name">Hand Balancing</div>
-          <div class="act-teaser">Stillness as spectacle — gravity-defying poise and pure strength</div>
+          <div class="act-name">LED Performances</div>
+          <div class="act-teaser">Light becomes art — luminous colour, motion, and wonder on stage</div>
         </div>
         <div class="act-hover">
-          <div class="act-name">Hand Balancing</div>
-          <p>From one-arm handstands to stacked duo balances, this act delivers quiet but profound impact for discerning audiences.</p>
-          <a href="catalogue.html#handbalancing" class="act-cta">Learn More</a>
+          <div class="act-name">LED Performances</div>
+          <p>From LED poi and fans to illuminated wings and costumes, our performers weave light into breathtaking stage choreography — indoors or outdoors.</p>
+          <a href="ledperformances.html" class="act-cta">Learn More</a>
         </div>
       </div>
     </div>
@@ -1031,7 +1037,15 @@ footer {
         <ul>
           <li><a href="groupacrobatics.html">Group Acrobatics</a></li>
           <li><a href="fireperformances.html">Fire Performances</a></li>
+          <li><a href="ledperformances.html">LED Performances</a></li>
+          <li><a href="catalogue.html">View All →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Roving Acts</h4>
+        <ul>
           <li><a href="fireroving.html">Fire Roving</a></li>
+          <li><a href="ledroving.html">LED Roving</a></li>
           <li><a href="stiltwalking.html">Stilt Walking</a></li>
           <li><a href="catalogue.html">View All →</a></li>
         </ul>
@@ -1041,10 +1055,10 @@ footer {
         <p>
           📍 Singapore · Available Worldwide<br><br>
           📞 <a href="tel:+6581382732">(+65) 8138 2732</a><br><br>
-          ✉ <a href="mailto:info@altrades.sg">info@altrades.sg</a>
+          ✉ <a href="/cdn-cgi/l/email-protection#046d6a626b4465687076656061772a7763"><span class="__cf_email__" data-cfemail="71181f171e31101d0503101514025f0216">[email&#160;protected]</span></a>
         </p>
         <div class="footer-socials" style="margin-top:20px">
-          <a href="mailto:info@altrades.sg" class="footer-social" title="Email">✉</a>
+          <a href="/cdn-cgi/l/email-protection#c5acaba3aa85a4a9b1b7a4a1a0b6ebb6a2" class="footer-social" title="Email">✉</a>
           <a href="https://www.instagram.com/altrades_sg" class="footer-social" title="Instagram" target="_blank">📷</a>
           <a href="https://www.tiktok.com/@circusofaltrades" class="footer-social" title="TikTok" target="_blank">🎵</a>
         </div>
@@ -1058,7 +1072,7 @@ footer {
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
@@ -1085,15 +1099,4 @@ function filterActs(cat, btn) {
 
 // Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-</script>
-</body>
-</html>
+  en
