@@ -223,12 +223,6 @@ nav {
 .ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); padding: 0 32px; }
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-/* ── GALLERY ── */
-.gallery { padding: 0; background: var(--black); }
-.gallery-grid { display: flex; gap: 2px; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
-.gallery-img { overflow: hidden; }
-.gallery-img img { width: auto; height: 480px; object-fit: unset; filter: grayscale(20%); transition: transform 0.6s ease, filter 0.4s ease; display: block; margin: 0 auto; }
-.gallery-img:hover img { transform: scale(1.04); filter: grayscale(0%); }
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
@@ -291,8 +285,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ── GALLERY ── */
+.act-gallery { padding: 96px 0; background: var(--black-deep); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 4px;
+  margin-top: 48px;
+}
+.gallery-item { overflow: hidden; position: relative; background: #111; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item--tall { grid-row: span 2; }
+.gallery-item--tall img { min-height: 600px; }
+.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--tall img { min-height: 400px; }
   nav { padding: 0 32px; }
   .container { padding: 0 32px; }
   .hero { grid-template-columns: 1fr; }
@@ -575,16 +588,23 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </section>
 
 <!-- GALLERY -->
-<section class="gallery">
-  <div class="gallery-grid">
-    <div class="gallery-img reveal">
-      <img src="stilt-gallery-1.jpg" alt="Stilt Walking — Circus of Altrades">
+<section class="act-gallery">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">In Action</p>
+      <h2 class="section-title">The Act in Photos</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
     </div>
-    <div class="gallery-img reveal reveal-delay-1">
-      <img src="stilt-gallery-2.jpg" alt="Stilt Walking — Circus of Altrades">
-    </div>
-    <div class="gallery-img reveal reveal-delay-2">
-      <img src="stilt-gallery-3.jpg" alt="Stilt Walking — Circus of Altrades">
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall reveal">
+        <img src="stilt-gallery-2.jpg" alt="Stilt Walking performance — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
+        <img src="stilt-gallery-1.jpg" alt="Stilt Walking — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
+        <img src="stilt-gallery-3.jpg" alt="Stilt Walking at event — Circus of Altrades">
+      </div>
     </div>
   </div>
 </section>
@@ -637,12 +657,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             <div class="enquire-contact-text">Singapore · Available Regionally</div>
           </div>
           <div class="enquire-contact-item">
-            <div class="enquire-contact-icon">📞</div>
-            <div class="enquire-contact-text"><a href="tel:+6581382732">(+65) 8138 2732</a></div>
+            <div class="enquire-contact-icon">💬</div>
+            <div class="enquire-contact-text"><a href="https://wa.me/6581382732" target="_blank" rel="noopener">(+65) 8138 2732</a></div>
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#c4adaaa2ab84a5a8b0b6a5a0a1b7eab7a3"><span class="__cf_email__" data-cfemail="30595e565f70515c4442515455431e4357">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
           </div>
         </div>
         <div class="enquire-other">

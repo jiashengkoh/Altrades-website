@@ -156,12 +156,6 @@ nav {
 .act-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
 .act-tag { padding: 8px 18px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(211,184,106,0.25); color: rgba(211,184,106,0.7); }
 
-/* ── GALLERY ── */
-.gallery { padding: 0; background: var(--black); }
-.gallery-grid { display: flex; gap: 2px; justify-content: center; align-items: flex-start; flex-wrap: nowrap; overflow: hidden; }
-.gallery-img { overflow: hidden; }
-.gallery-img img { width: auto; height: 480px; object-fit: unset; filter: grayscale(20%); transition: transform 0.5s ease, filter 0.4s ease; display: block; margin: 0 auto; }
-.gallery-img:hover img { transform: scale(1.04); filter: grayscale(0%); }
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
@@ -232,8 +226,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ── GALLERY ── */
+.act-gallery { padding: 96px 0; background: var(--black-deep); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 4px;
+  margin-top: 48px;
+}
+.gallery-item { overflow: hidden; position: relative; background: #111; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item--tall { grid-row: span 2; }
+.gallery-item--tall img { min-height: 600px; }
+.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--tall img { min-height: 400px; }
   nav { padding: 0 32px; }
   .container { padding: 0 32px; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -251,13 +264,11 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hero-left { padding: 100px 20px 48px; }
   .form-row { grid-template-columns: 1fr; }
   .past-perf-grid { grid-template-columns: 1fr 1fr; }
-  .gallery-img img { height: 280px; }
-}
+  }
 @media (max-width: 480px) {
   .past-perf-grid { grid-template-columns: 1fr; }
   .hero-btns { flex-direction: column; }
-  .gallery-img img { height: 220px; }
-}
+  }
 </style>
 </head>
 <body>
@@ -473,16 +484,23 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </section>
 
 <!-- GALLERY -->
-<section class="gallery">
-  <div class="gallery-grid">
-    <div class="gallery-img reveal">
-      <img src="led-perf-gallery-1.jpg" alt="LED Performances — Circus of Altrades">
+<section class="act-gallery">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">In Action</p>
+      <h2 class="section-title">The Act in Photos</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
     </div>
-    <div class="gallery-img reveal reveal-delay-1">
-      <img src="led-perf-gallery-2.jpg" alt="LED Performances — Circus of Altrades">
-    </div>
-    <div class="gallery-img reveal reveal-delay-2">
-      <img src="led-perf-gallery-3.jpg" alt="LED Performances — Circus of Altrades">
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall reveal">
+        <img src="led-perf-gallery-2.jpg" alt="LED Performances performance — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
+        <img src="led-perf-gallery-1.jpg" alt="LED Performances — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
+        <img src="led-perf-gallery-3.jpg" alt="LED Performances at event — Circus of Altrades">
+      </div>
     </div>
   </div>
 </section>
@@ -535,12 +553,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             <div class="enquire-contact-text">Singapore · Available Regionally</div>
           </div>
           <div class="enquire-contact-item">
-            <div class="enquire-contact-icon">📞</div>
-            <div class="enquire-contact-text"><a href="tel:+6581382732">(+65) 8138 2732</a></div>
+            <div class="enquire-contact-icon">💬</div>
+            <div class="enquire-contact-text"><a href="https://wa.me/6581382732" target="_blank" rel="noopener">(+65) 8138 2732</a></div>
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg" data-cfasync="false">info&#64;altrades&#46;sg</a></div>
+            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -650,7 +668,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -666,9 +684,4 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const ham = document.querySelector('.hamburger');
 const mob = document.getElementById('mob');
 if (ham && mob) {
-  ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
-}
-</script>
-</body>
-</html>
+  ham.addEventListener('click', () => mob.classList.togg
