@@ -329,6 +329,30 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ── GALLERY ── */
+.act-gallery { padding: 96px 0; background: var(--black-deep); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 4px;
+  margin-top: 48px;
+}
+.gallery-item {
+  overflow: hidden; position: relative;
+  background: #111;
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item--tall {
+  grid-row: span 2;
+}
+.gallery-item--tall img { min-height: 600px; }
+.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   nav { padding: 0 32px; }
@@ -339,6 +363,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .act-about-grid { grid-template-columns: 1fr; gap: 48px; }
   .enquire-grid { grid-template-columns: 1fr; gap: 56px; }
   .past-perf-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--tall img { min-height: 400px; }
 }
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
@@ -565,6 +592,31 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="act-gallery">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">In Action</p>
+      <h2 class="section-title">The Act in Photos</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
+    </div>
+    <div class="gallery-grid">
+      <!-- Tall left: hand-to-hand portrait shot -->
+      <div class="gallery-item gallery-item--tall reveal">
+        <img src="groupacrobatics-gallery-2.jpg" alt="Hand-to-hand acrobatics — Circus of Altrades">
+      </div>
+      <!-- Top right: Singapore Smash performance -->
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
+        <img src="groupacrobatics-gallery-1.jpg" alt="Group acrobatics at Singapore Smash — Circus of Altrades">
+      </div>
+      <!-- Bottom right: full circus tent pyramids -->
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
+        <img src="groupacrobatics-gallery-3.jpg" alt="Human pyramids — Circus of Altrades">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PAST PERFORMANCES -->
 <section class="past-perf">
   <div class="container">
@@ -613,12 +665,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             <div class="enquire-contact-text">Singapore · Available Regionally</div>
           </div>
           <div class="enquire-contact-item">
-            <div class="enquire-contact-icon">📞</div>
-            <div class="enquire-contact-text"><a href="tel:+6581382732">(+65) 8138 2732</a></div>
+            <div class="enquire-contact-icon">💬</div>
+            <div class="enquire-contact-text"><a href="https://wa.me/6581382732" target="_blank" rel="noopener">(+65) 8138 2732</a></div>
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#d1b8bfb7be91b0bda5a3b0b5b4a2ffa2b6"><span class="__cf_email__" data-cfemail="0c65626a634c6d60787e6d68697f227f6b">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
           </div>
         </div>
         <div class="enquire-other">
