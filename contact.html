@@ -74,11 +74,13 @@ nav {
 .page-hero-content {
   position: relative; z-index: 1;
   padding: 80px 56px;
+  width: 100%; max-width: 100%;
+  text-align: center;
 }
 .page-hero-label {
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--gold);
-  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;
 }
 .page-hero-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
 .page-hero-title {
@@ -87,7 +89,7 @@ nav {
   margin-bottom: 24px;
 }
 .page-hero-title span { color: var(--gold); }
-.page-hero-divider { width: 48px; height: 3px; background: var(--red); margin-bottom: 24px; }
+.page-hero-divider { width: 48px; height: 3px; background: var(--red); margin: 0 auto 24px; }
 .page-hero-sub {
   font-size: 1rem; font-weight: 300; line-height: 1.8;
   color: rgba(255,255,255,0.5); max-width: 520px;
@@ -276,7 +278,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 <!-- PAGE HERO -->
 <div class="page-hero" style="position:relative; overflow:hidden;">
   <div style="position:absolute;inset:0;z-index:0;">
-    <img src="contact-hero.jpg" alt="Circus of Altrades" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.35;display:block;">
+    <img src="about-hero.jpg" alt="Circus of Altrades" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.35;display:block;">
   </div>
   <div class="page-hero-bg-text" style="position:relative;z-index:1;">CONTACT</div>
   <div class="page-hero-content" style="position:relative;z-index:2;">
@@ -342,7 +344,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         <div class="section-divider"></div>
 
         <div class="contact-cards">
-          <a class="contact-card" href="/cdn-cgi/l/email-protection#127b7c747d52737e6660737677613c6175" data-cfasync="false">
+          <a class="contact-card" href="mailto:info@altrades.sg">
             <div class="contact-card-icon">✉</div>
             <div class="contact-card-body">
               <div class="contact-card-label">Email</div>

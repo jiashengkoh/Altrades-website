@@ -81,12 +81,14 @@ nav {
 .page-hero-content {
   position: relative; z-index: 1;
   padding: 80px 56px;
-  max-width: 780px;
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
 }
 .page-hero-label {
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--gold);
-  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;
 }
 .page-hero-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
 .page-hero-title {
@@ -95,7 +97,7 @@ nav {
   letter-spacing: 0.02em; margin-bottom: 28px;
 }
 .page-hero-title span { color: var(--gold); }
-.page-hero-divider { width: 48px; height: 3px; background: var(--red); margin-bottom: 28px; }
+.page-hero-divider { width: 48px; height: 3px; background: var(--red); margin: 0 auto 28px; }
 .page-hero-sub {
   font-size: 1rem; font-weight: 300; line-height: 1.8;
   color: rgba(255,255,255,0.55); max-width: 580px;
@@ -490,8 +492,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 <section class="showreel">
   <div class="container">
     <div class="reveal" style="text-align:center; margin-bottom:48px;">
-      <p class="section-label" style="justify-content:center">Watch Us Perform</p>
-      <h2 class="section-title">Our Showreel</h2>
+      <p class="section-label" style="justify-content:center">Behind the Magic</p>
+      <h2 class="section-title">Our Process</h2>
       <div class="section-divider" style="margin: 18px auto 0;"></div>
     </div>
     <div class="showreel-inner reveal reveal-delay-1">
