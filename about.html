@@ -62,7 +62,7 @@ nav {
 .page-hero {
   padding-top: 72px; min-height: 52vh;
   background: var(--black-deep);
-  display: flex; align-items: center;
+  display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
 }
 .page-hero::before {
@@ -452,18 +452,15 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </div>
 
 <!-- PAGE HERO -->
-<div class="page-hero" style="position:relative; overflow:hidden;">
-  <div style="position:absolute;inset:0;z-index:0;">
-    <img src="about-hero.jpg" alt="Circus of Altrades" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.35;display:block;">
-  </div>
-  <div class="page-hero-bg-text" style="position:relative;z-index:1;">ABOUT</div>
-  <div class="page-hero-content" style="position:relative;z-index:2;">
+<div class="page-hero">
+  <img src="about-hero.jpg" alt="Circus of Altrades" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.35;z-index:0;">
+  <div class="page-hero-bg-text">ABOUT</div>
+  <div class="page-hero-content">
     <p class="page-hero-label">Who We Are</p>
     <h1 class="page-hero-title">Born in <span>Singapore.</span><br>Built for the Stage.</h1>
     <div class="page-hero-divider"></div>
     <p class="page-hero-sub">We are a proudly homegrown circus troupe — local performers with deep roots, international ambition, and a shared passion for pushing the boundaries of contemporary circus in Singapore and beyond.</p>
   </div>
-  <div class="page-hero-suits">♠ ♥ ♣ ♦</div>
 </div>
 
 <!-- TICKER -->
