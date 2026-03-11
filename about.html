@@ -250,7 +250,7 @@ nav {
   font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--gold); cursor: pointer;
   background: none; border: none; font-family: 'Raleway', sans-serif;
-  padding: 0; opacity: 0; transition: opacity 0.3s;
+  padding: 0; opacity: 1; transition: opacity 0.3s;
 }
 .talent-card:hover .talent-expand { opacity: 1; }
 .talent-expand::after { content: '→'; }
@@ -708,7 +708,67 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
+<!-- BIO MODALS -->
+<div class="bio-modal" id="modal-jiasheng" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="bio-modal-inner">
+    <button class="bio-modal-close" onclick="document.getElementById('modal-jiasheng').classList.remove('open')">✕</button>
+    <div class="bio-modal-label">Founder & Director</div>
+    <div class="bio-modal-name">Koh Jia Sheng</div>
+    <div class="bio-modal-role">Founder · Director · Multidisciplinary Artist</div>
+    <div class="bio-modal-divider"></div>
+    <div class="bio-modal-text">
+      <p>Koh Jia Sheng is a Singapore-based multidisciplinary artist working across circus, dance, and theatre. As the founder and director of Circus of Altrades, he has built Singapore's first homegrown group acrobatic circus troupe from the ground up — a collective that has since performed at national celebrations, international brand events, and festivals across the world.</p>
+      <p>Jia Sheng's artistry lies in the intersection of physical virtuosity and storytelling. His work as a creator and director has produced original productions that blend contemporary performance with circus arts, bridging technical mastery with emotional resonance in ways rarely seen in Singapore's performing arts landscape.</p>
+      <p>Beyond his own troupe, Jia Sheng maintains strong connections with international performers and creative communities, giving Altrades the flexibility and reach to curate exceptional experiences for any event — anywhere in the world.</p>
+    </div>
+    <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+  </div>
+</div>
+
+<div class="bio-modal" id="modal-phiz" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="bio-modal-inner">
+    <button class="bio-modal-close" onclick="document.getElementById('modal-phiz').classList.remove('open')">✕</button>
+    <div class="bio-modal-label">Creative Director</div>
+    <div class="bio-modal-name">Phiz Nasrudin</div>
+    <div class="bio-modal-role">Creative Director · Fire Performer · Choreographer</div>
+    <div class="bio-modal-divider"></div>
+    <div class="bio-modal-text">
+      <p>With over 23 years in the performing arts industry, Phiz Nasrudin is one of Singapore's most versatile and experienced performers. A choreographer, creative visionary, and Altrades' resident fire performer, Phiz brings an extraordinary depth of knowledge and instinct to every production he touches.</p>
+      <p>His fire performances are legendary — a high-energy blend of danger, skill, and showmanship that leaves audiences breathless. But Phiz's real gift is his ability to see the bigger picture: shaping the creative direction of Altrades' productions with a sharp eye for detail, pacing, and impact.</p>
+      <p>Over the course of his career, Phiz has performed and choreographed for events spanning corporate galas, national celebrations, international music festivals, and private events across Singapore and beyond — accumulating a body of work that is as diverse as it is impressive.</p>
+    </div>
+    <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+  </div>
+</div>
+
 <script>
+function openBio(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+document.querySelectorAll('.bio-modal').forEach(modal => {
+  modal.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+});
+document.querySelectorAll('.bio-modal-close').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.closest('.bio-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.bio-modal.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
