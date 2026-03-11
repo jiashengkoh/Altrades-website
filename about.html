@@ -450,9 +450,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </div>
 
 <!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-bg-text">ABOUT</div>
-  <div class="page-hero-content">
+<div class="page-hero" style="position:relative; overflow:hidden;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="about-hero.jpg" alt="Circus of Altrades" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.35;display:block;">
+  </div>
+  <div class="page-hero-bg-text" style="position:relative;z-index:1;">ABOUT</div>
+  <div class="page-hero-content" style="position:relative;z-index:2;">
     <p class="page-hero-label">Who We Are</p>
     <h1 class="page-hero-title">Born in <span>Singapore.</span><br>Built for the Stage.</h1>
     <div class="page-hero-divider"></div>
@@ -494,7 +497,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     <div class="showreel-inner reveal reveal-delay-1">
       <div class="showreel-embed">
         <iframe
-          src="https://www.youtube.com/embed/AaFwuC6kVN4?rel=0&modestbranding=1&controls=1"
+          src="https://www.youtube.com/embed/09pc1ymcmQk?rel=0&modestbranding=1&controls=1"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
@@ -612,8 +615,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         <div class="talent-info">
           <div class="talent-number">Performer</div>
           <div class="talent-name">Ruimin</div>
-          <div class="talent-role">Performer · Bio Coming Soon</div>
-          <div class="talent-bio">Bio coming soon — check back shortly.</div>
+          <div class="talent-role">Choreographer · Cultural Dancer · Flyer</div>
+          <div class="talent-bio">One of Singapore's most celebrated cultural dancers, Ruimin is a versatile performer who moves between choreography, cultural dance, and aerial work with effortless precision. Her depth of artistry brings a unique dimension to every Altrades production.</div>
         </div>
       </div>
 
@@ -624,25 +627,23 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 
       <div class="cast-card reveal">
         <div class="cast-photo">
-          <div class="cast-photo-icon">🎪</div>
-          <div class="cast-photo-placeholder">Photo coming soon</div>
+          <img src="anastasia-photo.jpg" alt="Anastasia" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
         </div>
         <div class="cast-overlay"></div>
         <div class="cast-info">
           <div class="cast-name">Anastasia</div>
-          <div class="cast-oneliner">One-liner bio coming soon</div>
+          <div class="cast-oneliner">Ballerina · Contemporary Dancer · Flyer</div>
         </div>
       </div>
 
       <div class="cast-card reveal reveal-delay-1">
         <div class="cast-photo">
-          <div class="cast-photo-icon">🎪</div>
-          <div class="cast-photo-placeholder">Photo coming soon</div>
+          <img src="avril-photo.jpg" alt="Avril" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
         </div>
         <div class="cast-overlay"></div>
         <div class="cast-info">
-          <div class="cast-name">Louis</div>
-          <div class="cast-oneliner">One-liner bio coming soon</div>
+          <div class="cast-name">Avril</div>
+          <div class="cast-oneliner">National Team Cheerleader · Flyer</div>
         </div>
       </div>
 
@@ -653,8 +654,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         </div>
         <div class="cast-overlay"></div>
         <div class="cast-info">
-          <div class="cast-name">Gaz</div>
-          <div class="cast-oneliner">One-liner bio coming soon</div>
+          <div class="cast-name">Fooping</div>
+          <div class="cast-oneliner">Hand Balance Specialist</div>
         </div>
       </div>
 
@@ -665,8 +666,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         </div>
         <div class="cast-overlay"></div>
         <div class="cast-info">
-          <div class="cast-name">Fooping</div>
-          <div class="cast-oneliner">One-liner bio coming soon</div>
+          <div class="cast-name">Gaz</div>
+          <div class="cast-oneliner">Base · Certified Calisthenics Trainer</div>
         </div>
       </div>
 
@@ -677,8 +678,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         </div>
         <div class="cast-overlay"></div>
         <div class="cast-info">
-          <div class="cast-name">Avril</div>
-          <div class="cast-oneliner">One-liner bio coming soon</div>
+          <div class="cast-name">Louis</div>
+          <div class="cast-oneliner">National Team Cheerleader · National Team Trampolinist</div>
         </div>
       </div>
 

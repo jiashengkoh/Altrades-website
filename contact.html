@@ -274,9 +274,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </div>
 
 <!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-bg-text">CONTACT</div>
-  <div class="page-hero-content">
+<div class="page-hero" style="position:relative; overflow:hidden;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="contact-hero.jpg" alt="Circus of Altrades" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.35;display:block;">
+  </div>
+  <div class="page-hero-bg-text" style="position:relative;z-index:1;">CONTACT</div>
+  <div class="page-hero-content" style="position:relative;z-index:2;">
     <p class="page-hero-label">Get In Touch</p>
     <h1 class="page-hero-title">Let's Make Your<br><span>Event Unforgettable</span></h1>
     <div class="page-hero-divider"></div>
@@ -306,6 +309,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </div>
 
+<!-- SHOWREEL VIDEO -->
+<section style="padding: 72px 0; background: var(--black-deep);">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:40px;">
+      <p class="section-label" style="justify-content:center">Watch Us Perform</p>
+      <h2 class="section-title">See What We Do</h2>
+      <div class="section-divider" style="margin: 18px auto 0;"></div>
+    </div>
+    <div class="reveal reveal-delay-1" style="max-width:900px; margin:0 auto;">
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border:1px solid rgba(211,184,106,0.15);">
+        <iframe
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+          src="https://www.youtube.com/embed/AaFwuC6kVN4?rel=0&modestbranding=1&controls=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT SECTION -->
 <section class="contact-section">
   <div class="container">
@@ -326,12 +350,12 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
               <div class="contact-card-sub">We reply within 24 hours</div>
             </div>
           </a>
-          <a class="contact-card" href="tel:+6581382732">
-            <div class="contact-card-icon">📞</div>
+          <a class="contact-card" href="https://wa.me/6581382732" target="_blank" rel="noopener">
+            <div class="contact-card-icon">💬</div>
             <div class="contact-card-body">
-              <div class="contact-card-label">Phone</div>
+              <div class="contact-card-label">WhatsApp</div>
               <div class="contact-card-value">(+65) 8138 2732</div>
-              <div class="contact-card-sub">Mon – Fri, 10am – 7pm SGT</div>
+              <div class="contact-card-sub">Message us anytime</div>
             </div>
           </a>
           <div class="contact-card" style="cursor:default;">
@@ -361,10 +385,6 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <a class="social-btn" href="https://www.instagram.com/altrades_sg" target="_blank" rel="noopener">
             <span class="social-btn-icon">📸</span>
             <span class="social-btn-text">@altrades_sg</span>
-          </a>
-          <a class="social-btn" href="https://www.tiktok.com/@circusofaltrades" target="_blank" rel="noopener">
-            <span class="social-btn-icon">🎵</span>
-            <span class="social-btn-text">@circusofaltrades</span>
           </a>
         </div>
       </div>
