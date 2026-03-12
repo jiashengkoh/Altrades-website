@@ -224,11 +224,20 @@ nav {
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ── GALLERY ── */
-
-
-
-
-
+.act-gallery { padding: 96px 0; background: var(--black-deep); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 48px;
+}
+.gallery-item { overflow: hidden; position: relative; background: #111; }
+.gallery-item img {
+  width: 100%; height: 500px; display: block;
+  object-fit: cover; object-position: center;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img { transform: scale(1.03); }
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
@@ -291,11 +300,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 48px; width: 100%; }
-  .gallery-item img { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
   nav { padding: 0 32px; }
   .container { padding: 0 32px; }
   .hero { grid-template-columns: 1fr; }
@@ -317,6 +323,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hero-left { padding: 100px 20px 48px; }
   .form-row { grid-template-columns: 1fr; }
 }
+@media (max-width: 640px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item img { height: 500px; }
+}
 @media (max-width: 480px) {
   .past-perf-grid { grid-template-columns: 1fr; }
   .hero-btns { flex-direction: column; }
@@ -334,10 +344,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-        <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+  <ul class="nav-links">
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
@@ -345,9 +354,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -580,20 +588,20 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </section>
 
 <!-- GALLERY -->
-<section class="act-gallery" style="padding:96px 0; background:var(--black-deep);">
+<section class="act-gallery">
   <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
       <p class="section-label" style="justify-content:center">In Action</p>
       <h2 class="section-title">The Act in Photos</h2>
       <div class="section-divider" style="margin:18px auto 0;"></div>
     </div>
-  </div>
-  <div class="gallery-grid">
-    <div class="gallery-item reveal">
-      <img src="stilt-gallery-1.jpg" alt="Stilt Walking — Circus of Altrades">
-    </div>
-    <div class="gallery-item reveal reveal-delay-1">
-      <img src="stilt-gallery-2.jpg" alt="Stilt Walking — Circus of Altrades">
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="stilt-gallery-2.jpg" alt="Stilt Walking — Circus of Altrades">
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="stilt-gallery-1.jpg" alt="Stilt Walking — Circus of Altrades">
+      </div>
     </div>
   </div>
 </section>
@@ -646,22 +654,37 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             <div class="enquire-contact-text">Singapore · Available Regionally</div>
           </div>
           <div class="enquire-contact-item">
-            <div class="enquire-contact-icon">💬</div>
-            <div class="enquire-contact-text"><a href="https://wa.me/6581382732" target="_blank" rel="noopener">(+65) 8138 2732</a></div>
+            <div class="enquire-contact-icon">📞</div>
+            <div class="enquire-contact-text"><a href="tel:+6581382732">(+65) 8138 2732</a></div>
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#7910171f163918150d0b181d1c0a570a1e"><span class="__cf_email__" data-cfemail="264f48404966474a525447424355085541">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#c4adaaa2ab84a5a8b0b6a5a0a1b7eab7a3"><span class="__cf_email__" data-cfemail="30595e565f70515c4442515455431e4357">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
           <div class="enquire-other-label">Explore Other Roving Acts</div>
                     <div class="enquire-other-acts">
-            <a href="poispinning.html" class="enquire-other-act"><span class="enquire-other-act-name">Poi Spinning</span><span class="enquire-other-act-arrow">→</span></a>
-            <a href="ledroving.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Roving</span><span class="enquire-other-act-arrow">→</span></a>
-            <a href="fireroving.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Roving</span><span class="enquire-other-act-arrow">→</span></a>
-            <a href="groupacrobatics.html" class="enquire-other-act"><span class="enquire-other-act-name">Group Acrobatics</span><span class="enquire-other-act-arrow">→</span></a>
-            <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
+            <a href="ledroving.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">LED Roving</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="chairstacking.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Chairstacking</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="fireroving.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Fire Roving</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="groupacrobatics.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">Group Acrobatics</span>
+              <span class="enquire-other-act-arrow">→</span>
+            </a>
+            <a href="catalogue.html" class="enquire-other-act">
+              <span class="enquire-other-act-name">View All Acts</span>
+              <span class="enquire-other-act-arrow">♦</span>
+            </a>
           </div>
         </div>
       </div>
@@ -746,11 +769,25 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
       observer.unobserve(e.target);
- 
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Mobile menu
+const ham = document.querySelector('.hamburger');
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+</script>
+</body>
+</html>
