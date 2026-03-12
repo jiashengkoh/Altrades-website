@@ -208,6 +208,12 @@ nav {
 }
 .hiw-step:last-child::after { display: none; }
 
+/* ── GALLERY ── */
+
+
+
+
+
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
@@ -308,22 +314,6 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ── GALLERY ── */
-.act-gallery { padding: 96px 0; background: var(--black-deep); }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 4px;
-  margin-top: 48px;
-}
-.gallery-item { overflow: hidden; position: relative; background: #111; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
-.gallery-item:hover img { transform: scale(1.04); }
-.gallery-item--tall { grid-row: span 2; }
-.gallery-item--tall img { min-height: 600px; }
-.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -339,7 +329,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hiw-grid { grid-template-columns: 1fr; }
   .hiw-step::after { display: none; }
   .past-perf-grid { grid-template-columns: 1fr 1fr 1fr; }
-  }
+  
+}
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -354,7 +345,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 @media (max-width: 480px) {
   .past-perf-grid { grid-template-columns: 1fr; }
   .hero-btns { flex-direction: column; }
-  }
+  
+}
 </style>
 </head>
 <body>
@@ -368,9 +360,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-  <ul class="nav-links">
+        <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
@@ -378,8 +371,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -607,13 +601,13 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     </div>
     <div class="gallery-grid">
       <div class="gallery-item gallery-item--tall reveal">
-        <img src="fire-roving-gallery-2.jpg" alt="Fire Roving performance — Circus of Altrades">
+        <img src="fire-roving-gallery-2.jpg" alt="Fire Roving — Circus of Altrades">
       </div>
       <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
         <img src="fire-roving-gallery-1.jpg" alt="Fire Roving — Circus of Altrades">
       </div>
       <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
-        <img src="fire-roving-gallery-3.jpg" alt="Fire Roving at event — Circus of Altrades">
+        <img src="fire-roving-gallery-3.jpg" alt="Fire Roving — Circus of Altrades">
       </div>
     </div>
   </div>
@@ -640,7 +634,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       </div>
       <div class="perf-card reveal reveal-delay-2">
         <span class="perf-suit">♥</span>
-        <div class="perf-event">Bohemian Beatfreaks Music Festival (Australia)</div>
+        <div class="perf-event">Bohemian Beatfreaks Music Festival</div>
+<div class="perf-year" style="font-size:0.65rem; font-weight:500; letter-spacing:0.1em; color:rgba(211,184,106,0.55); text-transform:uppercase; margin-bottom:4px;">Australia</div>
         <div class="perf-year">2022</div>
       </div>
       <div class="perf-card reveal reveal-delay-3">
@@ -672,32 +667,17 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#92fbfcf4fdd2f3fee6e0f3f6f7e1bce1f5"><span class="__cf_email__" data-cfemail="670e09010827060b131506030214491400">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
           <div class="enquire-other-label">Explore Other Acts</div>
                     <div class="enquire-other-acts">
-            <a href="chairstacking.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Chairstacking</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="fireperformances.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Fire Performances</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="ledperformances.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">LED Performances</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="ledroving.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">LED Roving</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="catalogue.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">View All Acts</span>
-              <span class="enquire-other-act-arrow">♦</span>
-            </a>
+            <a href="poispinning.html" class="enquire-other-act"><span class="enquire-other-act-name">Poi Spinning</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="fireperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="ledroving.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Roving</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="stiltwalking.html" class="enquire-other-act"><span class="enquire-other-act-name">Stilt Walking</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
           </div>
         </div>
       </div>
@@ -782,7 +762,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -796,11 +776,4 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Mobile menu
 const ham = document.querySelector('.hamburger');
-const mob = document.getElementById('mob');
-if (ham && mob) {
-  ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
-}
-</script>
-</body>
-</html>
+const mob = document.getElem

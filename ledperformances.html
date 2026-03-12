@@ -156,6 +156,12 @@ nav {
 .act-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
 .act-tag { padding: 8px 18px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(211,184,106,0.25); color: rgba(211,184,106,0.7); }
 
+/* ── GALLERY ── */
+
+
+
+
+
 
 /* ── PAST PERFORMANCES ── */
 .past-perf { padding: 96px 0; background: var(--black-deep); }
@@ -226,22 +232,6 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ── GALLERY ── */
-.act-gallery { padding: 96px 0; background: var(--black-deep); }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 4px;
-  margin-top: 48px;
-}
-.gallery-item { overflow: hidden; position: relative; background: #111; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
-.gallery-item:hover img { transform: scale(1.04); }
-.gallery-item--tall { grid-row: span 2; }
-.gallery-item--tall img { min-height: 600px; }
-.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -264,11 +254,13 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hero-left { padding: 100px 20px 48px; }
   .form-row { grid-template-columns: 1fr; }
   .past-perf-grid { grid-template-columns: 1fr 1fr; }
-  }
+  
+}
 @media (max-width: 480px) {
   .past-perf-grid { grid-template-columns: 1fr; }
   .hero-btns { flex-direction: column; }
-  }
+  
+}
 </style>
 </head>
 <body>
@@ -282,9 +274,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-  <ul class="nav-links">
+        <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
@@ -292,8 +285,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -493,13 +487,13 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     </div>
     <div class="gallery-grid">
       <div class="gallery-item gallery-item--tall reveal">
-        <img src="led-perf-gallery-2.jpg" alt="LED Performances performance — Circus of Altrades">
+        <img src="led-perf-gallery-2.jpg" alt="LED Performances — Circus of Altrades">
       </div>
       <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
         <img src="led-perf-gallery-1.jpg" alt="LED Performances — Circus of Altrades">
       </div>
       <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
-        <img src="led-perf-gallery-3.jpg" alt="LED Performances at event — Circus of Altrades">
+        <img src="led-perf-gallery-3.jpg" alt="LED Performances — Circus of Altrades">
       </div>
     </div>
   </div>
@@ -558,32 +552,17 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#1871767e775879746c6a797c7d6b366b7f"><span class="__cf_email__" data-cfemail="bdd4d3dbd2fddcd1c9cfdcd9d8ce93ceda">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
           <div class="enquire-other-label">Explore Other Acts</div>
                     <div class="enquire-other-acts">
-            <a href="chairstacking.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Chairstacking</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="fireroving.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Fire Roving</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="fireperformances.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Fire Performances</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="groupacrobatics.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Group Acrobatics</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="catalogue.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">View All Acts</span>
-              <span class="enquire-other-act-arrow">♦</span>
-            </a>
+            <a href="poispinning.html" class="enquire-other-act"><span class="enquire-other-act-name">Poi Spinning</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="ledroving.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Roving</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="fireperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="groupacrobatics.html" class="enquire-other-act"><span class="enquire-other-act-name">Group Acrobatics</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
           </div>
         </div>
       </div>
@@ -678,10 +657,4 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Mobile menu
-const ham = document.querySelector('.hamburger');
-const mob = document.getElementById('mob');
-if (ham && mob) {
-  ham.addEventListener('click', () => mob.classList.togg
+document.querySelecto

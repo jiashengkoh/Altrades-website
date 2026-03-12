@@ -244,9 +244,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-  <ul class="nav-links">
+        <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
@@ -254,8 +255,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -468,7 +470,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       </div>
       <div class="perf-card reveal reveal-delay-1">
         <span class="perf-suit">♣</span>
-        <div class="perf-event">Trinity Film (Taiwan)</div>
+        <div class="perf-event">Trinity Film</div>
+<div class="perf-year" style="font-size:0.65rem; font-weight:500; letter-spacing:0.1em; color:rgba(211,184,106,0.55); text-transform:uppercase; margin-bottom:4px;">Taiwan</div>
         <div class="perf-year">2026</div>
       </div>
     </div>
@@ -495,32 +498,17 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#7e171018113e1f120a0c1f1a1b0d500d19"><span class="__cf_email__" data-cfemail="96fff8f0f9d6f7fae2e4f7f2f3e5b8e5f1">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#ec85828a83ac8d80989e8d88899fc29f8b"><span class="__cf_email__" data-cfemail="9ef7f0f8f1defff2eaecfffafbedb0edf9">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
           <div class="enquire-other-label">Explore Other Acts</div>
           <div class="enquire-other-acts">
-            <a href="ledperformances.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">LED Performances</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="groupacrobatics.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Group Acrobatics</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="fireroving.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">Fire Roving</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="ledroving.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">LED Roving</span>
-              <span class="enquire-other-act-arrow">→</span>
-            </a>
-            <a href="catalogue.html" class="enquire-other-act">
-              <span class="enquire-other-act-name">View All Acts</span>
-              <span class="enquire-other-act-arrow">♦</span>
-            </a>
+            <a href="tumbling.html" class="enquire-other-act"><span class="enquire-other-act-name">Tumbling</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="groupacrobatics.html" class="enquire-other-act"><span class="enquire-other-act-name">Group Acrobatics</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="fireperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="ledperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
           </div>
         </div>
       </div>
@@ -606,9 +594,4 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-const ham = document.querySelector('.hamburger');
-const mob = document.getEleme
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.uno

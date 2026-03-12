@@ -311,9 +311,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-  <ul class="nav-links">
+        <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
@@ -321,8 +322,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -671,7 +673,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#70191e161f30111c0402111415035e0317"><span class="__cf_email__" data-cfemail="aec7c0c8c1eecfc2dadccfcacbdd80ddc9">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -679,8 +681,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <div class="enquire-other-acts">
             <a href="fireperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Performances</span><span class="enquire-other-act-arrow">→</span></a>
             <a href="ledperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="tumbling.html" class="enquire-other-act"><span class="enquire-other-act-name">Tumbling</span><span class="enquire-other-act-arrow">→</span></a>
             <a href="groupacrobatics.html" class="enquire-other-act"><span class="enquire-other-act-name">Group Acrobatics</span><span class="enquire-other-act-arrow">→</span></a>
-            <a href="chairstacking.html" class="enquire-other-act"><span class="enquire-other-act-name">Chairstacking</span><span class="enquire-other-act-arrow">→</span></a>
             <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
           </div>
         </div>
@@ -753,7 +755,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 
 // ── TAB SWITCHER ──
@@ -806,11 +808,4 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Mobile menu
 const ham = document.querySelector('.hamburger');
-const mob = document.getElementById('mob');
-if (ham && mob) {
-  ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
-}
-</script>
-</body>
-</html>
+const mob = document.getEleme

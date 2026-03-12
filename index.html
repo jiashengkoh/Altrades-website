@@ -694,9 +694,10 @@ footer {
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-    <ul class="nav-links">
+          <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')" id="hamburger">
@@ -704,8 +705,9 @@ footer {
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -981,6 +983,42 @@ footer {
           <a href="ledperformances.html" class="act-cta">Learn More</a>
         </div>
       </div>
+
+      <!-- Tumbling - WIDE -->
+      <div class="act-card wide" data-act="tumbling" onclick="window.location='tumbling.html'" style="cursor:pointer" data-categories="stage">
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="tumbling-hero.jpg" alt="Tumbling" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.75;">
+        </div>
+        <span class="act-num">08</span>
+        <span class="act-tag tag-stage">Stage</span>
+        <div class="act-content">
+          <div class="act-name">Tumbling</div>
+          <div class="act-teaser">Explosive flips, throws and aerial manoeuvres that defy gravity and ignite every room</div>
+        </div>
+        <div class="act-hover">
+          <div class="act-name">Tumbling</div>
+          <p>No apparatus, no wires — just pure athletic power. From back tucks and layout flips to explosive partner throws that stop every heart in the room.</p>
+          <a href="tumbling.html" class="act-cta">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Poi Spinning -->
+      <div class="act-card" data-act="poi" onclick="window.location='poispinning.html'" style="cursor:pointer" data-categories="stage roving fire led">
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="poi-stage-gallery-1.jpg" alt="Poi Spinning" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.8;">
+        </div>
+        <span class="act-num">09</span>
+        <span class="act-tag tag-fire">Fire · LED</span>
+        <div class="act-content">
+          <div class="act-name">Poi Spinning</div>
+          <div class="act-teaser">Hypnotic orbits of fire, light and colour that fill the air with living art</div>
+        </div>
+        <div class="act-hover">
+          <div class="act-name">Poi Spinning</div>
+          <p>Available as a stage act or roving entertainment — Fire, LED, or Pixel Poi that displays brand logos and patterns for corporate events.</p>
+          <a href="poispinning.html" class="act-cta">Learn More</a>
+        </div>
+      </div>
     </div>
 
     <div style="text-align:center;margin-top:40px" class="reveal">
@@ -1076,11 +1114,11 @@ footer {
         <h4>Get In Touch</h4>
         <p>
           📍 Singapore · Available Worldwide<br><br>
-          📞 <a href="tel:+6581382732">(+65) 8138 2732</a><br><br>
-          ✉ <a href="/cdn-cgi/l/email-protection#61080f070e21000d1513000504124f1206"><span class="__cf_email__" data-cfemail="90f9fef6ffd0f1fce4e2f1f4f5e3bee3f7">[email&#160;protected]</span></a>
+          📞 <a href="https://wa.me/6581382732" target="_blank" rel="noopener">(+65) 8138 2732</a><br><br>
+          ✉ <a href="/cdn-cgi/l/email-protection#543d3a323b1435382026353031277a2733"><span class="__cf_email__" data-cfemail="046d6a626b4465687076656061772a7763">[email&#160;protected]</span></a>
         </p>
         <div class="footer-socials" style="margin-top:20px">
-          <a href="/cdn-cgi/l/email-protection#c5acaba3aa85a4a9b1b7a4a1a0b6ebb6a2" class="footer-social" title="Email">✉</a>
+          <a href="/cdn-cgi/l/email-protection#274e49414867464b535546434254095440" class="footer-social" title="Email">✉</a>
           <a href="https://www.instagram.com/altrades_sg" class="footer-social" title="Instagram" target="_blank">📷</a>
           <a href="https://www.tiktok.com/@circusofaltrades" class="footer-social" title="TikTok" target="_blank">🎵</a>
         </div>
@@ -1114,14 +1152,4 @@ function filterActs(cat, btn) {
   btn.classList.add('active');
   document.querySelectorAll('.act-card').forEach(card => {
     const cats = card.dataset.categories || '';
-    const show = cat === 'all' || cats.includes(cat);
-    card.style.display = show ? '' : 'none';
-  });
-}
-
-// Scroll reveal
-document.body.classList.add('js-loaded');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classL
+    const show = cat === 'al
