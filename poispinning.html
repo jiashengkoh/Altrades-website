@@ -644,8 +644,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     </div>
     <div class="past-perf-grid">
       <div class="perf-card reveal"><span class="perf-suit">♦</span><div class="perf-event">USS Hollywood Parade</div><div class="perf-year">2024</div></div>
-      <div class="perf-card reveal reveal-delay-1"><span class="perf-suit">♣</span><div class="perf-event">Bohemian Beatfreaks</div><div class="perf-year" style="font-size:0.65rem; font-weight:500; letter-spacing:0.1em; color:rgba(211,184,106,0.55); text-transform:uppercase; margin-bottom:4px;">Australia</div><div class="perf-year">2022</div></div>
-      <div class="perf-card reveal reveal-delay-2"><span class="perf-suit">♥</span><div class="perf-event">Wonderfruit</div><div class="perf-year" style="font-size:0.65rem; font-weight:500; letter-spacing:0.1em; color:rgba(211,184,106,0.55); text-transform:uppercase; margin-bottom:4px;">Thailand</div><div class="perf-year">2019</div></div>
+      <div class="perf-card reveal reveal-delay-1"><span class="perf-suit">♣</span><div class="perf-event">Bohemian Beatfreaks Music Festival</div><div class="perf-year" style="font-size:0.65rem; font-weight:500; letter-spacing:0.1em; color:rgba(211,184,106,0.55); text-transform:uppercase; margin-bottom:4px;">Australia</div><div class="perf-year">2022</div></div>
+      <div class="perf-card reveal reveal-delay-2"><span class="perf-suit">♥</span><div class="perf-event">Wonderfruit Music Festival</div><div class="perf-year" style="font-size:0.65rem; font-weight:500; letter-spacing:0.1em; color:rgba(211,184,106,0.55); text-transform:uppercase; margin-bottom:4px;">Thailand</div><div class="perf-year">2019</div></div>
       <div class="perf-card reveal reveal-delay-3"><span class="perf-suit">♠</span><div class="perf-event">Sundown Marathon</div><div class="perf-year">2017</div></div>
     </div>
   </div>
@@ -671,7 +671,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#523b3c343d12333e2620333637217c2135"><span class="__cf_email__" data-cfemail="0f666169604f6e637b7d6e6b6a7c217c68">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -753,11 +753,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 
 // ── TAB SWITCHER ──
-const ROVING_TICKER = '♦ Roving Act ♣ LED Poi ♥ Fire Poi ♠ 1–6 Performers ♦ 30–60 min Sets ♣ Walkabout ♥ Receptions & Galas ♠ Singapore & Region ♦ Roving Act ♣ LED Poi ♥ Fire Poi ♠ 1–6 Performers ♦ 30–60 min Sets ♣ Walkabout ♥ Receptions & Galas ♠ Singapore & Region';
 const STAGE_TICKER_ITEMS = [
   '♦ Stage Act','♣ Fire & LED Poi','♥ 1–4 Performers','♠ 3–8 Minutes',
   '♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Festivals',
@@ -772,28 +771,32 @@ const ROVING_TICKER_ITEMS = [
 ];
 
 function switchTab(tab) {
-  // Tabs buttons
+  // Tab buttons
   document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.hero-tab.${tab}`).classList.add('active');
+  document.querySelector('.hero-tab.' + tab).classList.add('active');
 
   // Hero meta
   document.querySelectorAll('.hero-meta[data-tab]').forEach(m => m.classList.remove('active'));
-  document.querySelector(`.hero-meta[data-tab="${tab}"]`).classList.add('active');
+  const activeMeta = document.querySelector('.hero-meta[data-tab="' + tab + '"]');
+  if (activeMeta) activeMeta.classList.add('active');
 
   // Hero images
   document.querySelectorAll('.hero-img').forEach(i => { i.classList.add('hidden'); i.classList.remove('visible'); });
-  document.querySelector(`.hero-img[data-tab-img="${tab}"]`).classList.remove('hidden');
-  document.querySelector(`.hero-img[data-tab-img="${tab}"]`).classList.add('visible');
+  const activeImg = document.querySelector('.hero-img[data-tab-img="' + tab + '"]');
+  if (activeImg) { activeImg.classList.remove('hidden'); activeImg.classList.add('visible'); }
 
   // Ticker colour + content
   const ticker = document.getElementById('ticker');
-  ticker.className = `ticker ${tab}`;
-  const items = tab === 'stage' ? STAGE_TICKER_ITEMS : ROVING_TICKER_ITEMS;
-  document.getElementById('ticker-track').innerHTML = items.map(i => `<span class="ticker-item">${i}</span>`).join('');
+  if (ticker) ticker.className = 'ticker ' + tab;
+  const trackEl = document.getElementById('ticker-track');
+  if (trackEl) {
+    const items = tab === 'stage' ? STAGE_TICKER_ITEMS : ROVING_TICKER_ITEMS;
+    trackEl.innerHTML = items.map(i => '<span class="ticker-item">' + i + '</span>').join('');
+  }
 
-  // Segments & galleries & past-perf
+  // Segments, galleries, past-perf
   document.querySelectorAll('.act-segment[data-tab], .act-gallery[data-tab], .past-perf[data-tab]').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll(`[data-tab="${tab}"]`).forEach(el => el.classList.add('active'));
+  document.querySelectorAll('[data-tab="' + tab + '"]').forEach(el => el.classList.add('active'));
 }
 
 // ── REVEAL ──
@@ -811,6 +814,12 @@ if (ham && mob) {
   ham.addEventListener('click', () => mob.classList.toggle('open'));
   mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
 }
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
 </script>
 </body>
 </html>
