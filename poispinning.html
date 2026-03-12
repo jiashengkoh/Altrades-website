@@ -673,7 +673,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#fc95929a93bc9d90888e9d98998fd28f9b"><span class="__cf_email__" data-cfemail="452c2b232a0524293137242120366b3622">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -755,50 +755,49 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 
 // ── TAB SWITCHER ──
-const ROVING_TICKER = '♦ Roving Act ♣ LED Poi ♥ Fire Poi ♠ 1–6 Performers ♦ 30–60 min Sets ♣ Walkabout ♥ Receptions & Galas ♠ Singapore & Region ♦ Roving Act ♣ LED Poi ♥ Fire Poi ♠ 1–6 Performers ♦ 30–60 min Sets ♣ Walkabout ♥ Receptions & Galas ♠ Singapore & Region';
-const STAGE_TICKER_ITEMS = [
-  '♦ Stage Act','♣ Fire & LED Poi','♥ 1–4 Performers','♠ 3–8 Minutes',
-  '♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Festivals',
-  '♦ Stage Act','♣ Fire & LED Poi','♥ 1–4 Performers','♠ 3–8 Minutes',
-  '♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Festivals'
-];
-const ROVING_TICKER_ITEMS = [
-  '♦ Roving Act','♣ LED Poi','♥ Fire Poi','♠ 1–4 Performers',
-  '♦ 3 × 10 min Sets','♣ Walkabout','♥ Receptions & Galas','♠ Singapore & Region',
-  '♦ Roving Act','♣ LED Poi','♥ Fire Poi','♠ 1–4 Performers',
-  '♦ 3 × 10 min Sets','♣ Walkabout','♥ Receptions & Galas','♠ Singapore & Region'
-];
-
 function switchTab(tab) {
-  // Tabs buttons
-  document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.hero-tab.${tab}`).classList.add('active');
+  // Hero tabs
+  document.querySelectorAll('.hero-tab').forEach(b => b.classList.remove('active'));
+  document.querySelector('.hero-tab.' + tab).classList.add('active');
 
-  // Hero meta
-  document.querySelectorAll('.hero-meta[data-tab]').forEach(m => m.classList.remove('active'));
-  document.querySelector(`.hero-meta[data-tab="${tab}"]`).classList.add('active');
+  // Hero meta blocks
+  document.querySelectorAll('.hero-meta[data-tab]').forEach(el => {
+    el.style.display = el.dataset.tab === tab ? 'flex' : 'none';
+  });
 
   // Hero images
-  document.querySelectorAll('.hero-img').forEach(i => { i.classList.add('hidden'); i.classList.remove('visible'); });
-  document.querySelector(`.hero-img[data-tab-img="${tab}"]`).classList.remove('hidden');
-  document.querySelector(`.hero-img[data-tab-img="${tab}"]`).classList.add('visible');
+  document.querySelectorAll('[data-tab-img]').forEach(el => {
+    el.classList.toggle('hidden', el.dataset.tabImg !== tab);
+  });
 
-  // Ticker colour + content
-  const ticker = document.getElementById('ticker');
-  ticker.className = `ticker ${tab}`;
-  const items = tab === 'stage' ? STAGE_TICKER_ITEMS : ROVING_TICKER_ITEMS;
-  document.getElementById('ticker-track').innerHTML = items.map(i => `<span class="ticker-item">${i}</span>`).join('');
+  // Ticker
+  const ticker = document.querySelector('.ticker');
+  if (ticker) {
+    ticker.classList.toggle('roving', tab === 'roving');
+    ticker.classList.toggle('stage', tab === 'stage');
+  }
 
-  // Segments & galleries & past-perf
-  document.querySelectorAll('.act-segment[data-tab], .act-gallery[data-tab], .past-perf[data-tab]').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll(`[data-tab="${tab}"]`).forEach(el => el.classList.add('active'));
+  // Segments (act description areas)
+  document.querySelectorAll('.act-segment[data-tab]').forEach(el => {
+    el.style.display = el.dataset.tab === tab ? 'block' : 'none';
+  });
+
+  // Galleries
+  document.querySelectorAll('.act-gallery[data-tab]').forEach(el => {
+    el.style.display = el.dataset.tab === tab ? 'block' : 'none';
+  });
+
+  // Past performances
+  document.querySelectorAll('.past-perf[data-tab]').forEach(el => {
+    el.style.display = el.dataset.tab === tab ? 'block' : 'none';
+  });
 }
 
-// ── REVEAL ──
+// Reveal on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
@@ -808,4 +807,11 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Mobile menu
 const ham = document.querySelector('.hamburger');
-const mob = document.getEleme
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+</script>
+</body>
+</html>

@@ -347,6 +347,14 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hero-btns { flex-direction: column; }
   
 }
+.act-gallery { padding: 96px 0; background: var(--black-deep); }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 4px; margin-top: 48px; }
+.gallery-item { overflow: hidden; position: relative; background: #111; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item--tall { grid-row: span 2; }
+.gallery-item--tall img { min-height: 600px; }
+.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
 </style>
 </head>
 <body>
@@ -599,15 +607,15 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <h2 class="section-title">The Act in Photos</h2>
       <div class="section-divider" style="margin:18px auto 0;"></div>
     </div>
-    <div class="gallery-grid">
+        <div class="gallery-grid">
       <div class="gallery-item gallery-item--tall reveal">
-        <img src="fire-roving-gallery-2.jpg" alt="Fire Roving — Circus of Altrades">
+        <img src="fire-roving-gallery-3.jpg" alt="fireroving — Circus of Altrades">
       </div>
       <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
-        <img src="fire-roving-gallery-1.jpg" alt="Fire Roving — Circus of Altrades">
+        <img src="fire-roving-gallery-1.jpg" alt="fireroving — Circus of Altrades">
       </div>
       <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
-        <img src="fire-roving-gallery-3.jpg" alt="Fire Roving — Circus of Altrades">
+        <img src="fire-roving-gallery-2.jpg" alt="fireroving — Circus of Altrades">
       </div>
     </div>
   </div>
@@ -667,7 +675,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#cfa6a1a9a08faea3bbbdaeabaabce1bca8"><span class="__cf_email__" data-cfemail="6a03040c052a0b061e180b0e0f1944190d">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -762,18 +770,11 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
       observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Mobile menu
-const ham = document.querySelector('.hamburger');
-const mob = document.getElem
+ 
