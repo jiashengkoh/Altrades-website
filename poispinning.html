@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="altrades-icon.png">
+<title>Poi Spinning | Circus of Altrades</title>
+<meta name="description" content="Poi Spinning by Circus of Altrades — available as a mesmerising stage act or an intimate roving performance. Hypnotic arcs of LED light for corporate events, galas and festivals in Singapore.">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #D3B86A; --gold-light: #e8d49a; --black: #212121; --black-deep: #0f0f0f;
+  --red: #C32129; --red-dark: #8f1820; --white: #ffffff; --muted: rgba(255,255,255,0.45);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Raleway', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; background: rgba(15,15,15,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(211,184,106,0.15); }
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-icon { width: 36px; height: 36px; flex-shrink: 0; object-fit: contain; }
+.nav-logo-text { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); line-height: 1.2; }
+.nav-logo-sub { font-size: 0.55rem; font-weight: 400; letter-spacing: 0.25em; color: rgba(211,184,106,0.6); text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { background: var(--red); color: var(--white) !important; padding: 10px 22px; font-size: 0.72rem !important; letter-spacing: 0.14em !important; }
+.nav-cta:hover { background: var(--red-dark); color: var(--white) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(15,15,15,0.98); z-index: 999; padding: 24px 32px; flex-direction: column; border-bottom: 1px solid rgba(211,184,106,0.15); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* HERO */
+.hero { min-height: 100vh; padding-top: 72px; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; background: var(--black-deep); }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; position: relative; z-index: 2; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 36px; }
+.hero-breadcrumb a { color: rgba(255,255,255,0.25); text-decoration: none; }
+.hero-breadcrumb a:hover { color: var(--gold); }
+.hero-breadcrumb span { color: rgba(255,255,255,0.1); }
+.hero-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.hero-label::before { content: '♦'; color: var(--red); font-size: 0.6rem; }
+.hero-title { font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 900; text-transform: uppercase; line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 28px; }
+.hero-title span { color: var(--gold); display: block; }
+.hero-divider { width: 48px; height: 3px; background: var(--red); margin-bottom: 28px; }
+.hero-tagline { font-size: 1rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 420px; margin-bottom: 36px; }
+
+/* TABS */
+.hero-tabs { display: flex; margin-bottom: 36px; border: 1px solid rgba(211,184,106,0.2); width: fit-content; }
+.hero-tab { padding: 12px 28px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; border: none; background: transparent; color: rgba(255,255,255,0.35); font-family: 'Raleway', sans-serif; transition: all 0.25s; border-right: 1px solid rgba(211,184,106,0.2); }
+.hero-tab:last-child { border-right: none; }
+.hero-tab.active.stage { background: var(--red); color: var(--white); }
+.hero-tab.active.roving { background: var(--gold); color: var(--black); }
+.hero-tab:not(.active):hover { color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.04); }
+.hero-meta { display: flex; gap: 32px; margin-bottom: 40px; flex-wrap: wrap; }
+.hero-meta-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(211,184,106,0.5); margin-bottom: 4px; }
+.hero-meta-value { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+.hero-meta[data-tab] { display: none; }
+.hero-meta.active { display: flex; }
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-red { background: var(--red); color: var(--white); padding: 14px 32px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+.btn-red:hover { background: var(--red-dark); }
+.btn-gold-outline { border: 1px solid rgba(211,184,106,0.4); color: var(--gold); padding: 14px 32px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-block; }
+.btn-gold-outline:hover { background: rgba(211,184,106,0.08); border-color: var(--gold); }
+.hero-right { position: relative; overflow: hidden; }
+.hero-right::before { content: ''; position: absolute; left: 0; top: 10%; bottom: 10%; width: 3px; background: linear-gradient(to bottom, transparent, var(--red), transparent); z-index: 2; }
+.hero-img { position: absolute; inset: 0; transition: opacity 0.5s ease; }
+.hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.hero-img.hidden { opacity: 0; pointer-events: none; }
+.hero-img.visible { opacity: 1; }
+.hero-bg-text { position: absolute; right: -30px; bottom: 20px; font-size: clamp(6rem, 12vw, 11rem); font-weight: 900; text-transform: uppercase; color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; user-select: none; z-index: 1; }
+
+/* TICKER */
+.ticker { padding: 13px 0; overflow: hidden; border-top: 1px solid rgba(211,184,106,0.15); border-bottom: 1px solid rgba(211,184,106,0.15); transition: background 0.4s; }
+.ticker.stage { background: var(--red); }
+.ticker.roving { background: var(--gold); }
+.ticker-track { display: flex; animation: ticker 28s linear infinite; white-space: nowrap; width: max-content; }
+.ticker-item { display: inline-flex; align-items: center; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0 32px; }
+.ticker.stage .ticker-item { color: var(--gold); }
+.ticker.roving .ticker-item { color: var(--black); }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* CONTAINER */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
+
+/* SEGMENTS */
+.act-segment { padding: 96px 0; }
+.act-segment.stage-seg { background: var(--black); }
+.act-segment.roving-seg { background: var(--black-deep); }
+.act-segment[data-tab] { display: none; }
+.act-segment.active { display: block; }
+.segment-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 8px 18px; margin-bottom: 48px; }
+.segment-badge.stage { background: var(--red); color: var(--white); }
+.segment-badge.roving { background: var(--gold); color: var(--black); }
+.act-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.section-label::before { content: '♦'; color: var(--red); font-size: 0.55rem; }
+.section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; text-transform: uppercase; line-height: 1.1; letter-spacing: 0.02em; }
+.section-divider { width: 40px; height: 3px; background: var(--red); margin: 20px 0 32px; }
+.act-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.65); }
+.act-desc p + p { margin-top: 18px; }
+.act-desc strong { color: var(--gold); font-weight: 700; }
+.act-features { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
+.act-feature { display: flex; gap: 16px; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.2s; }
+.act-feature:hover { background: rgba(211,184,106,0.05); border-color: rgba(211,184,106,0.2); }
+.act-feature-icon { color: var(--red); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.act-feature-text { font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.65); line-height: 1.6; }
+.act-feature-text strong { color: var(--white); font-weight: 700; display: block; margin-bottom: 2px; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.act-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.act-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(211,184,106,0.7); border: 1px solid rgba(211,184,106,0.2); padding: 6px 14px; }
+
+/* VIDEO + SPECS COLUMN */
+.right-col { display: flex; flex-direction: column; gap: 0; }
+.act-video-wrap { width: 100%; aspect-ratio: 9/16; max-height: 460px; overflow: hidden; background: #000; margin-bottom: 2px; }
+.act-video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+.act-specs { border: 1px solid rgba(211,184,106,0.15); }
+.act-specs-header { padding: 16px 24px; background: rgba(211,184,106,0.06); border-bottom: 1px solid rgba(211,184,106,0.15); }
+.act-specs-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.act-specs-body { padding: 8px 0; }
+.spec-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.spec-row:last-child { border-bottom: none; }
+.spec-label { font-size: 0.7rem; font-weight: 600; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; }
+.spec-value { font-size: 0.78rem; font-weight: 700; color: var(--white); text-align: right; }
+.spec-value.gold { color: var(--gold); }
+
+/* GALLERY */
+.act-gallery { padding: 96px 0; }
+.act-gallery.stage-gallery { background: var(--black-deep); }
+.act-gallery.roving-gallery { background: var(--black); }
+.act-gallery[data-tab] { display: none; }
+.act-gallery.active { display: block; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 4px; margin-top: 48px; }
+.gallery-item { overflow: hidden; position: relative; background: #111; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item--tall { grid-row: span 2; }
+.gallery-item--tall img { min-height: 600px; }
+.gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
+
+/* PAST PERFORMANCES */
+.past-perf { padding: 96px 0; }
+.past-perf.stage-perf { background: var(--black); }
+.past-perf.roving-perf { background: var(--black-deep); }
+.past-perf[data-tab] { display: none; }
+.past-perf.active { display: block; }
+.past-perf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
+.perf-card { padding: 36px 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.25s; position: relative; overflow: hidden; }
+.perf-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transition: transform 0.3s; }
+.perf-card:hover::before { transform: scaleX(1); }
+.perf-card:hover { background: rgba(211,184,106,0.04); border-color: rgba(211,184,106,0.12); }
+.perf-suit { font-size: 1.4rem; color: rgba(211,184,106,0.2); display: block; margin-bottom: 16px; }
+.perf-event { font-size: 0.88rem; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+.perf-year { font-size: 0.7rem; font-weight: 600; color: var(--gold); letter-spacing: 0.14em; }
+
+/* ENQUIRE */
+.enquire { padding: 96px 0; background: var(--black); }
+.enquire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.enquire-left .section-sub { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--muted); margin-top: 8px; }
+.enquire-contact { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+.enquire-contact-item { display: flex; align-items: center; gap: 14px; }
+.enquire-contact-icon { color: var(--gold); font-size: 1rem; width: 20px; }
+.enquire-contact-text { font-size: 0.88rem; font-weight: 400; color: rgba(255,255,255,0.55); }
+.enquire-contact-text a { color: rgba(211,184,106,0.7); text-decoration: none; transition: color 0.2s; }
+.enquire-contact-text a:hover { color: var(--gold); }
+.enquire-other { margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.07); }
+.enquire-other-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+.enquire-other-acts { display: flex; flex-direction: column; gap: 8px; }
+.enquire-other-act { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border: 1px solid rgba(255,255,255,0.06); text-decoration: none; transition: all 0.2s; }
+.enquire-other-act:hover { background: rgba(211,184,106,0.05); border-color: rgba(211,184,106,0.2); }
+.enquire-other-act-name { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.enquire-other-act-arrow { color: var(--gold); font-size: 0.8rem; }
+.enquire-form { display: flex; flex-direction: column; gap: 16px; }
+.form-preselect { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); padding: 14px 20px; border: 1px solid rgba(211,184,106,0.2); background: rgba(211,184,106,0.04); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.form-input, .form-select, .form-textarea { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--white); padding: 12px 16px; font-family: 'Raleway', sans-serif; font-size: 0.85rem; outline: none; transition: border-color 0.2s; width: 100%; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(211,184,106,0.4); }
+.form-select option { background: var(--black); }
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-submit { background: var(--red); color: var(--white); border: none; padding: 16px 32px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; align-self: flex-start; }
+.form-submit:hover { background: var(--red-dark); }
+
+/* FOOTER */
+footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0.1); padding: 32px 0; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-copy { font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; }
+.footer-suits { display: flex; gap: 12px; color: rgba(211,184,106,0.2); font-size: 0.9rem; }
+.footer-nav { display: flex; gap: 28px; }
+.footer-nav a { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); text-decoration: none; }
+.footer-nav a:hover { color: var(--gold); }
+
+/* REVEAL */
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js-loaded .reveal { opacity: 0; transform: translateY(24px); }
+.js-loaded .reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  nav { padding: 0 32px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 60px 32px; }
+  .hero-right { min-height: 420px; position: relative; }
+  .act-about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .enquire-grid { grid-template-columns: 1fr; gap: 56px; }
+  .past-perf-grid { grid-template-columns: 1fr 1fr; }
+  .container { padding: 0 32px; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--tall img { min-height: 400px; }
+  .act-video-wrap { max-height: 360px; }
+}
+@media (max-width: 640px) {
+  .hero-left { padding: 48px 20px; }
+  .hero-tabs { width: 100%; }
+  .hero-tab { flex: 1; padding: 12px 14px; font-size: 0.66rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .past-perf-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .container { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="altrades-icon.png" alt="Circus of Altrades" class="nav-logo-icon">
+    <div>
+      <div class="nav-logo-text">Altrades</div>
+      <div class="nav-logo-sub">Circus of Altrades</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="catalogue.html">Catalogue</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="catalogue.html">Catalogue</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a><span>/</span>
+      <a href="catalogue.html">Catalogue</a><span>/</span>
+      Poi Spinning
+    </div>
+    <p class="hero-label">Stage &amp; Roving Act</p>
+    <h1 class="hero-title">Poi<br><span>Spinning</span></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Hypnotic arcs of light, spinning in perfect rhythm. Available as a commanding stage centrepiece or an intimate roving spectacle that moves through your crowd.</p>
+
+    <div class="hero-tabs">
+      <button class="hero-tab stage active" onclick="switchTab('stage')">♦ &nbsp;Stage Act</button>
+      <button class="hero-tab roving" onclick="switchTab('roving')">♦ &nbsp;Roving Act</button>
+    </div>
+
+    <div class="hero-meta active" data-tab="stage">
+      <div><div class="hero-meta-label">Performers</div><div class="hero-meta-value">1 – 4</div></div>
+      <div><div class="hero-meta-label">Duration</div><div class="hero-meta-value">3 – 6 min</div></div>
+      <div><div class="hero-meta-label">Venue</div><div class="hero-meta-value">Indoor &amp; Outdoor</div></div>
+    </div>
+    <div class="hero-meta" data-tab="roving">
+      <div><div class="hero-meta-label">Performers</div><div class="hero-meta-value">1 – 4</div></div>
+      <div><div class="hero-meta-label">Sets</div><div class="hero-meta-value">3×10 min / 4 h</div></div>
+      <div><div class="hero-meta-label">Style</div><div class="hero-meta-value">Roving / Walkabout</div></div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#enquire" class="btn-red">Enquire Now</a>
+      <a href="#about-act" class="btn-gold-outline">Learn More</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img visible" data-tab-img="stage">
+      <img src="poi-stage-hero.jpg" alt="Poi Spinning Stage — Circus of Altrades">
+    </div>
+    <div class="hero-img hidden" data-tab-img="roving">
+      <img src="poi-roving-hero.jpg" alt="Poi Spinning Roving — Circus of Altrades">
+    </div>
+  </div>
+  <div class="hero-bg-text">POI</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker stage" id="ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-item">♦ Stage Act</span><span class="ticker-item">♣ LED Poi</span><span class="ticker-item">♥ 1–4 Performers</span><span class="ticker-item">♠ 3–6 Minutes</span><span class="ticker-item">♦ Indoor &amp; Outdoor</span><span class="ticker-item">♣ Customisable Theming</span><span class="ticker-item">♥ Corporate Events</span><span class="ticker-item">♠ Galas &amp; Festivals</span><span class="ticker-item">♦ Stage Act</span><span class="ticker-item">♣ LED Poi</span><span class="ticker-item">♥ 1–4 Performers</span><span class="ticker-item">♠ 3–6 Minutes</span><span class="ticker-item">♦ Indoor &amp; Outdoor</span><span class="ticker-item">♣ Customisable Theming</span><span class="ticker-item">♥ Corporate Events</span><span class="ticker-item">♠ Galas &amp; Festivals</span>
+  </div>
+</div>
+
+<!-- ═══ STAGE — ABOUT ═══ -->
+<section class="act-segment stage-seg active" data-tab="stage" id="about-act">
+  <div class="container">
+    <div class="segment-badge stage">♦ &nbsp; Stage Act</div>
+    <div class="act-about-grid">
+      <div class="reveal">
+        <p class="section-label">The Act</p>
+        <h2 class="section-title">Precision, Grace &amp; Spinning Light</h2>
+        <div class="section-divider"></div>
+        <div class="act-desc">
+          <p>Our Poi Spinning stage act transforms any performance space into a theatre of motion and light. <strong>1 to 4 skilled performers</strong> command the stage with poi — weighted orbs on cables — spinning them in hypnotic geometric patterns at breathtaking speed.</p>
+          <p>Choreographed to music and built for impact, each routine flows from fluid, meditative motion into an explosive, crowd-stopping finale. With <strong>LED poi</strong> casting vivid arcs of colour, the act is fully adaptable to your event's theme, mood, and stage configuration.</p>
+        </div>
+        <div class="act-features">
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>LED Poi</strong>Vivid arcs of programmable colour trace perfect orbits through the air — perfect for indoor galas and productions.</div></div>
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>Choreographed to Music</strong>Every routine is a full performance arc — composed with a build, climax, and crowd-stopping finale.</div></div>
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>Scalable Cast</strong>From a solo spotlight act to a quartet ensemble — we scale to your stage and production size.</div></div>
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>Fully Customisable</strong>Costume, music, and prop colour tailored to match your event's look and feel.</div></div>
+        </div>
+        <div class="act-tags">
+          <div class="act-tag">Stage Act</div><div class="act-tag">LED Poi</div><div class="act-tag">1–4 Performers</div>
+          <div class="act-tag">3–6 min</div><div class="act-tag">Indoor &amp; Outdoor</div><div class="act-tag">Galas</div><div class="act-tag">Concerts</div>
+        </div>
+      </div>
+      <div class="right-col reveal reveal-delay-2">
+        <div class="act-video-wrap">
+          <iframe src="https://www.youtube.com/embed/aKR-Md4uQn8?rel=0&modestbranding=1" title="Poi Spinning Stage — Circus of Altrades" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="act-specs">
+          <div class="act-specs-header"><div class="act-specs-title">Act Specifications — Stage</div></div>
+          <div class="act-specs-body">
+            <div class="spec-row"><div class="spec-label">Act Type</div><div class="spec-value">Stage Performance</div></div>
+            <div class="spec-row"><div class="spec-label">Performers</div><div class="spec-value gold">1 – 4 Artists</div></div>
+            <div class="spec-row"><div class="spec-label">Duration</div><div class="spec-value">3 – 6 min</div></div>
+            <div class="spec-row"><div class="spec-label">Props</div><div class="spec-value">LED Poi</div></div>
+            <div class="spec-row"><div class="spec-label">Indoor / Outdoor</div><div class="spec-value">Both</div></div>
+            <div class="spec-row"><div class="spec-label">Theming</div><div class="spec-value">Fully Customisable</div></div>
+            <div class="spec-row"><div class="spec-label">Availability</div><div class="spec-value gold">Singapore &amp; Region</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAGE — GALLERY ═══ -->
+<section class="act-gallery stage-gallery active" data-tab="stage">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">In Action</p>
+      <h2 class="section-title">Stage Act in Photos</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall reveal">
+        <img src="poi-stage-gallery-2.jpg" alt="Poi Spinning Stage — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
+        <img src="poi-stage-gallery-1.jpg" alt="Poi Spinning Stage — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
+        <img src="poi-stage-gallery-3.jpg" alt="Poi Spinning Stage — Circus of Altrades">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAGE — PAST PERFORMANCES ═══ -->
+<section class="past-perf stage-perf active" data-tab="stage">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">Track Record</p>
+      <h2 class="section-title">Where We've Performed</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
+    </div>
+    <div class="past-perf-grid">
+      <div class="perf-card reveal"><span class="perf-suit">♦</span><div class="perf-event">Island Concrete Gala Dinner</div><div class="perf-year">2025</div></div>
+      <div class="perf-card reveal reveal-delay-1"><span class="perf-suit">♣</span><div class="perf-event">TTU Charity Concert</div><div class="perf-year">2025</div></div>
+      <div class="perf-card reveal reveal-delay-2"><span class="perf-suit">♥</span><div class="perf-event">Altrades: Cabaret Production</div><div class="perf-year">2023</div></div>
+      <div class="perf-card reveal reveal-delay-3"><span class="perf-suit">♠</span><div class="perf-event">Kumar Locksdown</div><div class="perf-year">2022</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROVING — ABOUT ═══ -->
+<section class="act-segment roving-seg" data-tab="roving">
+  <div class="container">
+    <div class="segment-badge roving">♦ &nbsp; Roving Act</div>
+    <div class="act-about-grid">
+      <div class="reveal">
+        <p class="section-label">The Act</p>
+        <h2 class="section-title">Moving Through the Crowd</h2>
+        <div class="section-divider"></div>
+        <div class="act-desc">
+          <p>Our Roving Poi act takes the magic off the stage and into your event floor. <strong>1 to 4 performers</strong> weave through your guests, spinning LED poi in close quarters — creating spontaneous, intimate moments of wonder that a stage act simply can't replicate.</p>
+          <p>Structured as <strong>3 sets of 10 minutes within a 4-hour block</strong>, roving performers keep energy alive across your event from arrival to dinner call, reaching guests in every corner of the room.</p>
+        </div>
+        <div class="act-features">
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>Crowd Walkabout</strong>Performers weave between guests, bringing the act to your audience rather than the other way around.</div></div>
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>3×10 min Sets</strong>Timed sets within a 4-hour block — maximum impact without fatiguing your crowd.</div></div>
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>LED Poi</strong>Vivid spinning light that captivates at close range — safe and stunning for indoor receptions and outdoor events.</div></div>
+          <div class="act-feature"><div class="act-feature-icon">♦</div><div class="act-feature-text"><strong>Costume Customisable</strong>Styled to match your event's colour scheme, theme, or dress code.</div></div>
+        </div>
+        <div class="act-tags">
+          <div class="act-tag">Roving Act</div><div class="act-tag">LED Poi</div><div class="act-tag">1–4 Performers</div>
+          <div class="act-tag">3×10 min / 4 h</div><div class="act-tag">Receptions</div><div class="act-tag">Galas</div><div class="act-tag">Festivals</div>
+        </div>
+      </div>
+      <div class="right-col reveal reveal-delay-2">
+        <div class="act-video-wrap">
+          <iframe src="https://www.youtube.com/embed/aKR-Md4uQn8?rel=0&modestbranding=1" title="Poi Spinning Roving — Circus of Altrades" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="act-specs">
+          <div class="act-specs-header"><div class="act-specs-title">Act Specifications — Roving</div></div>
+          <div class="act-specs-body">
+            <div class="spec-row"><div class="spec-label">Act Type</div><div class="spec-value">Roving / Walkabout</div></div>
+            <div class="spec-row"><div class="spec-label">Performers</div><div class="spec-value gold">1 – 4 Artists</div></div>
+            <div class="spec-row"><div class="spec-label">Sets</div><div class="spec-value">3×10 min / 4 h block</div></div>
+            <div class="spec-row"><div class="spec-label">Props</div><div class="spec-value">LED Poi</div></div>
+            <div class="spec-row"><div class="spec-label">Indoor / Outdoor</div><div class="spec-value">Both</div></div>
+            <div class="spec-row"><div class="spec-label">Theming</div><div class="spec-value">Fully Customisable</div></div>
+            <div class="spec-row"><div class="spec-label">Availability</div><div class="spec-value gold">Singapore &amp; Region</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROVING — GALLERY ═══ -->
+<section class="act-gallery roving-gallery" data-tab="roving">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">In Action</p>
+      <h2 class="section-title">Roving Act in Photos</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall reveal">
+        <img src="poi-roving-gallery-2.jpg" alt="Poi Spinning Roving — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-1">
+        <img src="poi-roving-gallery-1.jpg" alt="Poi Spinning Roving — Circus of Altrades">
+      </div>
+      <div class="gallery-item gallery-item--wide reveal reveal-delay-2">
+        <img src="poi-roving-gallery-3.jpg" alt="Poi Spinning Roving — Circus of Altrades">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROVING — PAST PERFORMANCES ═══ -->
+<section class="past-perf roving-perf" data-tab="roving">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:16px;">
+      <p class="section-label" style="justify-content:center">Track Record</p>
+      <h2 class="section-title">Where We've Performed</h2>
+      <div class="section-divider" style="margin:18px auto 0;"></div>
+    </div>
+    <div class="past-perf-grid">
+      <div class="perf-card reveal"><span class="perf-suit">♦</span><div class="perf-event">USS Hollywood Parade</div><div class="perf-year">2024</div></div>
+      <div class="perf-card reveal reveal-delay-1"><span class="perf-suit">♣</span><div class="perf-event">Bohemian Beatfreaks Music Festival</div><div class="perf-year">Australia, 2022</div></div>
+      <div class="perf-card reveal reveal-delay-2"><span class="perf-suit">♥</span><div class="perf-event">Wonderfruit Music Festival</div><div class="perf-year">2019</div></div>
+      <div class="perf-card reveal reveal-delay-3"><span class="perf-suit">♠</span><div class="perf-event">Sundown Marathon</div><div class="perf-year">2017</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ENQUIRE ═══ -->
+<section class="enquire" id="enquire">
+  <div class="container">
+    <div class="enquire-grid">
+      <div class="enquire-left reveal">
+        <p class="section-label">Book This Act</p>
+        <h2 class="section-title">Bring Poi Spinning to Your Event</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Ready to make your event unforgettable? Fill in the form and our team will get back to you within 24 hours with a tailored proposal.</p>
+        <div class="enquire-contact">
+          <div class="enquire-contact-item"><div class="enquire-contact-icon">📍</div><div class="enquire-contact-text">440 Serangoon Road #02-01, Singapore 218134</div></div>
+          <div class="enquire-contact-item"><div class="enquire-contact-icon">💬</div><div class="enquire-contact-text"><a href="https://wa.me/6581382732" target="_blank" rel="noopener">(+65) 8138 2732</a></div></div>
+          <div class="enquire-contact-item"><div class="enquire-contact-icon">✉</div><div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div></div>
+        </div>
+        <div class="enquire-other">
+          <div class="enquire-other-label">Explore Other Acts</div>
+          <div class="enquire-other-acts">
+            <a href="fireperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="ledperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Performances</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="groupacrobatics.html" class="enquire-other-act"><span class="enquire-other-act-name">Group Acrobatics</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="chairstacking.html" class="enquire-other-act"><span class="enquire-other-act-name">Chairstacking</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="enquire-form">
+          <div class="form-preselect">♦ &nbsp; Act pre-selected: Poi Spinning</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane"></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@company.com"></div>
+          <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="+65 9123 4567"></div>
+          <div class="form-group">
+            <label class="form-label">Act Format</label>
+            <select class="form-select">
+              <option value="">Stage or Roving?</option>
+              <option>Stage Act</option>
+              <option>Roving Act</option>
+              <option>Both — Stage &amp; Roving</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Event Type</label>
+            <select class="form-select">
+              <option value="">Select event type…</option>
+              <option>Corporate Gala / Awards Night</option>
+              <option>Grand Opening / Brand Launch</option>
+              <option>Festival / Public Event</option>
+              <option>Concert / Show</option>
+              <option>Wedding / Private Celebration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Event Date</label><input class="form-input" type="date"></div>
+            <div class="form-group">
+              <label class="form-label">Expected Attendance</label>
+              <select class="form-select">
+                <option value="">Select range…</option>
+                <option>Under 100</option>
+                <option>100 – 300</option>
+                <option>300 – 500</option>
+                <option>500 – 1,000</option>
+                <option>1,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label">Tell Us About Your Event</label><textarea class="form-textarea" placeholder="Stage or roving, LED, theme or any special requirements…"></textarea></div>
+          <button class="form-submit">Send Enquiry →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <div>
+        <p class="footer-copy">© 2025 Circus of Altrades · Singapore</p>
+        <p class="footer-copy" style="margin-top:4px; font-size:0.58rem; color:rgba(255,255,255,0.12); letter-spacing:0.08em;">Altrades Entertainment Pte. Ltd. &nbsp;·&nbsp; UEN: 202425121M</p>
+      </div>
+      <div class="footer-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="about.html">About</a>
+        <a href="#enquire">Enquire</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.body.classList.add('js-loaded');
+
+const STAGE_ITEMS = ['♦ Stage Act','♣ LED Poi','♥ 1–4 Performers','♠ 3–6 Minutes','♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Galas & Festivals','♦ Stage Act','♣ LED Poi','♥ 1–4 Performers','♠ 3–6 Minutes','♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Galas & Festivals'];
+const ROVING_ITEMS = ['♦ Roving Act','♣ LED Poi','♥ 1–4 Performers','♠ 3×10 min Sets','♦ 4-Hour Block','♣ Walkabout','♥ Receptions & Galas','♠ Festivals','♦ Roving Act','♣ LED Poi','♥ 1–4 Performers','♠ 3×10 min Sets','♦ 4-Hour Block','♣ Walkabout','♥ Receptions & Galas','♠ Festivals'];
+
+function switchTab(tab) {
+  document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.hero-tab.' + tab).classList.add('active');
+  document.querySelectorAll('.hero-meta[data-tab]').forEach(m => m.classList.remove('active'));
+  document.querySelector('.hero-meta[data-tab="' + tab + '"]').classList.add('active');
+  document.querySelectorAll('.hero-img').forEach(i => { i.classList.add('hidden'); i.classList.remove('visible'); });
+  const img = document.querySelector('.hero-img[data-tab-img="' + tab + '"]');
+  img.classList.remove('hidden'); img.classList.add('visible');
+  const ticker = document.getElementById('ticker');
+  ticker.className = 'ticker ' + tab;
+  const items = tab === 'stage' ? STAGE_ITEMS : ROVING_ITEMS;
+  document.getElementById('ticker-track').innerHTML = items.map(i => '<span class="ticker-item">' + i + '</span>').join('');
+  document.querySelectorAll('[data-tab]').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('[data-tab="' + tab + '"]').forEach(el => el.classList.add('active'));
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.getElementById('ham').addEventListener('click', () => document.getElementById('mob').classList.toggle('open'));
+document.querySelectorAll('#mob a').forEach(a => a.addEventListener('click', () => document.getElementById('mob').classList.remove('open')));
+</script>
+</body>
+</html>
