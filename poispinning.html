@@ -311,10 +311,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       <div class="nav-logo-sub">Circus of Altrades</div>
     </div>
   </a>
-        <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+  <ul class="nav-links">
     <li><a href="catalogue.html">Catalogue</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
   <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
@@ -322,9 +321,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
   <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
-  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About</a>
   <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
 </div>
 
@@ -346,7 +344,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     <!-- TAB SWITCHER -->
     <div class="hero-tabs">
       <button class="hero-tab stage active" onclick="switchTab('stage')">♦ &nbsp;Stage Act</button>
-      <button class="hero-tab roving" onclick="switchTab(\'roving\')" style="cursor:pointer;">♦ &nbsp;Roving Act</button>
+      <button class="hero-tab roving" onclick="switchTab('roving')">♦ &nbsp;Roving Act</button>
     </div>
 
     <!-- Stage meta -->
@@ -673,7 +671,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#fc95929a93bc9d90888e9d98998fd28f9b"><span class="__cf_email__" data-cfemail="452c2b232a0524293137242120366b3622">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -681,8 +679,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <div class="enquire-other-acts">
             <a href="fireperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">Fire Performances</span><span class="enquire-other-act-arrow">→</span></a>
             <a href="ledperformances.html" class="enquire-other-act"><span class="enquire-other-act-name">LED Performances</span><span class="enquire-other-act-arrow">→</span></a>
-            <a href="tumbling.html" class="enquire-other-act"><span class="enquire-other-act-name">Tumbling</span><span class="enquire-other-act-arrow">→</span></a>
             <a href="groupacrobatics.html" class="enquire-other-act"><span class="enquire-other-act-name">Group Acrobatics</span><span class="enquire-other-act-arrow">→</span></a>
+            <a href="chairstacking.html" class="enquire-other-act"><span class="enquire-other-act-name">Chairstacking</span><span class="enquire-other-act-arrow">→</span></a>
             <a href="catalogue.html" class="enquire-other-act"><span class="enquire-other-act-name">View All Acts</span><span class="enquire-other-act-arrow">♦</span></a>
           </div>
         </div>
@@ -755,49 +753,50 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.body.classList.add('js-loaded');
 
 // ── TAB SWITCHER ──
-function switchTab(tab) {
-  // Hero tabs
-  document.querySelectorAll('.hero-tab').forEach(b => b.classList.remove('active'));
-  document.querySelector('.hero-tab.' + tab).classList.add('active');
+const ROVING_TICKER = '♦ Roving Act ♣ LED Poi ♥ Fire Poi ♠ 1–6 Performers ♦ 30–60 min Sets ♣ Walkabout ♥ Receptions & Galas ♠ Singapore & Region ♦ Roving Act ♣ LED Poi ♥ Fire Poi ♠ 1–6 Performers ♦ 30–60 min Sets ♣ Walkabout ♥ Receptions & Galas ♠ Singapore & Region';
+const STAGE_TICKER_ITEMS = [
+  '♦ Stage Act','♣ Fire & LED Poi','♥ 1–4 Performers','♠ 3–8 Minutes',
+  '♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Festivals',
+  '♦ Stage Act','♣ Fire & LED Poi','♥ 1–4 Performers','♠ 3–8 Minutes',
+  '♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Festivals'
+];
+const ROVING_TICKER_ITEMS = [
+  '♦ Roving Act','♣ LED Poi','♥ Fire Poi','♠ 1–4 Performers',
+  '♦ 3 × 10 min Sets','♣ Walkabout','♥ Receptions & Galas','♠ Singapore & Region',
+  '♦ Roving Act','♣ LED Poi','♥ Fire Poi','♠ 1–4 Performers',
+  '♦ 3 × 10 min Sets','♣ Walkabout','♥ Receptions & Galas','♠ Singapore & Region'
+];
 
-  // Hero meta blocks
-  document.querySelectorAll('.hero-meta[data-tab]').forEach(el => {
-    el.style.display = el.dataset.tab === tab ? 'flex' : 'none';
-  });
+function switchTab(tab) {
+  // Tabs buttons
+  document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.hero-tab.${tab}`).classList.add('active');
+
+  // Hero meta
+  document.querySelectorAll('.hero-meta[data-tab]').forEach(m => m.classList.remove('active'));
+  document.querySelector(`.hero-meta[data-tab="${tab}"]`).classList.add('active');
 
   // Hero images
-  document.querySelectorAll('[data-tab-img]').forEach(el => {
-    el.classList.toggle('hidden', el.dataset.tabImg !== tab);
-  });
+  document.querySelectorAll('.hero-img').forEach(i => { i.classList.add('hidden'); i.classList.remove('visible'); });
+  document.querySelector(`.hero-img[data-tab-img="${tab}"]`).classList.remove('hidden');
+  document.querySelector(`.hero-img[data-tab-img="${tab}"]`).classList.add('visible');
 
-  // Ticker
-  const ticker = document.querySelector('.ticker');
-  if (ticker) {
-    ticker.classList.toggle('roving', tab === 'roving');
-    ticker.classList.toggle('stage', tab === 'stage');
-  }
+  // Ticker colour + content
+  const ticker = document.getElementById('ticker');
+  ticker.className = `ticker ${tab}`;
+  const items = tab === 'stage' ? STAGE_TICKER_ITEMS : ROVING_TICKER_ITEMS;
+  document.getElementById('ticker-track').innerHTML = items.map(i => `<span class="ticker-item">${i}</span>`).join('');
 
-  // Segments (act description areas)
-  document.querySelectorAll('.act-segment[data-tab]').forEach(el => {
-    el.style.display = el.dataset.tab === tab ? 'block' : 'none';
-  });
-
-  // Galleries
-  document.querySelectorAll('.act-gallery[data-tab]').forEach(el => {
-    el.style.display = el.dataset.tab === tab ? 'block' : 'none';
-  });
-
-  // Past performances
-  document.querySelectorAll('.past-perf[data-tab]').forEach(el => {
-    el.style.display = el.dataset.tab === tab ? 'block' : 'none';
-  });
+  // Segments & galleries & past-perf
+  document.querySelectorAll('.act-segment[data-tab], .act-gallery[data-tab], .past-perf[data-tab]').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll(`[data-tab="${tab}"]`).forEach(el => el.classList.add('active'));
 }
 
-// Reveal on scroll
+// ── REVEAL ──
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
