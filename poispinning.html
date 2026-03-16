@@ -690,14 +690,14 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <input type="hidden" name="form-name" value="Poi Spinning">
           <div class="form-preselect">♦ &nbsp; Act pre-selected: <span>Poi Spinning</span></div>
           <div class="form-row">
-            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane"></div>
-            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith"></div>
+            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane" name="first-name"></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith" name="last-name"></div>
           </div>
-          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@company.com"></div>
-          <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="+65 9123 4567"></div>
+          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@company.com" name="email"></div>
+          <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="+65 9123 4567" name="phone"></div>
           <div class="form-group">
             <label class="form-label">Act Format</label>
-            <select class="form-select">
+            <select class="form-select" name="event-type">
               <option value="">Stage or Roving?</option>
               <option>Stage Act</option>
               <option>Roving Act</option>
@@ -706,7 +706,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="form-group">
             <label class="form-label">Event Type</label>
-            <select class="form-select">
+            <select class="form-select" name="event-type">
               <option value="">Select event type…</option>
               <option>Corporate Gala / Awards Night</option>
               <option>Grand Opening / Brand Launch</option>
@@ -716,10 +716,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             </select>
           </div>
           <div class="form-row">
-            <div class="form-group"><label class="form-label">Event Date</label><input class="form-input" type="date"></div>
+            <div class="form-group"><label class="form-label">Event Date</label><input class="form-input" type="date" name="event-date"></div>
             <div class="form-group">
               <label class="form-label">Expected Attendance</label>
-              <select class="form-select">
+              <select class="form-select" name="event-type">
                 <option value="">Select range…</option>
                 <option>Under 100</option>
                 <option>100 – 300</option>
@@ -729,7 +729,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
               </select>
             </div>
           </div>
-          <div class="form-group"><label class="form-label">Tell Us About Your Event</label><textarea class="form-textarea" placeholder="Stage or roving, fire or LED, theme or any special requirements…"></textarea></div>
+          <div class="form-group"><label class="form-label">Tell Us About Your Event</label><textarea class="form-textarea" placeholder="Stage or roving, fire or LED, theme or any special requirements…" name="message"></textarea></div>
           <button type="submit" class="form-submit">Send Enquiry →</button>
         </form>
       </div>

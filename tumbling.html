@@ -500,24 +500,24 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">First Name</label>
-              <input class="form-input" type="text" placeholder="Jane">
+              <input class="form-input" type="text" placeholder="Jane" name="first-name">
             </div>
             <div class="form-group">
               <label class="form-label">Last Name</label>
-              <input class="form-input" type="text" placeholder="Smith">
+              <input class="form-input" type="text" placeholder="Smith" name="last-name">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Email Address</label>
-            <input class="form-input" type="email" placeholder="jane@company.com">
+            <input class="form-input" type="email" placeholder="jane@company.com" name="email">
           </div>
           <div class="form-group">
             <label class="form-label">Phone Number</label>
-            <input class="form-input" type="tel" placeholder="+65 9123 4567">
+            <input class="form-input" type="tel" placeholder="+65 9123 4567" name="phone">
           </div>
           <div class="form-group">
             <label class="form-label">Event Type</label>
-            <select class="form-select">
+            <select class="form-select" name="event-type">
               <option value="">Select event type…</option>
               <option>Corporate Gala / Awards Night</option>
               <option>Grand Opening / Brand Launch</option>
@@ -529,11 +529,11 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Event Date</label>
-              <input class="form-input" type="date">
+              <input class="form-input" type="date" name="event-date">
             </div>
             <div class="form-group">
               <label class="form-label">Expected Attendance</label>
-              <select class="form-select">
+              <select class="form-select" name="event-type">
                 <option value="">Select range…</option>
                 <option>Under 100</option>
                 <option>100 – 300</option>
@@ -545,7 +545,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="form-group">
             <label class="form-label">Tell Us About Your Event</label>
-            <textarea class="form-textarea" placeholder="Stage dimensions, expected audience size, theme or any special requirements…"></textarea>
+            <textarea class="form-textarea" placeholder="Stage dimensions, expected audience size, theme or any special requirements…" name="message"></textarea>
           </div>
           <button type="submit" class="form-submit">Send Enquiry →</button>
         </form>
