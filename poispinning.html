@@ -671,7 +671,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#a3cacdc5cce3c2cfd7d1c2c7c6d08dd0c4"><span class="__cf_email__" data-cfemail="a2cbccc4cde2c3ced6d0c3c6c7d18cd1c5">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#84edeae2ebc4e5e8f0f6e5e0e1f7aaf7e3"><span class="__cf_email__" data-cfemail="345d5a525b7455584046555051471a4753">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -690,14 +690,14 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           <input type="hidden" name="form-name" value="Poi Spinning">
           <div class="form-preselect">♦ &nbsp; Act pre-selected: <span>Poi Spinning</span></div>
           <div class="form-row">
-            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane" name="first-name"></div>
-            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith" name="last-name"></div>
+            <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane"></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith"></div>
           </div>
-          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@company.com" name="email"></div>
-          <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="+65 9123 4567" name="phone"></div>
+          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="jane@company.com"></div>
+          <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="+65 9123 4567"></div>
           <div class="form-group">
             <label class="form-label">Act Format</label>
-            <select class="form-select" name="event-type">
+            <select class="form-select">
               <option value="">Stage or Roving?</option>
               <option>Stage Act</option>
               <option>Roving Act</option>
@@ -706,7 +706,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="form-group">
             <label class="form-label">Event Type</label>
-            <select class="form-select" name="event-type">
+            <select class="form-select">
               <option value="">Select event type…</option>
               <option>Corporate Gala / Awards Night</option>
               <option>Grand Opening / Brand Launch</option>
@@ -716,10 +716,10 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             </select>
           </div>
           <div class="form-row">
-            <div class="form-group"><label class="form-label">Event Date</label><input class="form-input" type="date" name="event-date"></div>
+            <div class="form-group"><label class="form-label">Event Date</label><input class="form-input" type="date"></div>
             <div class="form-group">
               <label class="form-label">Expected Attendance</label>
-              <select class="form-select" name="event-type">
+              <select class="form-select">
                 <option value="">Select range…</option>
                 <option>Under 100</option>
                 <option>100 – 300</option>
@@ -729,9 +729,9 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
               </select>
             </div>
           </div>
-          <div class="form-group"><label class="form-label">Tell Us About Your Event</label><textarea class="form-textarea" placeholder="Stage or roving, fire or LED, theme or any special requirements…" name="message"></textarea></div>
-          <button type="submit" class="form-submit">Send Enquiry →</button>
-        </form>
+          <div class="form-group"><label class="form-label">Tell Us About Your Event</label><textarea class="form-textarea" placeholder="Stage or roving, fire or LED, theme or any special requirements…"></textarea></div>
+          <button class="form-submit">Send Enquiry →</button>
+        </div>
       </div>
     </div>
   </div>
@@ -757,7 +757,6 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 
-// ── TAB SWITCHER ──
 const STAGE_TICKER_ITEMS = [
   '♦ Stage Act','♣ Fire & LED Poi','♥ 1–4 Performers','♠ 3–8 Minutes',
   '♦ Indoor & Outdoor','♣ Customisable Theming','♥ Corporate Events','♠ Festivals',
@@ -772,21 +771,17 @@ const ROVING_TICKER_ITEMS = [
 ];
 
 function switchTab(tab) {
-  // Tab buttons
   document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
   document.querySelector('.hero-tab.' + tab).classList.add('active');
 
-  // Hero meta
   document.querySelectorAll('.hero-meta[data-tab]').forEach(m => m.classList.remove('active'));
   const activeMeta = document.querySelector('.hero-meta[data-tab="' + tab + '"]');
   if (activeMeta) activeMeta.classList.add('active');
 
-  // Hero images
   document.querySelectorAll('.hero-img').forEach(i => { i.classList.add('hidden'); i.classList.remove('visible'); });
   const activeImg = document.querySelector('.hero-img[data-tab-img="' + tab + '"]');
   if (activeImg) { activeImg.classList.remove('hidden'); activeImg.classList.add('visible'); }
 
-  // Ticker colour + content
   const ticker = document.getElementById('ticker');
   if (ticker) ticker.className = 'ticker ' + tab;
   const trackEl = document.getElementById('ticker-track');
@@ -795,12 +790,10 @@ function switchTab(tab) {
     trackEl.innerHTML = items.map(i => '<span class="ticker-item">' + i + '</span>').join('');
   }
 
-  // Segments, galleries, past-perf
   document.querySelectorAll('.act-segment[data-tab], .act-gallery[data-tab], .past-perf[data-tab]').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('[data-tab="' + tab + '"]').forEach(el => el.classList.add('active'));
 }
 
-// ── REVEAL ──
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
@@ -808,9 +801,17 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Mobile menu
 const ham = document.querySelector('.hamburger');
 const mob = document.getElementById('mob');
 if (ham && mob) {
   ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', 
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>
