@@ -249,6 +249,44 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .form-submit-row { flex-direction: column; align-items: flex-start; }
 }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="Contact Us | Circus of Altrades">
+  <meta property="og:description" content="Get in touch with Circus of Altrades — Singapore's premier circus entertainment agency. Enquire about performances, bookings, and custom shows.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://altrades.sg/contact.html">
+  <meta property="og:image" content="https://altrades.sg/og-contact.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us | Circus of Altrades">
+  <meta name="twitter:description" content="Get in touch with Circus of Altrades — Singapore's premier circus entertainment agency. Enquire about performances, bookings, and custom shows.">
+  <meta name="twitter:image" content="https://altrades.sg/og-contact.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/contact.html">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Circus of Altrades",
+    "url": "https://altrades.sg",
+    "logo": "https://altrades.sg/altrades-icon.png",
+    "description": "Get in touch with Circus of Altrades — Singapore's premier circus entertainment agency. Enquire about performances, bookings, and custom shows.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "440 Serangoon Road #02-01",
+      "addressLocality": "Singapore",
+      "postalCode": "218134",
+      "addressCountry": "SG"
+    },
+    "telephone": "+6581382732",
+    "email": "info@altrades.sg",
+    "sameAs": [
+      "https://www.instagram.com/altrades_sg",
+      "https://www.tiktok.com/@circusofaltrades"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -507,14 +545,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     </div>
   </div>
 </footer>
-
 <script>
 document.body.classList.add('js-loaded');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   });
-}, { threshold: 0.08, 
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const ham = document.querySelector('.hamburger');
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>

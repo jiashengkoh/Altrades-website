@@ -232,6 +232,37 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .container { padding: 0 20px; }
 }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="Chairstacking | Circus of Altrades">
+  <meta property="og:description" content="Chairstacking by Circus of Altrades — a breathtaking stage act of impossible balance, towering chairs and nerves of steel. Available for corporate events, galas and festivals in Singapore.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://altrades.sg/chairstacking.html">
+  <meta property="og:image" content="https://altrades.sg/chairstacking-hero.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chairstacking | Circus of Altrades">
+  <meta name="twitter:description" content="Chairstacking by Circus of Altrades — a breathtaking stage act of impossible balance, towering chairs and nerves of steel. Available for corporate events, galas and festivals in Singapore.">
+  <meta name="twitter:image" content="https://altrades.sg/chairstacking-hero.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/chairstacking.html">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "name": "Circus of Altrades — Chairstacking",
+    "url": "https://altrades.sg/chairstacking.html",
+    "image": "https://altrades.sg/chairstacking-hero.jpg",
+    "description": "Chairstacking by Circus of Altrades — a breathtaking stage act of impossible balance, towering chairs and nerves of steel. Available for corporate events, galas and festivals in Singapore.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Circus of Altrades",
+      "url": "https://altrades.sg"
+    },
+    "areaServed": "Singapore"
+  }
+  </script>
 </head>
 <body>
 
@@ -587,3 +618,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         <a href="catalogue.html">Catalogue</a>
         <a href="about.html">About</a>
         <a href="#enquire">Enquir
+<script>
+document.body.classList.add('js-loaded');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const ham = document.querySelector('.hamburger');
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>

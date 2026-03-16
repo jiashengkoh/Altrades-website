@@ -682,6 +682,44 @@ footer {
   .hero-btns { flex-direction: column; align-items: center; }
 }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="Circus of Altrades | Extraordinary Entertainment Singapore">
+  <meta property="og:description" content="Singapore's first homegrown group acrobatic circus troupe. Fire acts, LED shows, acrobatics, contortion and more — with connections to world-class international artistes. Available worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://altrades.sg/">
+  <meta property="og:image" content="https://altrades.sg/og-home.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Circus of Altrades | Extraordinary Entertainment Singapore">
+  <meta name="twitter:description" content="Singapore's first homegrown group acrobatic circus troupe. Fire acts, LED shows, acrobatics, contortion and more — with connections to world-class international artistes. Available worldwide.">
+  <meta name="twitter:image" content="https://altrades.sg/og-home.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Circus of Altrades",
+    "url": "https://altrades.sg",
+    "logo": "https://altrades.sg/altrades-icon.png",
+    "description": "Singapore's first homegrown group acrobatic circus troupe. Fire acts, LED shows, acrobatics, contortion and more — with connections to world-class international artistes. Available worldwide.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "440 Serangoon Road #02-01",
+      "addressLocality": "Singapore",
+      "postalCode": "218134",
+      "addressCountry": "SG"
+    },
+    "telephone": "+6581382732",
+    "email": "info@altrades.sg",
+    "sameAs": [
+      "https://www.instagram.com/altrades_sg",
+      "https://www.tiktok.com/@circusofaltrades"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1153,3 +1191,14 @@ function filterActs(cat, btn) {
   document.querySelectorAll('.act-card').forEach(card => {
     const cats = (card.dataset.categories || '').split(' ');
     card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+
+// Reveal on scroll
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+</body>
+</html>

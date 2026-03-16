@@ -426,6 +426,44 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .cta-strip { padding: 64px 24px; }
 }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="About Us | Circus of Altrades">
+  <meta property="og:description" content="Meet the homegrown Singapore circus troupe behind Circus of Altrades — performers, creators and storytellers pushing the boundaries of contemporary circus.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://altrades.sg/about.html">
+  <meta property="og:image" content="https://altrades.sg/og-about.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | Circus of Altrades">
+  <meta name="twitter:description" content="Meet the homegrown Singapore circus troupe behind Circus of Altrades — performers, creators and storytellers pushing the boundaries of contemporary circus.">
+  <meta name="twitter:image" content="https://altrades.sg/og-about.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/about.html">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Circus of Altrades",
+    "url": "https://altrades.sg",
+    "logo": "https://altrades.sg/altrades-icon.png",
+    "description": "Meet the homegrown Singapore circus troupe behind Circus of Altrades — performers, creators and storytellers pushing the boundaries of contemporary circus.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "440 Serangoon Road #02-01",
+      "addressLocality": "Singapore",
+      "postalCode": "218134",
+      "addressCountry": "SG"
+    },
+    "telephone": "+6581382732",
+    "email": "info@altrades.sg",
+    "sameAs": [
+      "https://www.instagram.com/altrades_sg",
+      "https://www.tiktok.com/@circusofaltrades"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -745,53 +783,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     <div class="bio-modal-suits"><span>♠</span><span>♥</span><span>♣</span><span>♦</span></div>
   </div>
 </div>
-
 <script>
-function openBio(id) {
-  document.getElementById('modal-' + id).classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-document.querySelectorAll('.bio-modal').forEach(modal => {
-  modal.addEventListener('click', function(e) {
-    if (e.target === this) {
-      this.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  });
-});
-document.querySelectorAll('.bio-modal-close').forEach(btn => {
-  btn.addEventListener('click', function() {
-    this.closest('.bio-modal').classList.remove('open');
-    document.body.style.overflow = '';
-  });
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.bio-modal.open').forEach(m => {
-      m.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  }
-});
-
 document.body.classList.add('js-loaded');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Mobile menu
 const ham = document.querySelector('.hamburger');
 const mob = document.getElementById('mob');
 if (ham && mob) {
   ham.addEventListener('click', () => mob.classList.toggle('open'));
   mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
 }
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
 </script>
 </body>
 </html>

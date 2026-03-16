@@ -296,6 +296,37 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .gallery-item--tall img { min-height: 600px; }
 .gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="LED Roving | Circus of Altrades">
+  <meta property="og:description" content="LED roving performers who mingle with your guests, bringing light and colour directly to the crowd. 3×15 min sets within a 4-hour block. Singapore's premier LED roving act.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://altrades.sg/ledroving.html">
+  <meta property="og:image" content="https://altrades.sg/led-roving-hero.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED Roving | Circus of Altrades">
+  <meta name="twitter:description" content="LED roving performers who mingle with your guests, bringing light and colour directly to the crowd. 3×15 min sets within a 4-hour block. Singapore's premier LED roving act.">
+  <meta name="twitter:image" content="https://altrades.sg/led-roving-hero.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/ledroving.html">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "name": "Circus of Altrades — LED Roving",
+    "url": "https://altrades.sg/ledroving.html",
+    "image": "https://altrades.sg/led-roving-hero.jpg",
+    "description": "LED roving performers who mingle with your guests, bringing light and colour directly to the crowd. 3×15 min sets within a 4-hour block. Singapore's premier LED roving act.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Circus of Altrades",
+      "url": "https://altrades.sg"
+    },
+    "areaServed": "Singapore"
+  }
+  </script>
 </head>
 <body>
 
@@ -710,3 +741,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 </footer>
 
 <s
+<script>
+document.body.classList.add('js-loaded');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const ham = document.querySelector('.hamburger');
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>

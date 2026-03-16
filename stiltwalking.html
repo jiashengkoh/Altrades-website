@@ -332,6 +332,37 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   .hero-btns { flex-direction: column; }
 }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="Stilt Walking | Circus of Altrades">
+  <meta property="og:description" content="Larger-than-life stilt walkers for your event. Themed costumes, guest interaction, and roving entertainment across 3×20 min sets. Singapore's premier roving entertainment.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://altrades.sg/stiltwalking.html">
+  <meta property="og:image" content="https://altrades.sg/stilt-hero.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stilt Walking | Circus of Altrades">
+  <meta name="twitter:description" content="Larger-than-life stilt walkers for your event. Themed costumes, guest interaction, and roving entertainment across 3×20 min sets. Singapore's premier roving entertainment.">
+  <meta name="twitter:image" content="https://altrades.sg/stilt-hero.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/stiltwalking.html">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "name": "Circus of Altrades — Stilt Walking",
+    "url": "https://altrades.sg/stiltwalking.html",
+    "image": "https://altrades.sg/stilt-hero.jpg",
+    "description": "Larger-than-life stilt walkers for your event. Themed costumes, guest interaction, and roving entertainment across 3×20 min sets. Singapore's premier roving entertainment.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Circus of Altrades",
+      "url": "https://altrades.sg"
+    },
+    "areaServed": "Singapore"
+  }
+  </script>
 </head>
 <body>
 
@@ -770,19 +801,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
     </div>
   </div>
 </footer>
-
 <script>
 document.body.classList.add('js-loaded');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Mobile menu
 const ham = document.querySelector('.hamburger');
-const mob = document.getElem
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>

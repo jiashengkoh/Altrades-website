@@ -270,6 +270,37 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
 .gallery-item--tall img { min-height: 600px; }
 .gallery-item--wide img { min-height: 300px; aspect-ratio: 16/9; }
 </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="LED Performances | Circus of Altrades">
+  <meta property="og:description" content="2–6 LED performers delivering dazzling indoor and outdoor stage acts. LED poi, fans, wings and more. Singapore's premier LED performance act for corporate events, galas and festivals.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://altrades.sg/ledperformances.html">
+  <meta property="og:image" content="https://altrades.sg/led-perf-hero.jpg">
+  <meta property="og:site_name" content="Circus of Altrades">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED Performances | Circus of Altrades">
+  <meta name="twitter:description" content="2–6 LED performers delivering dazzling indoor and outdoor stage acts. LED poi, fans, wings and more. Singapore's premier LED performance act for corporate events, galas and festivals.">
+  <meta name="twitter:image" content="https://altrades.sg/led-perf-hero.jpg">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://altrades.sg/ledperformances.html">
+  <!-- SEO: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "name": "Circus of Altrades — LED Performances",
+    "url": "https://altrades.sg/ledperformances.html",
+    "image": "https://altrades.sg/led-perf-hero.jpg",
+    "description": "2–6 LED performers delivering dazzling indoor and outdoor stage acts. LED poi, fans, wings and more. Singapore's premier LED performance act for corporate events, galas and festivals.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Circus of Altrades",
+      "url": "https://altrades.sg"
+    },
+    "areaServed": "Singapore"
+  }
+  </script>
 </head>
 <body>
 
@@ -653,3 +684,27 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         <a href="about.html">About</a>
         <a href="#enquire">Enquire</a>
       <
+<script>
+document.body.classList.add('js-loaded');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const ham = document.querySelector('.hamburger');
+const mob = document.getElementById('mob');
+if (ham && mob) {
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>
