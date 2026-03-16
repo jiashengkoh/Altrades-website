@@ -659,7 +659,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#b5dcdbd3daf5d4d9c1c7d4d1d0c69bc6d2"><span class="__cf_email__" data-cfemail="771e19111837161b030516131204590410">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -690,7 +690,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
       </div>
 
       <div class="reveal reveal-delay-2">
-        <div class="enquire-form">
+        <form class="enquire-form" name="Stilt Walking" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="Stilt Walking">
           <div class="form-preselect">
             ♦ &nbsp; Act pre-selected: <span>Stilt Walking</span>
           </div>
@@ -745,8 +746,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             <label class="form-label">Tell Us About Your Event</label>
             <textarea class="form-textarea" placeholder="Venue details, expected guest count, theme or any special requirements…"></textarea>
           </div>
-          <button class="form-submit">Send Enquiry →</button>
-        </div>
+          <button type="submit" class="form-submit">Send Enquiry →</button>
+        </form>
       </div>
     </div>
   </div>
@@ -769,7 +770,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -783,11 +784,4 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Mobile menu
 const ham = document.querySelector('.hamburger');
-const mob = document.getElementById('mob');
-if (ham && mob) {
-  ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
-}
-</script>
-</body>
-</html>
+const mob = document.getElem

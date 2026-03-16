@@ -671,7 +671,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
+            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#a3cacdc5cce3c2cfd7d1c2c7c6d08dd0c4"><span class="__cf_email__" data-cfemail="a2cbccc4cde2c3ced6d0c3c6c7d18cd1c5">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -686,7 +686,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
         </div>
       </div>
       <div class="reveal reveal-delay-2">
-        <div class="enquire-form">
+        <form class="enquire-form" name="Poi Spinning" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="Poi Spinning">
           <div class="form-preselect">♦ &nbsp; Act pre-selected: <span>Poi Spinning</span></div>
           <div class="form-row">
             <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane"></div>
@@ -729,8 +730,8 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
             </div>
           </div>
           <div class="form-group"><label class="form-label">Tell Us About Your Event</label><textarea class="form-textarea" placeholder="Stage or roving, fire or LED, theme or any special requirements…"></textarea></div>
-          <button class="form-submit">Send Enquiry →</button>
-        </div>
+          <button type="submit" class="form-submit">Send Enquiry →</button>
+        </form>
       </div>
     </div>
   </div>
@@ -753,7 +754,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.body.classList.add('js-loaded');
 
 // ── TAB SWITCHER ──
@@ -812,14 +813,4 @@ const ham = document.querySelector('.hamburger');
 const mob = document.getElementById('mob');
 if (ham && mob) {
   ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
-}
-
-// Nav scroll
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-</script>
-</body>
-</html>
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', 
