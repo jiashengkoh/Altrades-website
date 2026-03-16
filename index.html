@@ -1153,14 +1153,3 @@ function filterActs(cat, btn) {
   document.querySelectorAll('.act-card').forEach(card => {
     const cats = (card.dataset.categories || '').split(' ');
     card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
-  });
-}
-
-// Reveal on scroll
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-</script>
-</body>
-</html>
