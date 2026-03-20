@@ -1,0 +1,8 @@
+# Redirect http to https (non-www)
+http://altrades.sg/* https://altrades.sg/:splat 301!
+
+# Redirect www to non-www
+https://www.altrades.sg/* https://altrades.sg/:splat 301!
+
+# Redirect http www to https non-www
+http://www.altrades.sg/* https://altrades.sg/:splat 301!

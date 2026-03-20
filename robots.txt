@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# Block old GoDaddy/Wix leftover paths
+Disallow: /_api/
+Disallow: /blog
+Disallow: /experience-details
+Disallow: /services-2
+Disallow: /portfolio-1
+Disallow: /about-us/
+Disallow: /artists
+
 Sitemap: https://altrades.sg/sitemap.xml
