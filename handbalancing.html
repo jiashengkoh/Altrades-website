@@ -532,7 +532,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
           </div>
           <div class="enquire-contact-item">
             <div class="enquire-contact-icon">✉</div>
-            <div class="enquire-contact-text"><a href="/cdn-cgi/l/email-protection#046d6a626b4465687076656061772a7763"><span class="__cf_email__" data-cfemail="e38a8d858ca3828f979182878690cd9084">[email&#160;protected]</span></a></div>
+            <div class="enquire-contact-text"><a href="mailto:info@altrades.sg">info@altrades.sg</a></div>
           </div>
         </div>
         <div class="enquire-other">
@@ -626,7 +626,7 @@ footer { background: var(--black-deep); border-top: 1px solid rgba(211,184,106,0
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.body.classList.add('js-loaded');
 
 const observer = new IntersectionObserver((entries) => {
@@ -640,4 +640,13 @@ const ham = document.querySelector('.hamburger');
 const mob = document.getElementById('mob');
 if (ham && mob) {
   ham.addEventListener('click', () => mob.classList.toggle('open'));
-  mob.querySelectorAll('a').forEach(a => a.addEventList
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+</body>
+</html>
