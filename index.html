@@ -682,44 +682,6 @@ footer {
   .hero-btns { flex-direction: column; align-items: center; }
 }
 </style>
-  <!-- SEO: Open Graph -->
-  <meta property="og:title" content="Circus of Altrades | Extraordinary Entertainment Singapore">
-  <meta property="og:description" content="Singapore's first homegrown group acrobatic circus troupe. Fire acts, LED shows, acrobatics, contortion and more — with connections to world-class international artistes. Available worldwide.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://altrades.sg/">
-  <meta property="og:image" content="https://altrades.sg/og-home.jpg">
-  <meta property="og:site_name" content="Circus of Altrades">
-  <!-- SEO: Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Circus of Altrades | Extraordinary Entertainment Singapore">
-  <meta name="twitter:description" content="Singapore's first homegrown group acrobatic circus troupe. Fire acts, LED shows, acrobatics, contortion and more — with connections to world-class international artistes. Available worldwide.">
-  <meta name="twitter:image" content="https://altrades.sg/og-home.jpg">
-  <!-- SEO: Canonical -->
-  <link rel="canonical" href="https://altrades.sg/">
-  <!-- SEO: JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Circus of Altrades",
-    "url": "https://altrades.sg",
-    "logo": "https://altrades.sg/altrades-icon.png",
-    "description": "Singapore's first homegrown group acrobatic circus troupe. Fire acts, LED shows, acrobatics, contortion and more — with connections to world-class international artistes. Available worldwide.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "440 Serangoon Road #02-01",
-      "addressLocality": "Singapore",
-      "postalCode": "218134",
-      "addressCountry": "SG"
-    },
-    "telephone": "+6581382732",
-    "email": "info@altrades.sg",
-    "sameAs": [
-      "https://www.instagram.com/altrades_sg",
-      "https://www.tiktok.com/@circusofaltrades"
-    ]
-  }
-  </script>
 </head>
 <body>
 
@@ -815,7 +777,29 @@ footer {
     <span class="ticker-item"><span class="ticker-suit">♦</span> Customised Shows <span class="ticker-suit">♣</span></span>
     <span class="ticker-item"><span class="ticker-suit">♥</span> Corporate Events <span class="ticker-suit">♠</span></span>
   </div>
-</div>
+
+
+      <!-- Handbalancing -->
+      <div class="act-card" data-act="handbalancing" onclick="window.location='handbalancing.html'" style="cursor:pointer" data-categories="stage">
+        <div class="act-bg" style="background:#0a0a0a">
+          <img src="handbalancing-hero.jpg" alt="Handbalancing" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.75;">
+        </div>
+        <span class="act-num">10</span>
+        <span class="act-tag tag-stage">Stage</span>
+        <!-- NEW stamp -->
+        <div style="position:absolute;top:12px;right:12px;z-index:5;width:52px;height:52px;border-radius:50%;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;transform:rotate(-18deg);background:rgba(195,33,41,0.08);">
+          <span style="font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:900;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);">NEW</span>
+        </div>
+        <div class="act-content">
+          <div class="act-name">Handbalancing</div>
+          <div class="act-teaser">A handbalancer on canes, elevated by dancers — pure strength made art</div>
+        </div>
+        <div class="act-hover">
+          <div class="act-name">Handbalancing</div>
+          <p>A specialised handbalancer performing on handstand canes, joined by two dancers whose movement creates an immersive, genre-bending performance around them.</p>
+          <a href="handbalancing.html" class="act-cta">Learn More</a>
+        </div>
+      </div></div>
 
 <!-- STATS -->
 <div class="intro">
@@ -1171,12 +1155,10 @@ footer {
 </footer>
 
 <script>
-// Nav scroll
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Mobile menu
 document.getElementById('hamburger').addEventListener('click', () => {
   document.getElementById('mob').classList.toggle('open');
 });
@@ -1184,7 +1166,6 @@ document.querySelectorAll('#mob a').forEach(a => {
   a.addEventListener('click', () => document.getElementById('mob').classList.remove('open'));
 });
 
-// Act filter
 function filterActs(cat, btn) {
   document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -1194,7 +1175,6 @@ function filterActs(cat, btn) {
   });
 }
 
-// Reveal on scroll
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
