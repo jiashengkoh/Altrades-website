@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="altrades-icon.png">
+<link rel="shortcut icon" type="image/png" href="altrades-icon.png">
+<title>Catalogue | Circus of Altrades</title>
+<meta name="description" content="Browse the full Circus of Altrades act catalogue — stage acts, roving acts and overseas artistes. Available for corporate events in Singapore.">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<meta property="og:title" content="Catalogue | Circus of Altrades">
+<meta property="og:description" content="Browse the full Circus of Altrades act catalogue — stage acts, roving acts and overseas artistes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://altrades.sg/catalogue.html">
+<meta property="og:image" content="https://altrades.sg/groupacrobatics-hero.jpg">
+<meta property="og:site_name" content="Circus of Altrades">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Catalogue | Circus of Altrades">
+<meta name="twitter:description" content="Browse the full Circus of Altrades act catalogue.">
+<meta name="twitter:image" content="https://altrades.sg/groupacrobatics-hero.jpg">
+<link rel="canonical" href="https://altrades.sg/catalogue.html">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#D3B86A;--black:#212121;--black-deep:#0f0f0f;--red:#C32129;--red-dark:#8f1820;--white:#ffffff}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--gold)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:72px;background:rgba(15,15,15,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(211,184,106,0.15)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-icon{width:36px;height:36px;object-fit:contain}
+.nav-logo-text{font-size:0.78rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);line-height:1.2}
+.nav-logo-sub{font-size:0.55rem;font-weight:400;letter-spacing:0.25em;color:rgba(211,184,106,0.6);text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:40px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);font-size:0.78rem;font-weight:600;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.nav-active{color:var(--gold)}
+.nav-cta{background:var(--red)!important;color:var(--white)!important;padding:10px 22px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white)}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(15,15,15,0.98);z-index:999;padding:24px 32px;flex-direction:column;gap:0;border-bottom:1px solid rgba(211,184,106,0.15)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.8);font-size:0.85rem;font-weight:600;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.mobile-menu a:last-child{border-bottom:none}
+.page-hero{padding:140px 56px 72px;background:var(--black-deep);border-bottom:1px solid rgba(211,184,106,0.08);position:relative;overflow:hidden}
+.hero-bg-word{position:absolute;right:-10px;bottom:-20px;font-size:clamp(8rem,15vw,13rem);font-weight:900;text-transform:uppercase;color:rgba(211,184,106,0.025);line-height:1;pointer-events:none;user-select:none}
+.page-hero-label{font-size:0.65rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.page-hero-label::before{content:"♦";color:var(--red)}
+.page-hero h1{font-size:clamp(2.8rem,5vw,5rem);font-weight:900;text-transform:uppercase;line-height:0.92;margin-bottom:24px}
+.page-hero h1 span{color:var(--gold);display:block}
+.hero-divider{width:48px;height:3px;background:var(--red);margin-bottom:24px}
+.page-hero-sub{font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.45);max-width:480px;line-height:1.75}
+.catalogue-layout{display:grid;grid-template-columns:260px 1fr;align-items:start}
+.sidebar{position:sticky;top:72px;height:calc(100vh - 72px);overflow-y:auto;background:var(--black-deep);border-right:1px solid rgba(255,255,255,0.05);padding:32px 0 48px}
+.sidebar::-webkit-scrollbar{width:2px}.sidebar::-webkit-scrollbar-thumb{background:rgba(211,184,106,0.2)}
+.sidebar-section{margin-bottom:4px}
+.sidebar-heading{font-size:0.55rem;font-weight:800;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.18);padding:16px 28px 8px}
+.sidebar-link{display:flex;align-items:center;justify-content:space-between;padding:11px 28px;text-decoration:none;transition:all 0.18s;border-left:3px solid transparent}
+.sidebar-link.available{color:rgba(255,255,255,0.6)}
+.sidebar-link.available:hover{background:rgba(255,255,255,0.03);border-left-color:rgba(211,184,106,0.35);color:var(--white)}
+.sidebar-link.coming{color:rgba(255,255,255,0.18);cursor:default}
+.sidebar-link.overseas{color:rgba(211,184,106,0.5)}
+.sidebar-link.overseas:hover{background:rgba(211,184,106,0.05);border-left-color:rgba(211,184,106,0.3);color:var(--gold)}
+.sidebar-link-name{font-size:0.78rem;font-weight:600;letter-spacing:0.05em;display:flex;align-items:center;gap:8px}
+.sidebar-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sidebar-dot.available{background:rgba(211,184,106,0.5)}
+.sidebar-dot.coming{background:rgba(255,255,255,0.1)}
+.sidebar-dot.overseas{background:rgba(211,184,106,0.3);border:1px solid rgba(211,184,106,0.5)}
+.sidebar-new{font-size:0.5rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(211,184,106,0.45);padding:2px 5px}
+.sidebar-divider{height:1px;background:rgba(255,255,255,0.04);margin:12px 28px}
+.sidebar-standalone{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;text-decoration:none;transition:all 0.18s;border-left:3px solid var(--red);background:rgba(195,33,41,0.05);color:rgba(255,255,255,0.7);margin-bottom:4px}
+.sidebar-standalone:hover{background:rgba(195,33,41,0.1);color:var(--white)}
+.sidebar-standalone-name{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.sidebar-standalone-label{font-size:0.52rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(195,33,41,0.7)}
+.filter-bar{background:rgba(12,12,12,0.98);border-bottom:1px solid rgba(211,184,106,0.08);position:sticky;top:72px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:52px}
+.filter-btns{display:flex;gap:2px}
+.filter-btn{background:transparent;border:none;color:rgba(255,255,255,0.35);font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:7px 14px;cursor:pointer;transition:all 0.2s}
+.filter-btn:hover{color:rgba(255,255,255,0.65)}
+.filter-btn.active{color:var(--white);background:var(--red)}
+.filter-count{font-size:0.62rem;color:rgba(255,255,255,0.18);letter-spacing:0.1em}
+.acts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.act-card{position:relative;overflow:hidden;aspect-ratio:3/4;background:#111;cursor:pointer;text-decoration:none;display:block}
+.act-card.wide{grid-column:span 2;aspect-ratio:unset;min-height:360px}
+.act-bg{position:absolute;inset:0;transition:transform 0.6s ease}
+.act-card:hover .act-bg{transform:scale(1.05)}
+.act-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:0.55;transition:opacity 0.3s}
+.act-card:hover .act-bg img{opacity:0.8}
+.act-num{position:absolute;top:20px;left:20px;z-index:2;font-size:0.7rem;font-weight:800;color:rgba(211,184,106,0.35);letter-spacing:0.1em}
+.act-tag{position:absolute;top:20px;right:20px;z-index:2;font-size:0.58rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:5px 10px}
+.tag-stage{background:rgba(195,33,41,0.85);color:#ffcccc}
+.tag-roving{background:rgba(211,184,106,0.18);color:var(--gold);border:1px solid rgba(211,184,106,0.3)}
+.tag-fire{background:rgba(180,80,10,0.85);color:#ffcca0}
+.tag-led{background:rgba(20,60,180,0.85);color:#a0c0ff}
+.tag-overseas{background:rgba(211,184,106,0.15);color:var(--gold);border:1px solid rgba(211,184,106,0.25)}
+.act-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:28px 24px 22px;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,0.75) 55%,transparent 100%)}
+.act-name{font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;display:flex;align-items:center;gap:10px}
+.act-card.wide .act-name{font-size:1.45rem}
+.act-teaser{font-size:0.78rem;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.5}
+.act-hover{position:absolute;inset:0;z-index:3;background:rgba(10,10,10,0.93);display:flex;flex-direction:column;justify-content:center;padding:36px;opacity:0;transition:opacity 0.25s;pointer-events:none}
+.act-card:hover .act-hover{opacity:1;pointer-events:auto}
+.act-hover .act-name{font-size:1.15rem;margin-bottom:14px}
+.act-card.wide .act-hover .act-name{font-size:1.6rem}
+.act-hover p{font-size:0.84rem;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:24px;max-width:380px}
+.act-cta{display:inline-flex;align-items:center;gap:8px;font-size:0.7rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.act-cta::after{content:'→';transition:transform 0.2s}
+.new-stamp{width:42px;height:42px;border-radius:50%;border:2px solid var(--gold);display:inline-flex;align-items:center;justify-content:center;transform:rotate(-12deg);flex-shrink:0}
+.new-stamp span{font-size:0.48rem;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold)}
+.overseas-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0f0a00,#1a1200)}
+.overseas-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(211,184,106,0.03) 0px,rgba(211,184,106,0.03) 1px,transparent 1px,transparent 8px)}
+.coming-strip{padding:48px 40px;background:var(--black-deep);border-top:1px solid rgba(255,255,255,0.04)}
+.coming-label{font-size:0.58rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.coming-label::before{content:'◦';color:var(--red)}
+.coming-title{font-size:1.1rem;font-weight:900;text-transform:uppercase;margin-bottom:20px}
+.coming-pills{display:flex;flex-wrap:wrap;gap:8px}
+.coming-pill{padding:9px 18px;border:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.18);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
+.cta-bar{padding:64px 40px;background:var(--red);text-align:center}
+.cta-bar h2{font-size:clamp(1.6rem,3vw,2.6rem);font-weight:900;text-transform:uppercase;margin-bottom:12px}
+.cta-bar p{font-size:0.9rem;color:rgba(255,255,255,0.7);margin-bottom:28px}
+.btn-white{background:var(--white);color:var(--red);padding:14px 36px;font-size:0.75rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;display:inline-block;margin:0 8px}
+.btn-white-outline{border:2px solid rgba(255,255,255,0.5);color:var(--white);padding:14px 36px;font-size:0.75rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;display:inline-block;margin:0 8px}
+footer{background:var(--black-deep);border-top:1px solid rgba(211,184,106,0.1);padding:32px 0;text-align:center}
+.footer-copy{font-size:0.62rem;color:rgba(255,255,255,0.2);letter-spacing:0.12em;text-transform:uppercase}
+.footer-suits{display:flex;justify-content:center;gap:20px;margin:12px 0}
+.footer-suits span{color:rgba(211,184,106,0.2)}
+@media(max-width:1024px){.catalogue-layout{grid-template-columns:220px 1fr}.acts-grid{grid-template-columns:1fr 1fr}.act-card.wide{grid-column:span 2}}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hamburger{display:flex}.catalogue-layout{grid-template-columns:1fr}.sidebar{display:none}.page-hero{padding:120px 20px 60px}.acts-grid{grid-template-columns:1fr}.act-card.wide{grid-column:span 1;min-height:280px}.filter-bar{padding:0 20px;overflow-x:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="altrades-icon.png" alt="Circus of Altrades" class="nav-logo-icon">
+    <div><div class="nav-logo-text">Altrades</div><div class="nav-logo-sub">Circus of Altrades</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="catalogue.html" class="nav-active">Catalogue</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
+  <a href="catalogue.html" onclick="document.getElementById('mob').classList.remove('open')">Catalogue</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
+  <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-bg-word">CATALOGUE</div>
+  <p class="page-hero-label">Our Acts</p>
+  <h1>The Full<br><span>Catalogue</span></h1>
+  <div class="hero-divider"></div>
+  <p class="page-hero-sub">From solo stage centrepieces to full ensemble productions — every act performed by our own troupe or curated from our world-class international network.</p>
+</div>
+
+<div class="catalogue-layout">
+
+  <aside class="sidebar">
+    <a href="contact.html" class="sidebar-standalone">
+      <div>
+        <div class="sidebar-standalone-label">♦ &nbsp; Flagship</div>
+        <div class="sidebar-standalone-name">Full Circus Experience</div>
+      </div>
+      <span style="color:rgba(195,33,41,0.5);font-size:0.9rem">→</span>
+    </a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Stage Acts</div>
+      <a class="sidebar-link available" href="chairstacking.html"><span class="sidebar-link-name">Chairstacking</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Contortion</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Customised Show</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Dance</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link available" href="fireperformances.html"><span class="sidebar-link-name">Fire Performances</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link available" href="groupacrobatics.html"><span class="sidebar-link-name">Group Acrobatics</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link available" href="handbalancing.html"><span class="sidebar-link-name">Handbalancing <span class="sidebar-new">New</span></span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Juggling</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link available" href="ledperformances.html"><span class="sidebar-link-name">LED Performances</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Mime</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link available" href="poispinning.html"><span class="sidebar-link-name">Poi Spinning</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link available" href="tumbling.html"><span class="sidebar-link-name">Tumbling</span><span class="sidebar-dot available"></span></a>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Roving Acts</div>
+      <a class="sidebar-link available" href="fireroving.html"><span class="sidebar-link-name">Fire Roving</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Juggling Roving</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link coming"><span class="sidebar-link-name">Jumping Stilts / Powerskips</span><span class="sidebar-dot coming"></span></a>
+      <a class="sidebar-link available" href="ledroving.html"><span class="sidebar-link-name">LED Roving</span><span class="sidebar-dot available"></span></a>
+      <a class="sidebar-link available" href="stiltwalking.html"><span class="sidebar-link-name">Stilt Walking</span><span class="sidebar-dot available"></span></a>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Overseas Acts</div>
+      <a class="sidebar-link overseas" href="contact.html"><span class="sidebar-link-name">Mongolian Contortion</span><span class="sidebar-dot overseas"></span></a>
+      <a class="sidebar-link overseas" href="contact.html"><span class="sidebar-link-name">Handstand</span><span class="sidebar-dot overseas"></span></a>
+    </div>
+  </aside>
+
+  <main>
+    <div class="filter-bar">
+      <div class="filter-btns">
+        <button class="filter-btn active" onclick="filterActs('all',this)">All Acts</button>
+        <button class="filter-btn" onclick="filterActs('stage',this)">Stage</button>
+        <button class="filter-btn" onclick="filterActs('roving',this)">Roving</button>
+        <button class="filter-btn" onclick="filterActs('fire',this)">Fire</button>
+        <button class="filter-btn" onclick="filterActs('led',this)">LED</button>
+        <button class="filter-btn" onclick="filterActs('overseas',this)">Overseas</button>
+      </div>
+      <span class="filter-count" id="actCount">12 acts</span>
+    </div>
+
+    <div class="acts-grid" id="actsGrid">
+
+      <a href="groupacrobatics.html" class="act-card wide" data-cats="stage">
+        <div class="act-bg"><img src="groupacrobatics-hero.jpg" alt="Group Acrobatics"></div>
+        <span class="act-num">01</span><span class="act-tag tag-stage">Stage</span>
+        <div class="act-content"><div class="act-name">Group Acrobatics</div><div class="act-teaser">Death-defying pyramids & breathtaking group stunts</div></div>
+        <div class="act-hover"><div class="act-name">Group Acrobatics</div><p>From high-energy tumbles to mesmerising pyramids — strength, agility and breathtaking coordination for grand openings and corporate galas.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="fireperformances.html" class="act-card" data-cats="stage fire">
+        <div class="act-bg"><img src="fire-perf-hero.jpg" alt="Fire Performances"></div>
+        <span class="act-num">02</span><span class="act-tag tag-fire">Fire · Stage</span>
+        <div class="act-content"><div class="act-name">Fire Performances</div><div class="act-teaser">Raw primal spectacle that commands every eye</div></div>
+        <div class="act-hover"><div class="act-name">Fire Performances</div><p>Fire poi, staff, breathing and more — dramatic, electrifying acts fully safety-compliant with fire officer on-site.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="ledperformances.html" class="act-card" data-cats="stage led">
+        <div class="act-bg"><img src="led-perf-hero.jpg" alt="LED Performances"></div>
+        <span class="act-num">03</span><span class="act-tag tag-led">LED · Stage</span>
+        <div class="act-content"><div class="act-name">LED Performances</div><div class="act-teaser">Light becomes art — luminous colour and motion</div></div>
+        <div class="act-hover"><div class="act-name">LED Performances</div><p>LED poi, fans, wings and illuminated costumes woven into breathtaking stage choreography — indoors or outdoors.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="fireroving.html" class="act-card wide" data-cats="roving fire">
+        <div class="act-bg"><img src="fire-roving-hero.jpg" alt="Fire Roving"></div>
+        <span class="act-num">04</span><span class="act-tag tag-fire">Fire · Roving</span>
+        <div class="act-content"><div class="act-name">Fire Roving</div><div class="act-teaser">Fire doesn't stay on stage — it comes to your guests</div></div>
+        <div class="act-hover"><div class="act-name">Fire Roving</div><p>Fire artists roam freely through your space, bringing heat directly to the crowd across 3 sets within a 4-hour block.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="chairstacking.html" class="act-card" data-cats="stage">
+        <div class="act-bg"><img src="chairstacking-hero.jpg" alt="Chairstacking"></div>
+        <span class="act-num">05</span><span class="act-tag tag-stage">Stage</span>
+        <div class="act-content"><div class="act-name">Chairstacking</div><div class="act-teaser">One performer. A tower of chairs. A room holds its breath.</div></div>
+        <div class="act-hover"><div class="act-name">Chairstacking</div><p>A slow, nerve-shredding build of chair upon chair — raw balance and precision that commands total silence.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="stiltwalking.html" class="act-card" data-cats="roving">
+        <div class="act-bg"><img src="stilt-hero.jpg" alt="Stilt Walking"></div>
+        <span class="act-num">06</span><span class="act-tag tag-roving">Roving</span>
+        <div class="act-content"><div class="act-name">Stilt Walking</div><div class="act-teaser">Towering elegance meets dynamic crowd entertainment</div></div>
+        <div class="act-hover"><div class="act-name">Stilt Walking</div><p>Larger-than-life performers roaming your event — themed costumes, guest interaction and unforgettable photo moments.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="ledroving.html" class="act-card" data-cats="roving led">
+        <div class="act-bg"><img src="led-roving-hero.jpg" alt="LED Roving"></div>
+        <span class="act-num">07</span><span class="act-tag tag-led">LED · Roving</span>
+        <div class="act-content"><div class="act-name">LED Roving</div><div class="act-teaser">Glowing performers weaving light through your crowd</div></div>
+        <div class="act-hover"><div class="act-name">LED Roving</div><p>LED artists roam freely with glowing poi, fans and props — intimate, up-close moments of light and spectacle.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="tumbling.html" class="act-card wide" data-cats="stage">
+        <div class="act-bg"><img src="tumbling-hero.jpg" alt="Tumbling"></div>
+        <span class="act-num">08</span><span class="act-tag tag-stage">Stage</span>
+        <div class="act-content"><div class="act-name">Tumbling</div><div class="act-teaser">Explosive flips, throws and aerial power that ignite every room</div></div>
+        <div class="act-hover"><div class="act-name">Tumbling</div><p>No apparatus, no wires — pure athletic power. Back tucks, layout flips, explosive partner throws that stop every heart.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="poispinning.html" class="act-card" data-cats="stage roving fire led">
+        <div class="act-bg"><img src="poi-stage-gallery-1.jpg" alt="Poi Spinning"></div>
+        <span class="act-num">09</span><span class="act-tag tag-fire">Fire · LED</span>
+        <div class="act-content"><div class="act-name">Poi Spinning</div><div class="act-teaser">Hypnotic arcs of fire and light — stage or roving</div></div>
+        <div class="act-hover"><div class="act-name">Poi Spinning</div><p>Available as a stage act or roving entertainment — fire, LED or pixel poi for corporate events, galas and festivals.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="handbalancing.html" class="act-card" data-cats="stage">
+        <div class="act-bg"><img src="handbalancing-hero.jpg" alt="Handbalancing"></div>
+        <span class="act-num">10</span><span class="act-tag tag-stage">Stage</span>
+        <div class="act-content"><div class="act-name">Handbalancing <span class="new-stamp"><span>New</span></span></div><div class="act-teaser">Handstand canes with immersive dancers</div></div>
+        <div class="act-hover"><div class="act-name">Handbalancing</div><p>A specialised handbalancer on handstand canes, joined by two dancers whose movement creates an immersive, genre-bending performance.</p><span class="act-cta">Learn More</span></div>
+      </a>
+
+      <a href="contact.html" class="act-card" data-cats="overseas" style="background:linear-gradient(135deg,#0f0a00,#1a1200)">
+        <div class="overseas-bg"></div><div class="overseas-pattern"></div>
+        <span class="act-tag tag-overseas">Overseas · Stage</span>
+        <div class="act-content"><div class="act-name" style="color:var(--gold)">Mongolian Contortion</div><div class="act-teaser" style="color:rgba(211,184,106,0.45)">World-class overseas act — enquire for details</div></div>
+        <div class="act-hover"><div class="act-name" style="color:var(--gold)">Mongolian Contortion</div><p>A world-class contortion act from Mongolia — extraordinary flexibility and artistry. Contact us to discuss availability and booking.</p><span class="act-cta" style="color:var(--gold)">Enquire Now</span></div>
+      </a>
+
+      <a href="contact.html" class="act-card" data-cats="overseas" style="background:linear-gradient(135deg,#0f0a00,#1a1200)">
+        <div class="overseas-bg"></div><div class="overseas-pattern"></div>
+        <span class="act-tag tag-overseas">Overseas · Stage</span>
+        <div class="act-content"><div class="act-name" style="color:var(--gold)">Handstand</div><div class="act-teaser" style="color:rgba(211,184,106,0.45)">World-class overseas act — enquire for details</div></div>
+        <div class="act-hover"><div class="act-name" style="color:var(--gold)">Handstand</div><p>A world-class handstand act from our international network. Extraordinary strength and balance for premium events. Contact us for availability.</p><span class="act-cta" style="color:var(--gold)">Enquire Now</span></div>
+      </a>
+
+    </div>
+
+    <div class="coming-strip">
+      <p class="coming-label">Coming Soon</p>
+      <h3 class="coming-title">More Acts in Development</h3>
+      <div class="coming-pills">
+        <span class="coming-pill">Contortion</span>
+        <span class="coming-pill">Dance</span>
+        <span class="coming-pill">Juggling</span>
+        <span class="coming-pill">Mime</span>
+        <span class="coming-pill">Customised Show</span>
+        <span class="coming-pill">Full Circus Experience</span>
+        <span class="coming-pill">Juggling Roving</span>
+        <span class="coming-pill">Jumping Stilts / Powerskips</span>
+      </div>
+    </div>
+
+    <div class="cta-bar">
+      <h2>Let's Make Your Event Unforgettable</h2>
+      <p>Tell us about your event and we'll curate the perfect combination of acts.</p>
+      <a href="contact.html" class="btn-white">Enquire Now</a>
+      <a href="about.html" class="btn-white-outline">About Us</a>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-suits"><span>&#9824;</span><span>&#9829;</span><span>&#9827;</span><span>&#9830;</span></div>
+  <p class="footer-copy">&#169; 2025 Circus of Altrades &middot; Singapore &middot; Altrades Entertainment Pte. Ltd. &middot; UEN: 202425121M</p>
+</footer>
+
+<script>
+function filterActs(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  let count=0;
+  document.querySelectorAll('.act-card').forEach(card=>{
+    const cats=(card.dataset.cats||'').split(' ');
+    const show=cat==='all'||cats.includes(cat);
+    card.style.display=show?'':'none';
+    if(show)count++;
+  });
+  document.getElementById('actCount').textContent=count+' act'+(count!==1?'s':'');
+}
+const ham=document.querySelector('.hamburger');
+const mob=document.getElementById('mob');
+if(ham&&mob){ham.addEventListener('click',()=>mob.classList.toggle('open'));}
+window.addEventListener('scroll',()=>{const nav=document.querySelector('nav');if(nav)nav.classList.toggle('scrolled',window.scrollY>60);});
+</script>
+</body>
+</html>
